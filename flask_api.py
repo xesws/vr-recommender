@@ -1,5 +1,5 @@
 """
-Flask API for LLM-based VR App Recommender (Heinz College)
+Flask API for OpenRouter LLM-based VR App Recommender (Heinz College)
 Returns ONLY VR app recommendations (NO course recommendations)
 """
 
@@ -18,18 +18,19 @@ app = Flask(__name__)
 CORS(app)
 
 print("\n" + "=" * 70)
-print("INITIALIZING HEINZ LLM VR APP RECOMMENDER")
+print("INITIALIZING HEINZ OPENROUTER VR APP RECOMMENDER")
 print("=" * 70)
 
 # Initialize recommender
 recommender = None
 try:
-    print("\n🔄 Initializing LLM-based VR recommender...")
-    # Requires OPENAI_API_KEY in env
+    print("\n🔄 Initializing OpenRouter LLM-based VR recommender...")
+    # Requires OPENROUTER_API_KEY in env
     recommender = HeinzVRLLMRecommender(
-        model_name=os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+        model_name=os.getenv("OPENROUTER_MODEL", "qwen/qwen3-next-80b-a3b-thinking"),
+        base_url="https://openrouter.ai/api/v1"
     )
-    print("✓ LLM VR Recommender ready!")
+    print("✓ OpenRouter VR Recommender ready!")
 except Exception as e:
     print(f"❌ Init failed: {e}")
     recommender = None
@@ -86,7 +87,7 @@ def chat():
         if not recommender:
             return jsonify(
                 {
-                    "response": "Recommender unavailable. Please check OPENAI_API_KEY configuration.",
+                    "response": "Recommender unavailable. Please check OPENROUTER_API_KEY configuration.",
                     "type": "error",
                 }
             )
@@ -203,7 +204,7 @@ What are you working on?"""
 def generate_help_response() -> str:
     return """🤖 How I Work:
 
-I use an LLM (GPT) to interpret your learning goals and map them to Heinz-style topics, then I recommend VR apps aligned to those topics.
+I use an LLM (OpenRouter) to interpret your learning goals and map them to Heinz-style topics, then I recommend VR apps aligned to those topics.
 
 **What I Recommend:**
 • Meta Quest VR apps for hands-on learning
@@ -279,7 +280,7 @@ if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
 
     print("\n" + "=" * 70)
-    print("HEINZ LLM VR APP RECOMMENDER API")
+    print("HEINZ OPENROUTER VR APP RECOMMENDER API")
     print("=" * 70)
     print(f"🚀 Starting on http://localhost:{port}")
     print("\n📍 Endpoints:")

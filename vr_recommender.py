@@ -1,13 +1,13 @@
 """
 LLM‑Based VR App Recommender for Heinz College
 ------------------------------------------------
-• Uses OpenAI (chat.completions) to infer intent → map to canonical categories
+• Uses OpenRouter (chat.completions) to infer intent → map to canonical categories
 • Maps categories to curated VR apps (no course list shown to users)
 • Falls back gracefully if LLM fails (aliases + keywords)
 
 Usage
 -----
-export OPENAI_API_KEY=sk-...
+export OPENROUTER_API_KEY=sk-or-v1-...
 python heinz_vr_recommender_llm.py
 
 Integrate into your web app by importing HeinzVRLLMRecommender and calling
@@ -45,11 +45,19 @@ class StudentQuery:
 class HeinzVRLLMRecommender:
     """LLM-first recommender: LLM understands intent → map to categories → apps."""
 
-    def __init__(self, model_name: str = "gpt-4o-mini", api_key: Optional[str] = None):
+    def __init__(
+        self,
+        model_name: str = "qwen/qwen3-next-80b-a3b-thinking",
+        api_key: Optional[str] = None,
+        base_url: str = "https://openrouter.ai/api/v1"
+    ):
         self.model_name = model_name
-        self.client = OpenAI(api_key=api_key or os.getenv("OPENAI_API_KEY"))
+        self.client = OpenAI(
+            api_key=api_key or os.getenv("OPENROUTER_API_KEY") or os.getenv("OPENAI_API_KEY"),
+            base_url=base_url
+        )
         if not self.client.api_key:
-            raise RuntimeError("OPENAI_API_KEY not set. Export it before running.")
+            raise RuntimeError("OPENROUTER_API_KEY not set. Export it before running.")
 
         # Curated VR apps per category (expand as needed)
         self.vr_app_mappings: Dict[str, Dict[str, List[str]]] = {
