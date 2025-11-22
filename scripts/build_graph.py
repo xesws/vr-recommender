@@ -9,7 +9,7 @@ import os
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, project_root)
 
-from stage3.src.knowledge_graph.builder import KnowledgeGraphBuilder
+from knowledge_graph.src.knowledge_graph.builder import KnowledgeGraphBuilder
 
 
 def main():
@@ -19,8 +19,8 @@ def main():
     )
     parser.add_argument(
         "--data-dir",
-        default="stage1/data",
-        help="Directory containing JSON data files (default: stage1/data)"
+        default="data_collection/data",
+        help="Directory containing JSON data files (default: data_collection/data)"
     )
     parser.add_argument(
         "--clear",

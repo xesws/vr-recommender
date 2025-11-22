@@ -8,7 +8,7 @@ import os
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from stage2.src.skill_extraction.pipeline import SkillExtractionPipeline
+from skill_extraction.src.skill_extraction.pipeline import SkillExtractionPipeline
 
 
 def main():
@@ -18,18 +18,18 @@ def main():
     )
     parser.add_argument(
         "--courses",
-        default="stage1/data/courses.json",
-        help="Path to courses JSON file (default: stage1/data/courses.json)"
+        default="data_collection/data/courses.json",
+        help="Path to courses JSON file (default: data_collection/data/courses.json)"
     )
     parser.add_argument(
         "--apps",
-        default="stage1/data/vr_apps.json",
-        help="Path to VR apps JSON file (default: stage1/data/vr_apps.json)"
+        default="data_collection/data/vr_apps.json",
+        help="Path to VR apps JSON file (default: data_collection/data/vr_apps.json)"
     )
     parser.add_argument(
         "--output-dir",
-        default="stage1/data",
-        help="Output directory for results (default: stage1/data)"
+        default="data_collection/data",
+        help="Output directory for results (default: data_collection/data)"
     )
     parser.add_argument(
         "--batch-size",

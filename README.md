@@ -30,7 +30,7 @@ This system was developed in 6 stages to create a comprehensive recommendation p
 - Implemented VR app data collection with Tavily API
 - Created structured JSON outputs for 232 courses and 77 VR apps
 - Multi-department support covering 6 CMU colleges
-- **Output**: `stage1/data/courses.json`, `stage1/data/vr_apps.json`
+- **Output**: `data_collection/data/courses.json`, `data_collection/data/vr_apps.json`
 
 ### Stage 2: Skill Extraction (COMPLETE)
 - LLM-based recommendation engine using OpenRouter API (Qwen model)
@@ -45,14 +45,14 @@ This system was developed in 6 stages to create a comprehensive recommendation p
 - TEACHES, DEVELOPS, and RECOMMENDS relationships with weights
 - Smart recommendation algorithm based on weighted skill similarity
 - Cypher query interface for graph traversal
-- **Output**: `stage3/src/knowledge_graph/` module
+- **Output**: `knowledge_graph/src/knowledge_graph/` module
 
 ### Stage 4: Vector Store (COMPLETE)
 - ChromaDB vector store for persistent skill embeddings
 - Local embeddings (sentence-transformers) and OpenAI support
 - Semantic search with similarity thresholds and category filtering
 - Batch search and diversified recommendations
-- **Output**: `stage4/src/vector_store/` module, `stage4/data/chroma/`
+- **Output**: `vector_store/src/vector_store/` module, `vector_store/data/chroma/`
 
 ### Stage 5: RAG Retrieval (COMPLETE)
 - RAGRetriever combining ChromaDB vector search with Neo4j graph queries
@@ -123,10 +123,10 @@ This system was developed in 6 stages to create a comprehensive recommendation p
 4. **Build the RAG system** (first time only):
    ```bash
    # Build knowledge graph
-   python stage3/scripts/build_graph.py
+   python knowledge_graph/scripts/build_graph.py
 
    # Build vector index
-   python stage4/scripts/build_vector_index.py
+   python vector_store/scripts/build_vector_index.py
    ```
 
 5. **Start the Flask API**:
@@ -278,26 +278,26 @@ python scripts/update_rag.py --rebuild-embeddings
 
 ```bash
 # Test connection
-python stage3/scripts/build_graph.py --test
+python knowledge_graph/scripts/build_graph.py --test
 
 # Build graph
-python stage3/scripts/build_graph.py
+python knowledge_graph/scripts/build_graph.py
 
 # Clear and rebuild
-python stage3/scripts/build_graph.py --clear
+python knowledge_graph/scripts/build_graph.py --clear
 ```
 
 ### Rebuild Vector Index
 
 ```bash
 # With local embeddings
-python stage4/scripts/build_vector_index.py
+python vector_store/scripts/build_vector_index.py
 
 # With OpenAI embeddings
-python stage4/scripts/build_vector_index.py --use-openai
+python vector_store/scripts/build_vector_index.py --use-openai
 
 # Show statistics
-python stage4/scripts/build_vector_index.py --stats
+python vector_store/scripts/build_vector_index.py --stats
 ```
 
 ## Project Structure
@@ -319,14 +319,14 @@ vr-recommender/
 │   └── chat/                  # Chat session management
 │       └── session.py
 │
-├── stage1/                    # Data collection
+├── data_collection/           # Data collection
 │   ├── src/data_collection/   # Fetchers for courses/apps
 │   └── data/                  # JSON output files
 │
-├── stage3/                    # Knowledge graph
+├── knowledge_graph/           # Knowledge graph
 │   └── src/knowledge_graph/   # Neo4j graph module
 │
-├── stage4/                    # Vector store
+├── vector_store/              # Vector store
 │   ├── src/vector_store/      # ChromaDB module
 │   └── data/chroma/           # Persistent embeddings
 │

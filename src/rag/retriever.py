@@ -8,14 +8,14 @@ from typing import List, Dict
 import sys
 import os
 
-# Add stage3 and stage4 to path for imports
-stage3_path = os.path.join(os.path.dirname(__file__), "../../stage3/src")
-stage4_path = os.path.join(os.path.dirname(__file__), "../../stage4/src")
+# Add knowledge_graph and vector_store to path for imports
+kg_path = os.path.join(os.path.dirname(__file__), "../../knowledge_graph/src")
+vs_path = os.path.join(os.path.dirname(__file__), "../../vector_store/src")
 
-if stage3_path not in sys.path:
-    sys.path.append(stage3_path)
-if stage4_path not in sys.path:
-    sys.path.append(stage4_path)
+if kg_path not in sys.path:
+    sys.path.append(kg_path)
+if vs_path not in sys.path:
+    sys.path.append(vs_path)
 
 from vector_store.search_service import SkillSearchService
 from knowledge_graph.connection import Neo4jConnection
