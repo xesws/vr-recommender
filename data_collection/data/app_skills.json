@@ -3,13 +3,13 @@
     "source_id": "InMind",
     "source_type": "app",
     "skill_name": "Interactive Learning",
-    "weight": 0.7
+    "weight": 0.8
   },
   {
     "source_id": "InMind",
     "source_type": "app",
     "skill_name": "Educational Content Development",
-    "weight": 0.8
+    "weight": 0.7
   },
   {
     "source_id": "InMind",
@@ -20,20 +20,14 @@
   {
     "source_id": "InMind",
     "source_type": "app",
-    "skill_name": "Immersive Experience Design",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "InMind",
+    "source_type": "app",
+    "skill_name": "Educational Technology (Edtech)",
     "weight": 0.8
-  },
-  {
-    "source_id": "InMind",
-    "source_type": "app",
-    "skill_name": "Education",
-    "weight": 0.9
-  },
-  {
-    "source_id": "InMind",
-    "source_type": "app",
-    "skill_name": "Virtual Reality (Vr) Applications",
-    "weight": 0.9
   },
   {
     "source_id": "InMind",
@@ -44,7 +38,7 @@
   {
     "source_id": "InMind",
     "source_type": "app",
-    "skill_name": "Communication",
+    "skill_name": "Instructional Design",
     "weight": 0.8
   },
   {
@@ -87,19 +81,37 @@
     "source_id": "VR_Museum_Art_Through_Time",
     "source_type": "app",
     "skill_name": "Instructional Design",
-    "weight": 0.75
+    "weight": 0.9
   },
   {
     "source_id": "VR_Museum_Art_Through_Time",
     "source_type": "app",
     "skill_name": "Art History",
-    "weight": 0.9
+    "weight": 0.85
   },
   {
     "source_id": "VR_Museum_Art_Through_Time",
     "source_type": "app",
     "skill_name": "Educational Technology (Edtech)",
-    "weight": 0.85
+    "weight": 0.9
+  },
+  {
+    "source_id": "Origami_Dojo",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Origami_Dojo",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Origami_Dojo",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
   },
   {
     "source_id": "Origami_Dojo",
@@ -110,250 +122,214 @@
   {
     "source_id": "Origami_Dojo",
     "source_type": "app",
-    "skill_name": "3D Visualization",
-    "weight": 0.85
-  },
-  {
-    "source_id": "Origami_Dojo",
-    "source_type": "app",
-    "skill_name": "Interactive Learning Design",
+    "skill_name": "Educational Pedagogy",
     "weight": 0.8
   },
   {
     "source_id": "Origami_Dojo",
-    "source_type": "app",
-    "skill_name": "Educational Content Development",
-    "weight": 0.8
-  },
-  {
-    "source_id": "Origami_Dojo",
-    "source_type": "app",
-    "skill_name": "User Experience",
-    "weight": 0.7
-  },
-  {
-    "source_id": "Origami_Dojo",
-    "source_type": "app",
-    "skill_name": "Communication",
-    "weight": 0.7
-  },
-  {
-    "source_id": "Origami_Dojo",
-    "source_type": "app",
-    "skill_name": "Collaboration",
-    "weight": 0.65
-  },
-  {
-    "source_id": "Origami_Dojo",
-    "source_type": "app",
-    "skill_name": "Education",
-    "weight": 0.9
-  },
-  {
-    "source_id": "Origami_Dojo",
-    "source_type": "app",
-    "skill_name": "Immersive Learning",
-    "weight": 0.85
-  },
-  {
-    "source_id": "VEDAVI_VR_Human_Anatomy",
-    "source_type": "app",
-    "skill_name": "Interactive Learning",
-    "weight": 0.85
-  },
-  {
-    "source_id": "VEDAVI_VR_Human_Anatomy",
-    "source_type": "app",
-    "skill_name": "3D Visualizations",
-    "weight": 0.9
-  },
-  {
-    "source_id": "VEDAVI_VR_Human_Anatomy",
-    "source_type": "app",
-    "skill_name": "Educational Content Development",
-    "weight": 0.8
-  },
-  {
-    "source_id": "VEDAVI_VR_Human_Anatomy",
-    "source_type": "app",
-    "skill_name": "Immersive Learning Design",
-    "weight": 0.85
-  },
-  {
-    "source_id": "VEDAVI_VR_Human_Anatomy",
-    "source_type": "app",
-    "skill_name": "Student Engagement",
-    "weight": 0.75
-  },
-  {
-    "source_id": "VEDAVI_VR_Human_Anatomy",
-    "source_type": "app",
-    "skill_name": "Educational Facilitation",
-    "weight": 0.8
-  },
-  {
-    "source_id": "VEDAVI_VR_Human_Anatomy",
-    "source_type": "app",
-    "skill_name": "Human Anatomy",
-    "weight": 0.95
-  },
-  {
-    "source_id": "VEDAVI_VR_Human_Anatomy",
-    "source_type": "app",
-    "skill_name": "Education",
-    "weight": 0.9
-  },
-  {
-    "source_id": "3D_Organon_VR_Anatomy",
-    "source_type": "app",
-    "skill_name": "3D Visualizations",
-    "weight": 0.9
-  },
-  {
-    "source_id": "3D_Organon_VR_Anatomy",
-    "source_type": "app",
-    "skill_name": "Interactive Learning",
-    "weight": 0.8
-  },
-  {
-    "source_id": "3D_Organon_VR_Anatomy",
-    "source_type": "app",
-    "skill_name": "Educational Content Development",
-    "weight": 0.7
-  },
-  {
-    "source_id": "3D_Organon_VR_Anatomy",
-    "source_type": "app",
-    "skill_name": "Immersive Learning Design",
-    "weight": 0.8
-  },
-  {
-    "source_id": "3D_Organon_VR_Anatomy",
-    "source_type": "app",
-    "skill_name": "Education",
-    "weight": 0.9
-  },
-  {
-    "source_id": "3D_Organon_VR_Anatomy",
     "source_type": "app",
     "skill_name": "Student Engagement",
     "weight": 0.7
   },
   {
-    "source_id": "3D_Organon_VR_Anatomy",
+    "source_id": "Origami_Dojo",
     "source_type": "app",
-    "skill_name": "Educational Facilitation",
-    "weight": 0.8
-  },
-  {
-    "source_id": "Mission_ISS",
-    "source_type": "app",
-    "skill_name": "Interactive Learning",
-    "weight": 0.8
-  },
-  {
-    "source_id": "Mission_ISS",
-    "source_type": "app",
-    "skill_name": "Educational Content Development",
-    "weight": 0.7
-  },
-  {
-    "source_id": "Mission_ISS",
-    "source_type": "app",
-    "skill_name": "3D Visualizations",
-    "weight": 0.9
-  },
-  {
-    "source_id": "Mission_ISS",
-    "source_type": "app",
-    "skill_name": "Immersive Learning Design",
-    "weight": 0.8
-  },
-  {
-    "source_id": "Mission_ISS",
-    "source_type": "app",
-    "skill_name": "Educational Technology (Edtech)",
-    "weight": 0.9
-  },
-  {
-    "source_id": "Mission_ISS",
-    "source_type": "app",
-    "skill_name": "Virtual Reality (Vr) Applications",
-    "weight": 0.9
-  },
-  {
-    "source_id": "Mission_ISS",
-    "source_type": "app",
-    "skill_name": "Student Engagement",
-    "weight": 0.7
-  },
-  {
-    "source_id": "Mission_ISS",
-    "source_type": "app",
-    "skill_name": "Educator Collaboration",
+    "skill_name": "Collaboration With Educators",
     "weight": 0.6
   },
   {
-    "source_id": "Babel_VR",
+    "source_id": "VEDAVI_VR_Human_Anatomy",
     "source_type": "app",
     "skill_name": "Interactive Learning",
     "weight": 0.8
   },
   {
-    "source_id": "Babel_VR",
+    "source_id": "VEDAVI_VR_Human_Anatomy",
     "source_type": "app",
     "skill_name": "3D Visualizations",
     "weight": 0.9
   },
   {
-    "source_id": "Babel_VR",
+    "source_id": "VEDAVI_VR_Human_Anatomy",
     "source_type": "app",
-    "skill_name": "Educational Content Design",
+    "skill_name": "Educational Content Development",
     "weight": 0.7
   },
   {
-    "source_id": "Babel_VR",
+    "source_id": "VEDAVI_VR_Human_Anatomy",
     "source_type": "app",
-    "skill_name": "Immersive Learning Experiences",
+    "skill_name": "Immersive Learning Design",
     "weight": 0.8
   },
   {
-    "source_id": "Babel_VR",
+    "source_id": "VEDAVI_VR_Human_Anatomy",
     "source_type": "app",
     "skill_name": "User Engagement",
     "weight": 0.7
   },
   {
-    "source_id": "Babel_VR",
+    "source_id": "VEDAVI_VR_Human_Anatomy",
     "source_type": "app",
-    "skill_name": "Collaboration",
-    "weight": 0.6
-  },
-  {
-    "source_id": "Babel_VR",
-    "source_type": "app",
-    "skill_name": "Education",
+    "skill_name": "Educational Pedagogy",
     "weight": 0.9
   },
   {
-    "source_id": "Babel_VR",
+    "source_id": "VEDAVI_VR_Human_Anatomy",
     "source_type": "app",
-    "skill_name": "Virtual Reality (Vr) Applications",
-    "weight": 0.9
+    "skill_name": "Human Anatomy",
+    "weight": 1.0
   },
   {
-    "source_id": "Unimersiv",
+    "source_id": "3D_Organon_VR_Anatomy",
     "source_type": "app",
     "skill_name": "Interactive Learning",
     "weight": 0.85
   },
   {
-    "source_id": "Unimersiv",
+    "source_id": "3D_Organon_VR_Anatomy",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "3D_Organon_VR_Anatomy",
     "source_type": "app",
     "skill_name": "Educational Content Development",
     "weight": 0.8
   },
   {
+    "source_id": "3D_Organon_VR_Anatomy",
+    "source_type": "app",
+    "skill_name": "Immersive Learning Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "3D_Organon_VR_Anatomy",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "3D_Organon_VR_Anatomy",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.95
+  },
+  {
+    "source_id": "3D_Organon_VR_Anatomy",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.75
+  },
+  {
+    "source_id": "3D_Organon_VR_Anatomy",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Mission_ISS",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Mission_ISS",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Mission_ISS",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Mission_ISS",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Mission_ISS",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Mission_ISS",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Applications",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Mission_ISS",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Mission_ISS",
+    "source_type": "app",
+    "skill_name": "Communication",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Babel_VR",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Babel_VR",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Babel_VR",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Babel_VR",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Babel_VR",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Babel_VR",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Babel_VR",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Unimersiv",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Unimersiv",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.7
+  },
+  {
     "source_id": "Unimersiv",
     "source_type": "app",
     "skill_name": "3D Visualizations",
@@ -362,26 +338,26 @@
   {
     "source_id": "Unimersiv",
     "source_type": "app",
-    "skill_name": "Immersive Experience Design",
-    "weight": 0.85
-  },
-  {
-    "source_id": "Unimersiv",
-    "source_type": "app",
-    "skill_name": "User-Centered Design",
-    "weight": 0.75
-  },
-  {
-    "source_id": "Unimersiv",
-    "source_type": "app",
-    "skill_name": "Education",
+    "skill_name": "Virtual Reality (Vr) Development",
     "weight": 0.9
   },
   {
     "source_id": "Unimersiv",
     "source_type": "app",
-    "skill_name": "Virtual Reality (Vr) Applications",
-    "weight": 0.9
+    "skill_name": "User Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Unimersiv",
+    "source_type": "app",
+    "skill_name": "Educational Pedagogy",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Unimersiv",
+    "source_type": "app",
+    "skill_name": "Learning Experience Design",
+    "weight": 0.8
   },
   {
     "source_id": "MEL_Science_VR",
@@ -392,14 +368,14 @@
   {
     "source_id": "MEL_Science_VR",
     "source_type": "app",
-    "skill_name": "3D Visualizations",
-    "weight": 0.9
+    "skill_name": "Educational Content Development",
+    "weight": 0.8
   },
   {
     "source_id": "MEL_Science_VR",
     "source_type": "app",
-    "skill_name": "Educational Content Design",
-    "weight": 0.8
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
   },
   {
     "source_id": "MEL_Science_VR",
@@ -411,7 +387,13 @@
     "source_id": "MEL_Science_VR",
     "source_type": "app",
     "skill_name": "Education",
-    "weight": 0.95
+    "weight": 0.9
+  },
+  {
+    "source_id": "MEL_Science_VR",
+    "source_type": "app",
+    "skill_name": "Educational Technology (Edtech)",
+    "weight": 0.85
   },
   {
     "source_id": "MEL_Science_VR",
@@ -446,14 +428,20 @@
   {
     "source_id": "Chemistry_Lab",
     "source_type": "app",
-    "skill_name": "Immersive Experience Design",
+    "skill_name": "Immersive Learning Experiences",
     "weight": 0.8
   },
   {
     "source_id": "Chemistry_Lab",
     "source_type": "app",
-    "skill_name": "Education",
-    "weight": 0.9
+    "skill_name": "Student Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Chemistry_Lab",
+    "source_type": "app",
+    "skill_name": "Communication",
+    "weight": 0.8
   },
   {
     "source_id": "Chemistry_Lab",
@@ -464,25 +452,2041 @@
   {
     "source_id": "Chemistry_Lab",
     "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "app",
+    "skill_name": "3D Visualization",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "app",
+    "skill_name": "Interactive Learning Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.75
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "app",
+    "skill_name": "Communication",
+    "weight": 0.7
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.65
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "app",
+    "skill_name": "Astronomy",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Newton_s_Cradle",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Newton_s_Cradle",
+    "source_type": "app",
+    "skill_name": "Educational Content Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Newton_s_Cradle",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Newton_s_Cradle",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Newton_s_Cradle",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Newton_s_Cradle",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Applications",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "app",
+    "skill_name": "3D Visualization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "app",
+    "skill_name": "Interactive Learning Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "app",
+    "skill_name": "Communication",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.65
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "app",
+    "skill_name": "Astronomy",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.8
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.7
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "app",
+    "skill_name": "Immersive Learning Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "app",
     "skill_name": "Student Engagement",
     "weight": 0.7
   },
   {
-    "source_id": "Chemistry_Lab",
+    "source_id": "GeoGebra_AR",
     "source_type": "app",
-    "skill_name": "Educational Facilitation",
+    "skill_name": "Communication",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
     "weight": 0.8
   },
   {
-    "source_id": "InMind",
-    "source_type": "vr_app",
-    "skill_name": "Programming",
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
     "weight": 0.9
   },
   {
-    "source_id": "InMind",
-    "source_type": "vr_app",
-    "skill_name": "Python",
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "app",
+    "skill_name": "Educational Content Design",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "app",
+    "skill_name": "Immersive Learning Experiences",
     "weight": 0.8
+  },
+  {
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.7
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.8
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.7
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Applications",
+    "weight": 0.95
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "app",
+    "skill_name": "Communication",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Google_Expeditions",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Google_Expeditions",
+    "source_type": "app",
+    "skill_name": "Educational Content Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Google_Expeditions",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Google_Expeditions",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Google_Expeditions",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Google_Expeditions",
+    "source_type": "app",
+    "skill_name": "Educational Pedagogy",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Discovery_VR",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Discovery_VR",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Discovery_VR",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Discovery_VR",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Discovery_VR",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Discovery_VR",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Applications",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Discovery_VR",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Discovery_VR",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "app",
+    "skill_name": "Educational Technology (Edtech)",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Applications",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "app",
+    "skill_name": "Communication",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Apollo_11",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Apollo_11",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Apollo_11",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Apollo_11",
+    "source_type": "app",
+    "skill_name": "Immersive Learning Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Apollo_11",
+    "source_type": "app",
+    "skill_name": "User Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Apollo_11",
+    "source_type": "app",
+    "skill_name": "Communication",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Apollo_11",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Applications",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Apollo_11",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Apollo_11",
+    "source_type": "app",
+    "skill_name": "Educational Technology (Edtech)",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Cosmic_Watch",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Cosmic_Watch",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Cosmic_Watch",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Cosmic_Watch",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Cosmic_Watch",
+    "source_type": "app",
+    "skill_name": "Educational Pedagogy",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Cosmic_Watch",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Cosmic_Watch",
+    "source_type": "app",
+    "skill_name": "Collaboration With Educators",
+    "weight": 0.6
+  },
+  {
+    "source_id": "Skygaze",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Skygaze",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Skygaze",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Skygaze",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Skygaze",
+    "source_type": "app",
+    "skill_name": "Educational Technology (Edtech)",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Skygaze",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Applications",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Skygaze",
+    "source_type": "app",
+    "skill_name": "Student Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Skygaze",
+    "source_type": "app",
+    "skill_name": "Educational Collaboration",
+    "weight": 0.6
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "app",
+    "skill_name": "Interactive Learning",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "app",
+    "skill_name": "Educational Content Development",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "app",
+    "skill_name": "3D Visualizations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "app",
+    "skill_name": "Communication",
+    "weight": 0.6
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.6
+  },
+  {
+    "source_id": "Metaenga",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Metaenga",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Metaenga",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Vrainers",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Vrainers",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Vrainers",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "SafeFire_VR",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "SafeFire_VR",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "SafeFire_VR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "STRIVR",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "STRIVR",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "STRIVR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Voxels",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Voxels",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Voxels",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Immersive_Training",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Immersive_Training",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Immersive_Training",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Engage_VR",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Engage_VR",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Engage_VR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VirBELA",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VirBELA",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VirBELA",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "MediTeach_VR",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "MediTeach_VR",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "MediTeach_VR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "SimX_VR",
+    "source_type": "app",
+    "skill_name": "Vr Simulation Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "SimX_VR",
+    "source_type": "app",
+    "skill_name": "Skill Training Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "SimX_VR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking Systems",
+    "weight": 0.85
+  },
+  {
+    "source_id": "SimX_VR",
+    "source_type": "app",
+    "skill_name": "User Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "SimX_VR",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "SimX_VR",
+    "source_type": "app",
+    "skill_name": "Immersive Learning Technologies",
+    "weight": 0.9
+  },
+  {
+    "source_id": "OrthoVR",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "OrthoVR",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "OrthoVR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Dentali_VR",
+    "source_type": "app",
+    "skill_name": "Vr Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Dentali_VR",
+    "source_type": "app",
+    "skill_name": "Realistic Simulation Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Dentali_VR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking Systems",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Dentali_VR",
+    "source_type": "app",
+    "skill_name": "Dental Procedures",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Dentali_VR",
+    "source_type": "app",
+    "skill_name": "Medical Training Pedagogy",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Dentali_VR",
+    "source_type": "app",
+    "skill_name": "User Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Dentali_VR",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Surgical_Training",
+    "source_type": "app",
+    "skill_name": "Vr Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "VR_Surgical_Training",
+    "source_type": "app",
+    "skill_name": "Realistic Simulation Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_Surgical_Training",
+    "source_type": "app",
+    "skill_name": "Progress Tracking Systems",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Surgical_Training",
+    "source_type": "app",
+    "skill_name": "Medical Training Methodologies",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_Surgical_Training",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_Surgical_Training",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "app",
+    "skill_name": "Medical Simulation Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "app",
+    "skill_name": "Progress Tracking Systems",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "app",
+    "skill_name": "Surgical Procedures Knowledge",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "app",
+    "skill_name": "Training And Development",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "app",
+    "skill_name": "Attention To Detail",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Level_Ex",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Level_Ex",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Level_Ex",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "FundamentalVR",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.9
+  },
+  {
+    "source_id": "FundamentalVR",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.95
+  },
+  {
+    "source_id": "FundamentalVR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Touch_Surgery",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Touch_Surgery",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Touch_Surgery",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "AppliedVR",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "AppliedVR",
+    "source_type": "app",
+    "skill_name": "Simulations Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "AppliedVR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking Systems",
+    "weight": 0.85
+  },
+  {
+    "source_id": "AppliedVR",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.8
+  },
+  {
+    "source_id": "AppliedVR",
+    "source_type": "app",
+    "skill_name": "Training Program Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "AppliedVR",
+    "source_type": "app",
+    "skill_name": "Analytics",
+    "weight": 0.85
+  },
+  {
+    "source_id": "AppliedVR",
+    "source_type": "app",
+    "skill_name": "Communication",
+    "weight": 0.7
+  },
+  {
+    "source_id": "AppliedVR",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Psious",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Psious",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Psious",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Luminopia",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Luminopia",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Luminopia",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Caribu",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Caribu",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Caribu",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Caribu",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Futuclass_Education",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Futuclass_Education",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Futuclass_Education",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.75
+  },
+  {
+    "source_id": "VictoryXR",
+    "source_type": "app",
+    "skill_name": "Skill Training",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VictoryXR",
+    "source_type": "app",
+    "skill_name": "Realistic Simulations",
+    "weight": 0.95
+  },
+  {
+    "source_id": "VictoryXR",
+    "source_type": "app",
+    "skill_name": "Progress Tracking",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Applications",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "app",
+    "skill_name": "Workflow Optimization",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "app",
+    "skill_name": "User Interface",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "app",
+    "skill_name": "Collaboration Tools Design",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "app",
+    "skill_name": "Productivity Enhancement",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Horizon_Workrooms",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Horizon_Workrooms",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Horizon_Workrooms",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Horizon_Workrooms",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Horizon_Workrooms",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Applications",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Spatial",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Spatial",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Spatial",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Spatial",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Spatial",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Arthur_VR",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Arthur_VR",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Arthur_VR",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Arthur_VR",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Arthur_VR",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "MeetinVR",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "MeetinVR",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.7
+  },
+  {
+    "source_id": "MeetinVR",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.8
+  },
+  {
+    "source_id": "MeetinVR",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.6
+  },
+  {
+    "source_id": "MeetinVR",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Glue",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Glue",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Glue",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Glue",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Glue",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Spatial_Rooms",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Spatial_Rooms",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Spatial_Rooms",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Spatial_Rooms",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Spatial_Rooms",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Spatial_Rooms",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VRChat",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "VRChat",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.7
+  },
+  {
+    "source_id": "VRChat",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VRChat",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.6
+  },
+  {
+    "source_id": "Rec_Room",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Rec_Room",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Rec_Room",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Rec_Room",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Bigscreen",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Bigscreen",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Bigscreen",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Bigscreen",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Bigscreen",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Experience Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Mozilla_Hubs",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Mozilla_Hubs",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Mozilla_Hubs",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Mozilla_Hubs",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Mozilla_Hubs",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Mozilla_Hubs",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.7
+  },
+  {
+    "source_id": "AltspaceVR",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "AltspaceVR",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.7
+  },
+  {
+    "source_id": "AltspaceVR",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.8
+  },
+  {
+    "source_id": "AltspaceVR",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.6
+  },
+  {
+    "source_id": "VRWorkout",
+    "source_type": "app",
+    "skill_name": "Vr Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VRWorkout",
+    "source_type": "app",
+    "skill_name": "Workflow Optimization",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VRWorkout",
+    "source_type": "app",
+    "skill_name": "User Interface",
+    "weight": 0.7
+  },
+  {
+    "source_id": "VRWorkout",
+    "source_type": "app",
+    "skill_name": "Collaboration Tools Design",
+    "weight": 0.7
+  },
+  {
+    "source_id": "VRWorkout",
+    "source_type": "app",
+    "skill_name": "Productivity Enhancement",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VRWorkout",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.7
+  },
+  {
+    "source_id": "VRWorkout",
+    "source_type": "app",
+    "skill_name": "Cross-Functional Team Collaboration",
+    "weight": 0.6
+  },
+  {
+    "source_id": "VRWorkout",
+    "source_type": "app",
+    "skill_name": "Design Thinking",
+    "weight": 0.7
+  },
+  {
+    "source_id": "FitXR",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.8
+  },
+  {
+    "source_id": "FitXR",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.7
+  },
+  {
+    "source_id": "FitXR",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "FitXR",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.7
+  },
+  {
+    "source_id": "FitXR",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Boneworks",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Boneworks",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Boneworks",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Boneworks",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.75
+  },
+  {
+    "source_id": "Population_One",
+    "source_type": "app",
+    "skill_name": "Workflow Enhancement",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Population_One",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Population_One",
+    "source_type": "app",
+    "skill_name": "Interface Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Population_One",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Population_One",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Population_One",
+    "source_type": "app",
+    "skill_name": "Collaboration",
+    "weight": 0.7
+  },
+  {
+    "source_id": "Population_One",
+    "source_type": "app",
+    "skill_name": "Focus And Concentration",
+    "weight": 0.75
+  },
+  {
+    "source_id": "VR_education",
+    "source_type": "app",
+    "skill_name": "Vr Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "VR_education",
+    "source_type": "app",
+    "skill_name": "Interactive Learning Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_education",
+    "source_type": "app",
+    "skill_name": "3D Visualization",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_education",
+    "source_type": "app",
+    "skill_name": "Educational Technology",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_education",
+    "source_type": "app",
+    "skill_name": "Knowledge Assessment Design",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_education",
+    "source_type": "app",
+    "skill_name": "User Experience",
+    "weight": 0.75
+  },
+  {
+    "source_id": "VR_education",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_fitness",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "VR_fitness",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_fitness",
+    "source_type": "app",
+    "skill_name": "Skill Practice Simulation",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_fitness",
+    "source_type": "app",
+    "skill_name": "Progress Tracking Systems",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_fitness",
+    "source_type": "app",
+    "skill_name": "User Engagement",
+    "weight": 0.75
+  },
+  {
+    "source_id": "VR_fitness",
+    "source_type": "app",
+    "skill_name": "Learning Facilitation",
+    "weight": 0.7
+  },
+  {
+    "source_id": "VR_fitness",
+    "source_type": "app",
+    "skill_name": "Fitness Training Methodologies",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_fitness",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_Fitness_Games_on_Meta",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "VR_Fitness_Games_on_Meta",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_Fitness_Games_on_Meta",
+    "source_type": "app",
+    "skill_name": "Skill Practice Simulation",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Fitness_Games_on_Meta",
+    "source_type": "app",
+    "skill_name": "Progress Tracking Systems",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_Fitness_Games_on_Meta",
+    "source_type": "app",
+    "skill_name": "User Engagement",
+    "weight": 0.75
+  },
+  {
+    "source_id": "VR_Fitness_Games_on_Meta",
+    "source_type": "app",
+    "skill_name": "Learning Facilitation",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_Fitness_Games_on_Meta",
+    "source_type": "app",
+    "skill_name": "Fitness Training Methodologies",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Fitness_Games_on_Meta",
+    "source_type": "app",
+    "skill_name": "Education",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_Fitness",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "VR_Fitness",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_Fitness",
+    "source_type": "app",
+    "skill_name": "Skill Practice Simulation",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Fitness",
+    "source_type": "app",
+    "skill_name": "Progress Tracking Systems",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_Fitness",
+    "source_type": "app",
+    "skill_name": "User Engagement",
+    "weight": 0.75
+  },
+  {
+    "source_id": "VR_Fitness",
+    "source_type": "app",
+    "skill_name": "Learning Experience Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_Fitness",
+    "source_type": "app",
+    "skill_name": "Fitness Training Methodologies",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Meta",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "Meta",
+    "source_type": "app",
+    "skill_name": "Immersive Learning Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Meta",
+    "source_type": "app",
+    "skill_name": "Realistic Simulation Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Meta",
+    "source_type": "app",
+    "skill_name": "Progress Tracking Systems",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Meta",
+    "source_type": "app",
+    "skill_name": "User Engagement",
+    "weight": 0.8
+  },
+  {
+    "source_id": "Meta",
+    "source_type": "app",
+    "skill_name": "Instructional Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Meta",
+    "source_type": "app",
+    "skill_name": "Training And Development",
+    "weight": 0.9
+  },
+  {
+    "source_id": "Meta",
+    "source_type": "app",
+    "skill_name": "Edtech",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "Multi-Screen Interface Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "Remote Collaboration Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "Workspace Customization",
+    "weight": 0.75
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "User Engagement",
+    "weight": 0.7
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "Learning Facilitation",
+    "weight": 0.8
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "Skill Development Strategy",
+    "weight": 0.75
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "Edtech",
+    "weight": 0.9
+  },
+  {
+    "source_id": "VR_productivity",
+    "source_type": "app",
+    "skill_name": "Productivity Tools",
+    "weight": 0.85
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "Virtual Reality (Vr) Development",
+    "weight": 0.95
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "Immersive Experience Design",
+    "weight": 0.9
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "Multi-Screen Interface Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "Remote Collaboration Tools",
+    "weight": 0.8
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "Workspace Customization",
+    "weight": 0.75
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "User Engagement",
+    "weight": 0.8
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "Learning Facilitation",
+    "weight": 0.85
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "Skill Development Strategy",
+    "weight": 0.8
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "Productivity Optimization",
+    "weight": 0.9
+  },
+  {
+    "source_id": "productivity",
+    "source_type": "app",
+    "skill_name": "E-Learning Technologies",
+    "weight": 0.85
   }
 ]

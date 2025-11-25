@@ -1,0 +1,585 @@
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+ * Serving Flask app 'flask_api'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.130:5001
+Press CTRL+C to quit
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: RECOMMENDS)} {position: line: 4, column: 22, offset: 103} for query: '\n        MATCH (c:Course)\n        WHERE toLower(c.title) CONTAINS toLower($query)\n        MATCH (c)-[r:RECOMMENDS]->(a:VRApp)\n        RETURN a.app_id AS app_id,\n               a.name AS name,\n               a.category AS category,\n               a.description AS description,\n               r.shared_skills AS matched_skills,\n               r.score AS score\n            ORDER BY r.score DESC\n            LIMIT $top_k\n        '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: shared_skills)} {position: line: 9, column: 18, offset: 293} for query: '\n        MATCH (c:Course)\n        WHERE toLower(c.title) CONTAINS toLower($query)\n        MATCH (c)-[r:RECOMMENDS]->(a:VRApp)\n        RETURN a.app_id AS app_id,\n               a.name AS name,\n               a.category AS category,\n               a.description AS description,\n               r.shared_skills AS matched_skills,\n               r.score AS score\n            ORDER BY r.score DESC\n            LIMIT $top_k\n        '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: score)} {position: line: 10, column: 18, offset: 343} for query: '\n        MATCH (c:Course)\n        WHERE toLower(c.title) CONTAINS toLower($query)\n        MATCH (c)-[r:RECOMMENDS]->(a:VRApp)\n        RETURN a.app_id AS app_id,\n               a.name AS name,\n               a.category AS category,\n               a.description AS description,\n               r.shared_skills AS matched_skills,\n               r.score AS score\n            ORDER BY r.score DESC\n            LIMIT $top_k\n        '
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+💬 Message: 'I want to learn about public speaking'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+   Extracted interests: []
+   Background: CMU Heinz College student
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): I want to learn about public speaking
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.99it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.98it/s]
+127.0.0.1 - - [24/Nov/2025 18:55:28] "POST /chat HTTP/1.1" 200 -
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: RECOMMENDS)} {position: line: 4, column: 22, offset: 103} for query: '\n        MATCH (c:Course)\n        WHERE toLower(c.title) CONTAINS toLower($query)\n        MATCH (c)-[r:RECOMMENDS]->(a:VRApp)\n        RETURN a.app_id AS app_id,\n               a.name AS name,\n               a.category AS category,\n               a.description AS description,\n               r.shared_skills AS matched_skills,\n               r.score AS score\n            ORDER BY r.score DESC\n            LIMIT $top_k\n        '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: shared_skills)} {position: line: 9, column: 18, offset: 293} for query: '\n        MATCH (c:Course)\n        WHERE toLower(c.title) CONTAINS toLower($query)\n        MATCH (c)-[r:RECOMMENDS]->(a:VRApp)\n        RETURN a.app_id AS app_id,\n               a.name AS name,\n               a.category AS category,\n               a.description AS description,\n               r.shared_skills AS matched_skills,\n               r.score AS score\n            ORDER BY r.score DESC\n            LIMIT $top_k\n        '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: score)} {position: line: 10, column: 18, offset: 343} for query: '\n        MATCH (c:Course)\n        WHERE toLower(c.title) CONTAINS toLower($query)\n        MATCH (c)-[r:RECOMMENDS]->(a:VRApp)\n        RETURN a.app_id AS app_id,\n               a.name AS name,\n               a.category AS category,\n               a.description AS description,\n               r.shared_skills AS matched_skills,\n               r.score AS score\n            ORDER BY r.score DESC\n            LIMIT $top_k\n        '
+🔍 Search for 'I want to learn about public speaking':
+   • Communication: 0.303
+   • Educator Collaboration: 0.175
+   • Educational Content Development: 0.173
+   • Interactive Learning: 0.171
+   • Educational Content Design: 0.138
+   • Reflection And Self-Assessment: 0.137
+   • Immersive Learning Design: 0.137
+   • Interactive Learning Design: 0.135
+   • Student Engagement: 0.135
+   • Educational Facilitation: 0.131
+   • Immersive Learning Experiences: 0.128
+   • Curriculum Development: 0.122
+   • Immersive Learning: 0.108
+   • Virtual Reality (Vr) Development: 0.102
+   • Technical Writing: 0.082
+   • Algorithm Analysis: 0.081
+   • Formal Argumentation: 0.077
+   • Educational Technology (Edtech): 0.073
+   • Instructional Design: 0.068
+   • Application Of Cs Concepts: 0.066
+   • Program Analysis: 0.059
+   • Immersive Experience Design: 0.055
+   • Collaboration: 0.055
+   • Standalone Program Development: 0.055
+   • Algorithms: 0.054
+   • Education: 0.045
+   • Virtual Reality (Vr) Applications: 0.041
+   • Code Efficiency: 0.041
+   • Mathematical Induction: 0.040
+   • Computer Networks: 0.037
+✓ Got 3 VR apps
+   Top apps:
+     • InMind (100%)
+     • Origami Dojo (87%)
+     • VR Museum: Art Through Time (87%)
+✅ Sending response
+
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+💬 Message: 'I am taking Introduction to Psychology'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+   Extracted interests: []
+   Background: CMU Heinz College student
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): I am taking Introduction to Psychology
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.77it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.75it/s]
+127.0.0.1 - - [24/Nov/2025 18:55:38] "POST /chat HTTP/1.1" 200 -
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning} {category: UNRECOGNIZED} {title: The provided relationship type is not in the database.} {description: One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: RECOMMENDS)} {position: line: 3, column: 26, offset: 79} for query: '\n            MATCH (c:Course {course_id: $course_id})\n            MATCH (c)-[r:RECOMMENDS]->(a:VRApp)\n            RETURN a.app_id AS app_id,\n                   a.name AS name,\n                   a.category AS category,\n                   a.description AS description,\n                   r.shared_skills AS matched_skills,\n                   r.score AS score\n            ORDER BY r.score DESC\n            LIMIT $top_k\n            '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: shared_skills)} {position: line: 8, column: 22, offset: 289} for query: '\n            MATCH (c:Course {course_id: $course_id})\n            MATCH (c)-[r:RECOMMENDS]->(a:VRApp)\n            RETURN a.app_id AS app_id,\n                   a.name AS name,\n                   a.category AS category,\n                   a.description AS description,\n                   r.shared_skills AS matched_skills,\n                   r.score AS score\n            ORDER BY r.score DESC\n            LIMIT $top_k\n            '
+Received notification from DBMS server: {severity: WARNING} {code: Neo.ClientNotification.Statement.UnknownPropertyKeyWarning} {category: UNRECOGNIZED} {title: The provided property key is not in the database} {description: One of the property names in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing property name is: score)} {position: line: 9, column: 22, offset: 343} for query: '\n            MATCH (c:Course {course_id: $course_id})\n            MATCH (c)-[r:RECOMMENDS]->(a:VRApp)\n            RETURN a.app_id AS app_id,\n                   a.name AS name,\n                   a.category AS category,\n                   a.description AS description,\n                   r.shared_skills AS matched_skills,\n                   r.score AS score\n            ORDER BY r.score DESC\n            LIMIT $top_k\n            '
+🔍 Search for 'I am taking Introduction to Psychology':
+   • Reflection And Self-Assessment: 0.406
+   • Educational Content Design: 0.318
+   • Educational Content Development: 0.311
+   • Educational Facilitation: 0.299
+   • Chemistry: 0.291
+   • Application Of Cs Concepts: 0.285
+   • Immersive Experience Design: 0.280
+   • Interactive Learning: 0.279
+   • User Experience: 0.278
+   • Immersive Learning Experiences: 0.276
+   • Computational Thinking: 0.273
+   • Informal Analysis: 0.271
+   • Instructional Design: 0.269
+   • Immersive Learning Design: 0.267
+   • Student Engagement: 0.267
+   • Problem Solving: 0.254
+   • Communication: 0.252
+   • Interactive Learning Design: 0.252
+   • Selection: 0.250
+   • Immersive Learning: 0.248
+   • Computer Organization: 0.246
+   • Human Anatomy: 0.231
+   • Virtual Reality (Vr) Development: 0.231
+   • Data Structures: 0.230
+   • Educational Technology (Edtech): 0.230
+   • Curriculum Development: 0.227
+   • Abstraction: 0.226
+   • Function Design: 0.220
+   • Divide And Conquer: 0.220
+   • Technical Writing: 0.217
+✓ Got 8 VR apps
+   Top apps:
+     • MEL Science VR (100%)
+     • Origami Dojo (100%)
+     • InMind (100%)
+✅ Sending response
+
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+💬 Message: 'Any apps for course 15-112?'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+   Extracted interests: []
+   Background: CMU Heinz College student
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): Any apps for course 15-112?
+   [Course Search] Detected Course ID: 15-112
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 14.68it/s]
+127.0.0.1 - - [24/Nov/2025 18:55:39] "POST /chat HTTP/1.1" 200 -
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/debug_15112.py', reloading
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/debug_15112.py', reloading
+🔍 Search for 'Any apps for course 15-112?':
+   • Student Engagement: 0.281
+   • Educational Content Development: 0.257
+   • Immersive Learning Experiences: 0.252
+   • Python: 0.243
+   • Educational Content Design: 0.237
+   • Interactive Learning Design: 0.234
+   • Web-Based Application Development: 0.233
+   • Immersive Learning Design: 0.230
+   • Interactive Learning: 0.227
+   • Educational Technology (Edtech): 0.222
+   • Standalone Program Development: 0.208
+   • Virtual Reality (Vr) Applications: 0.204
+   • Instructional Design: 0.200
+   • Lists: 0.197
+   • Program Design: 0.187
+   • Educational Facilitation: 0.182
+   • Internship Experience: 0.180
+   • Algorithms: 0.178
+   • Divide And Conquer: 0.176
+   • Programming: 0.175
+   • Curriculum Development: 0.175
+   • Stacks: 0.171
+   • Teamwork: 0.166
+   • Immersive Learning: 0.163
+   • Program Analysis: 0.162
+   • Technical Writing: 0.162
+   • Trees: 0.162
+   • Java: 0.161
+   • Educator Collaboration: 0.160
+   • Communication: 0.159
+✓ Got 0 VR apps
+   ⚠ NO APPS RETURNED!
+✅ Sending response
+
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/knowledge_graph/src/knowledge_graph/builder.py', reloading
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/fix_data.py', reloading
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/fix_data.py', reloading
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/diagnose_skills.py', reloading
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/diagnose_skills.py', reloading
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/fix_app_skills.py', reloading
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/fix_app_skills.py', reloading
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/fix_app_skills.py', reloading
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+💬 Message: 'Any apps for course 15-112?'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+   Extracted interests: []
+   Background: CMU Heinz College student
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): Any apps for course 15-112?
+   [Course Search] Detected Course ID: 15-112
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.87it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.86it/s]
+127.0.0.1 - - [24/Nov/2025 18:58:08] "POST /chat HTTP/1.1" 200 -
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/src/database.py', reloading
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/src/database.py', reloading
+🔍 Search for 'Any apps for course 15-112?':
+   • Student Engagement: 0.281
+   • Educational Content Development: 0.257
+   • Immersive Learning Experiences: 0.252
+   • Python: 0.243
+   • Educational Content Design: 0.237
+   • Interactive Learning Design: 0.234
+   • Web-Based Application Development: 0.233
+   • Immersive Learning Design: 0.230
+   • Interactive Learning: 0.227
+   • Educational Technology (Edtech): 0.222
+   • Standalone Program Development: 0.208
+   • Virtual Reality (Vr) Applications: 0.204
+   • Instructional Design: 0.200
+   • Lists: 0.197
+   • Program Design: 0.187
+   • Educational Facilitation: 0.182
+   • Internship Experience: 0.180
+   • Algorithms: 0.178
+   • Divide And Conquer: 0.176
+   • Programming: 0.175
+   • Curriculum Development: 0.175
+   • Stacks: 0.171
+   • Teamwork: 0.166
+   • Immersive Learning: 0.163
+   • Program Analysis: 0.162
+   • Technical Writing: 0.162
+   • Trees: 0.162
+   • Java: 0.161
+   • Educator Collaboration: 0.160
+   • Communication: 0.159
+✓ Got 1 VR apps
+   Top apps:
+     • InMind (100%)
+✅ Sending response
+
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/src/logging_service.py', reloading
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/src/logging_service.py', reloading
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/flask_api.py', reloading
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing RAG-based VR recommender...
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+/opt/anaconda3/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

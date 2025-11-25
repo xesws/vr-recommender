@@ -1,0 +1,170 @@
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+/opt/anaconda3/lib/python3.9/site-packages/pydantic/_internal/_fields.py:184: UserWarning: Field name "json" shadows an attribute in parent "BaseModel"; 
+  warnings.warn(
+/opt/anaconda3/lib/python3.9/site-packages/pydantic/_internal/_fields.py:184: UserWarning: Field name "schema" shadows an attribute in parent "Format"; 
+  warnings.warn(
+/opt/anaconda3/lib/python3.9/site-packages/pydantic/_internal/_fields.py:184: UserWarning: Field name "json" shadows an attribute in parent "Document"; 
+  warnings.warn(
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing Services...
+✓ Database Logger ready
+✓ Data Manager ready
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+ * Serving Flask app 'flask_api'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.130:5001
+Press CTRL+C to quit
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+/opt/anaconda3/lib/python3.9/site-packages/pydantic/_internal/_fields.py:184: UserWarning: Field name "json" shadows an attribute in parent "BaseModel"; 
+  warnings.warn(
+/opt/anaconda3/lib/python3.9/site-packages/pydantic/_internal/_fields.py:184: UserWarning: Field name "schema" shadows an attribute in parent "Format"; 
+  warnings.warn(
+/opt/anaconda3/lib/python3.9/site-packages/pydantic/_internal/_fields.py:184: UserWarning: Field name "json" shadows an attribute in parent "Document"; 
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+127.0.0.1 - - [24/Nov/2025 22:52:46] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 22:52:46] "GET /api/admin/data/status HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 22:52:50] "GET / HTTP/1.1" 304 -
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing Services...
+✓ Database Logger ready
+✓ Data Manager ready
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+
+📄 GET / - Serving chatbot
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+👤 Returning User: e7242652-8078-433a-93a0-df0339f902ec
+💬 Message: 'Machine Learning'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): Machine Learning
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.91it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.91it/s]
+127.0.0.1 - - [24/Nov/2025 22:53:04] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 22:53:14] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 22:53:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 22:54:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 22:55:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+🔍 Search for 'Machine Learning':
+   • Support Vector Machines: 0.610
+   • Statistical Learning: 0.553
+   • Data Mining: 0.514
+   • Machine Learning: 0.510
+   • Random Forests: 0.501
+   • Supervised Learning: 0.472
+   • Structured Prediction: 0.470
+   • Bayesian Networks: 0.463
+   • Inference Algorithms: 0.460
+   • Pattern Recognition: 0.452
+   • Decision Trees: 0.449
+   • Predictive Modeling: 0.441
+   • Classification: 0.439
+   • Algorithmic Bias Analysis: 0.439
+   • Probabilistic Modeling: 0.427
+   • Object Recognition: 0.422
+   • Unsupervised Learning: 0.418
+   • Feedback-Driven Learning: 0.417
+   • Learning Evaluation Methods: 0.413
+   • Evolutionary Algorithms: 0.411
+   • Statistical Modeling: 0.406
+   • Problem Detection In Production: 0.402
+   • Neural Systems Analysis: 0.401
+   • Statistical Software: 0.401
+   • Manipulation Algorithms: 0.401
+   • Data-Driven Algorithms: 0.398
+   • Service Learning: 0.395
+   • Karnaugh Maps: 0.394
+   • Neural Program Assistance: 0.393
+   • Adaptation Analysis: 0.393
+✓ Got 0 VR apps
+📝 Logged interaction for user e7242652...
+✅ Sending response
+
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+👤 Returning User: e7242652-8078-433a-93a0-df0339f902ec
+💬 Message: 'Hi there'
+🎯 Intent: greeting
+📝 Logged interaction for user e7242652...
+✅ Sending response
+
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+👤 Returning User: e7242652-8078-433a-93a0-df0339f902ec
+💬 Message: 'AI'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): AI
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.43it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.43it/s]
+127.0.0.1 - - [24/Nov/2025 22:55:46] "POST /chat HTTP/1.1" 200 -

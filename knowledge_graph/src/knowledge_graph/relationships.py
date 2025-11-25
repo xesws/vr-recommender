@@ -94,35 +94,37 @@ class RelationshipCreator:
     def compute_recommendations(self, min_shared_skills: int = 1):
         """
         Compute RECOMMENDS relationships between Course and VRApp
-        based on shared skills and their weights
-
-        Args:
-            min_shared_skills: Minimum number of shared skills to create recommendation
+        based on shared skills and their weights.
+        
+        NOTE: We are intentionally disabling the creation of direct :RECOMMENDS relationships
+        to force the RAG system to traverse the skill nodes ((Course)-[:DEVELOPS]->(Skill)<-[:DEVELOPS]-(VRApp)).
+        Direct links were causing the system to bypass the semantic layer.
         """
-        print(f"\n[Relations] Computing recommendations (min_shared_skills={min_shared_skills})...")
+        print(f"\\n[Relations] Skipping direct RECOMMENDATION creation (Architecture Fix).")
+        print(f"  System will rely on indirect (Course)->(Skill)<-(App) paths.")
+        
+        # cypher = """
+        # MATCH (c:Course)-[t:TEACHES]->(s:Skill)<-[d:DEVELOPS]-(a:VRApp)
+        # WITH c, a, collect(s.name) AS shared_skills,
+        #      sum(t.weight * d.weight) AS score
+        # WHERE size(shared_skills) >= $min_shared
+        # MERGE (c)-[r:RECOMMENDS]->(a)
+        # SET r.score = score,
+        #     r.shared_skills = shared_skills,
+        #     r.skill_count = size(shared_skills),
+        #     r.created_at = timestamp()
+        # """
 
-        cypher = """
-        MATCH (c:Course)-[t:TEACHES]->(s:Skill)<-[d:DEVELOPS]-(a:VRApp)
-        WITH c, a, collect(s.name) AS shared_skills,
-             sum(t.weight * d.weight) AS score
-        WHERE size(shared_skills) >= $min_shared
-        MERGE (c)-[r:RECOMMENDS]->(a)
-        SET r.score = score,
-            r.shared_skills = shared_skills,
-            r.skill_count = size(shared_skills),
-            r.created_at = timestamp()
-        """
+        # try:
+        #     self.conn.execute(cypher, {"min_shared": min_shared_skills})
 
-        try:
-            self.conn.execute(cypher, {"min_shared": min_shared_skills})
-
-            # Count relationships created
-            result = self.conn.query("MATCH ()-[r:RECOMMENDS]->() RETURN count(r) as count")
-            count = result[0]['count'] if result else 0
-            print(f"✓ Computed {count} RECOMMENDS relationships")
-        except Exception as e:
-            print(f"✗ Failed to compute RECOMMENDS relationships: {e}")
-            raise
+        #     # Count relationships created
+        #     result = self.conn.query("MATCH ()-[r:RECOMMENDS]->() RETURN count(r) as count")
+        #     count = result[0]['count'] if result else 0
+        #     print(f"✓ Computed {count} RECOMMENDS relationships")
+        # except Exception as e:
+        #     print(f"✗ Failed to compute RECOMMENDS relationships: {e}")
+        #     raise
 
     def get_relationship_counts(self) -> dict:
         """

@@ -293,12 +293,18 @@ def admin_data():
 # --------------------------- Helpers --------------------------- #
 
 def parse_user_intent(message: str) -> str:
-    """Determine user intent"""
+    """Determine user intent using word boundary matching"""
+    import re
     msg_lower = message.lower()
-    if any(g in msg_lower for g in ["hello", "hi", "hey"]):
+    
+    # Regex for greeting: matches 'hi', 'hello', 'hey' as whole words
+    if re.search(r'\b(hello|hi|hey)\b', msg_lower):
         return "greeting"
-    if any(h in msg_lower for h in ["help", "how to", "what can"]):
+        
+    # Regex for help: matches 'help', 'how to', 'what can'
+    if re.search(r'\b(help)\b|how to|what can', msg_lower):
         return "help"
+        
     return "recommendation"
 
 
