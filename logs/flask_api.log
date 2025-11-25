@@ -59,9 +59,8 @@ Press CTRL+C to quit
   warnings.warn(
  * Debugger is active!
  * Debugger PIN: 929-036-735
-127.0.0.1 - - [24/Nov/2025 23:28:25] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [24/Nov/2025 23:28:31] "GET / HTTP/1.1" 304 -
-127.0.0.1 - - [24/Nov/2025 23:28:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:31:59] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:32:04] "GET / HTTP/1.1" 304 -
 
 ======================================================================
 INITIALIZING HEINZ RAG VR APP RECOMMENDER
@@ -105,7 +104,7 @@ HEINZ RAG VR APP RECOMMENDER API
 🔄 Calling recommender.generate_recommendation()…
 
 🔍 Processing (RAG): Machine Learning
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.53it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.53it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.57it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.57it/s]
 🔍 Search for 'Machine Learning':
    • Support Vector Machines: 0.610
    • Statistical Learning: 0.553
@@ -128,7 +127,7 @@ HEINZ RAG VR APP RECOMMENDER API
    • Learning Evaluation Methods: 0.413
    • Evolutionary Algorithms: 0.411
    [RAG] Low direct matches (0). Attempting Semantic Bridge...
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 121.58it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 113.79it/s]
 🔍 Search for 'Machine Learning':
    • Support Vector Machines: 0.610
    • Statistical Learning: 0.553
@@ -1493,4 +1492,5 @@ HEINZ RAG VR APP RECOMMENDER API
    • Tactile Sensing: 0.118
    • Immersive Experience Design: 0.118
    • Science Fiction As Cultural Analysis: 0.118
-127.0.0.1 - - [24/Nov/2025 23:28:59] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:32:32] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:32:41] "GET /api/admin/data/status HTTP/1.1" 200 -

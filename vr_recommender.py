@@ -76,9 +76,9 @@ class HeinzVRLLMRecommender:
             normalized_score = app.score / max_score
             
             # Apply strict confidence penalty for semantic bridges
-            # Bridged results should never exceed 49% confidence to manage expectations
+            # Scale down bridged results to max 49% to manage expectations while preserving relative ranking
             if app.retrieval_source == "semantic_bridge":
-                normalized_score = min(normalized_score, 0.49)
+                normalized_score = normalized_score * 0.49
                 
             apps.append({
                 "app_name": app.name,
