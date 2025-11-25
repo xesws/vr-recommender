@@ -28,13 +28,29 @@ class RAGRetriever:
         """Initialize the retriever with search and graph services."""
         self.skill_search = SkillSearchService()
         self.graph = Neo4jConnection()
+        self.active_skills = self._get_active_skills()
+        print(f"   [RAG] Loaded {len(self.active_skills)} active skills (skills with VR Apps)")
+
+    def _get_active_skills(self) -> List[str]:
+        """Fetch all skills that are actually connected to VR Apps."""
+        try:
+            cypher = """
+            MATCH (s:Skill)<-[:DEVELOPS]-(a:VRApp)
+            RETURN DISTINCT s.name as skill
+            """
+            result = self.graph.query(cypher)
+            return [r["skill"] for r in result]
+        except Exception as e:
+            print(f"   [RAG] Warning: Failed to load active skills: {e}")
+            return []
 
     def retrieve(self, query: str, top_k: int = 8) -> List[Dict]:
         """
         Main retrieval function.
-        Implements Hybrid Retrieval:
-        1. Vector Search: Query -> Skill -> VRApp (via DEVELOPS)
-        2. Graph Search: Query -> Course -> VRApp (via RECOMMENDS)
+        Implements Hybrid Retrieval with Semantic Bridging:
+        1. Direct Skill Search: Query -> Skill -> VRApp
+        2. Semantic Bridge: Query -> (Similarity) -> Active Skill -> VRApp
+           (Used when direct search fails or returns few results)
 
         Args:
             query: User query string
@@ -44,31 +60,69 @@ class RAGRetriever:
             List of dictionaries containing VR application data
         """
         candidates = {}
-
-        # --- Strategy 1: Course-based Retrieval ---
-        # Direct lookup for course codes (e.g. "15-112") or titles
-        course_apps = self._query_apps_by_course(query, top_k)
-        for app in course_apps:
-            app["retrieval_source"] = "course_match"
-            candidates[app["name"]] = app
-
-        # --- Strategy 2: Skill-based Retrieval ---
+        
+        # Thresholds
+        BRIDGE_SIMILARITY_THRESHOLD = 0.35  # Minimum similarity to bridge (0-1)
+        
+        # --- Strategy 1: Direct Skill Retrieval ---
         # Vector search for related skills -> Apps
-        related_skills = self.skill_search.find_related_skills(query, top_k=15)
+        # We get more candidates initially to filter
+        related_skills = self.skill_search.find_related_skills(query, top_k=10)
+        
         if related_skills:
-            skill_apps = self._query_apps_by_skills(related_skills, top_k)
-            for app in skill_apps:
-                if app["name"] not in candidates:
-                    app["retrieval_source"] = "skill_match"
-                    candidates[app["name"]] = app
-                else:
-                    # If already found via course, verify/boost score if needed
-                    # For now, course match usually implies strong relevance
-                    pass
+            direct_apps = self._query_apps_by_skills(related_skills, top_k)
+            for app in direct_apps:
+                app["retrieval_source"] = "direct_skill_match"
+                candidates[app["name"]] = app
+
+        # --- Strategy 2: Semantic Bridge Retrieval (The "Missing Link" Fix) ---
+        # If we have few results, try to bridge from the query to known active skills
+        if len(candidates) < 3:
+            print(f"   [RAG] Low direct matches ({len(candidates)}). Attempting Semantic Bridge...")
+            
+            # Find which Active Skills are closest to the query
+            bridged_skills_data = self.skill_search.find_nearest_from_candidates(
+                query, 
+                self.active_skills, 
+                top_k=5, 
+                min_similarity=BRIDGE_SIMILARITY_THRESHOLD
+            )
+            
+            if bridged_skills_data:
+                # Extract names and scores
+                bridge_map = {item["name"]: item["score"] for item in bridged_skills_data}
+                bridge_names = list(bridge_map.keys())
+                
+                # Query apps for these bridged skills
+                bridged_apps = self._query_apps_by_skills(bridge_names, top_k)
+                
+                for app in bridged_apps:
+                    # Only add if not already present
+                    if app["name"] not in candidates:
+                        # Find which skill caused this app to be found
+                        # The app result contains 'matched_skills'. We pick the best one from our bridge list.
+                        caused_by = []
+                        best_bridge_score = 0
+                        best_bridge_skill = None
+                        
+                        for s in app.get("matched_skills", []):
+                            if s in bridge_map:
+                                score = bridge_map[s]
+                                caused_by.append(f"{s} ({score*100:.0f}%)")
+                                if score > best_bridge_score:
+                                    best_bridge_score = score
+                                    best_bridge_skill = s
+                        
+                        if best_bridge_skill:
+                            app["retrieval_source"] = "semantic_bridge"
+                            app["bridge_explanation"] = f"Related to '{best_bridge_skill}'"
+                            # Penalize score slightly based on bridge distance
+                            # Original score is sum of weights. We multiply by similarity.
+                            app["score"] = app["score"] * best_bridge_score
+                            candidates[app["name"]] = app
 
         # Convert dict back to list and sort by score
         final_results = list(candidates.values())
-        # Simple sort by score (descending)
         final_results.sort(key=lambda x: x.get("score", 0), reverse=True)
 
         return final_results[:top_k]

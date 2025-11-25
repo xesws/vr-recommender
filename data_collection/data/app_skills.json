@@ -2488,5 +2488,335 @@
     "source_type": "app",
     "skill_name": "E-Learning Technologies",
     "weight": 0.85
+  },
+  {
+    "source_id": "InMind",
+    "source_type": "vr_app",
+    "skill_name": "Brain Science",
+    "weight": 0.85
+  },
+  {
+    "source_id": "InMind",
+    "source_type": "vr_app",
+    "skill_name": "Neuroscience",
+    "weight": 0.85
+  },
+  {
+    "source_id": "InMind",
+    "source_type": "vr_app",
+    "skill_name": "Psychology",
+    "weight": 0.85
+  },
+  {
+    "source_id": "InMind",
+    "source_type": "vr_app",
+    "skill_name": "Artificial Intelligence",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VEDAVI_VR_Human_Anatomy",
+    "source_type": "vr_app",
+    "skill_name": "Medicine",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VEDAVI_VR_Human_Anatomy",
+    "source_type": "vr_app",
+    "skill_name": "Anatomy",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VEDAVI_VR_Human_Anatomy",
+    "source_type": "vr_app",
+    "skill_name": "Biology",
+    "weight": 0.85
+  },
+  {
+    "source_id": "3D_Organon_VR_Anatomy",
+    "source_type": "vr_app",
+    "skill_name": "Medicine",
+    "weight": 0.85
+  },
+  {
+    "source_id": "3D_Organon_VR_Anatomy",
+    "source_type": "vr_app",
+    "skill_name": "Anatomy",
+    "weight": 0.85
+  },
+  {
+    "source_id": "3D_Organon_VR_Anatomy",
+    "source_type": "vr_app",
+    "skill_name": "Biology",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Chemistry_Lab",
+    "source_type": "vr_app",
+    "skill_name": "Lab Safety",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Chemistry_Lab",
+    "source_type": "vr_app",
+    "skill_name": "Science",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Space_VR",
+    "source_type": "vr_app",
+    "skill_name": "Physics",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "vr_app",
+    "skill_name": "Space Science",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Solar_System_VR",
+    "source_type": "vr_app",
+    "skill_name": "Physics",
+    "weight": 0.85
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "vr_app",
+    "skill_name": "Geometry",
+    "weight": 0.85
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "vr_app",
+    "skill_name": "Mathematics",
+    "weight": 0.85
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "vr_app",
+    "skill_name": "Data Visualization",
+    "weight": 0.85
+  },
+  {
+    "source_id": "GeoGebra_AR",
+    "source_type": "vr_app",
+    "skill_name": "Calculus",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "vr_app",
+    "skill_name": "Chemistry",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "vr_app",
+    "skill_name": "Science",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Molecules_by_Theodore_Gray",
+    "source_type": "vr_app",
+    "skill_name": "Molecular Biology",
+    "weight": 0.85
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "vr_app",
+    "skill_name": "Medicine",
+    "weight": 0.85
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "vr_app",
+    "skill_name": "Anatomy",
+    "weight": 0.85
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "vr_app",
+    "skill_name": "Health Science",
+    "weight": 0.85
+  },
+  {
+    "source_id": "The_Body_VR",
+    "source_type": "vr_app",
+    "skill_name": "Biology",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "vr_app",
+    "skill_name": "Physics",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Titans_of_Space",
+    "source_type": "vr_app",
+    "skill_name": "Astronomy",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Cosmic_Watch",
+    "source_type": "vr_app",
+    "skill_name": "Astronomy",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "vr_app",
+    "skill_name": "Physics",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Universe_Sandbox",
+    "source_type": "vr_app",
+    "skill_name": "Astronomy",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Surgical_Training",
+    "source_type": "vr_app",
+    "skill_name": "Medicine",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Surgical_Training",
+    "source_type": "vr_app",
+    "skill_name": "Surgery",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VR_Surgical_Training",
+    "source_type": "vr_app",
+    "skill_name": "Health Science",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "vr_app",
+    "skill_name": "Medicine",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "vr_app",
+    "skill_name": "Surgery",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Surgical_Theater",
+    "source_type": "vr_app",
+    "skill_name": "Health Science",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "vr_app",
+    "skill_name": "Computer Science",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "vr_app",
+    "skill_name": "Programming",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "vr_app",
+    "skill_name": "Remote Work",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Virtual_Desktop",
+    "source_type": "vr_app",
+    "skill_name": "Data Analysis",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "vr_app",
+    "skill_name": "Computer Science",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "vr_app",
+    "skill_name": "Programming",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "vr_app",
+    "skill_name": "Remote Work",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Immersed",
+    "source_type": "vr_app",
+    "skill_name": "Data Analysis",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Horizon_Workrooms",
+    "source_type": "vr_app",
+    "skill_name": "Communication",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Horizon_Workrooms",
+    "source_type": "vr_app",
+    "skill_name": "Project Management",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VRChat",
+    "source_type": "vr_app",
+    "skill_name": "Communication",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VRChat",
+    "source_type": "vr_app",
+    "skill_name": "Community Building",
+    "weight": 0.85
+  },
+  {
+    "source_id": "VRChat",
+    "source_type": "vr_app",
+    "skill_name": "Social Interaction",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Rec_Room",
+    "source_type": "vr_app",
+    "skill_name": "Creativity",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Rec_Room",
+    "source_type": "vr_app",
+    "skill_name": "Social Interaction",
+    "weight": 0.85
+  },
+  {
+    "source_id": "Rec_Room",
+    "source_type": "vr_app",
+    "skill_name": "Game Design",
+    "weight": 0.85
+  },
+  {
+    "source_id": "AltspaceVR",
+    "source_type": "vr_app",
+    "skill_name": "Physics",
+    "weight": 0.85
+  },
+  {
+    "source_id": "AltspaceVR",
+    "source_type": "vr_app",
+    "skill_name": "Astronomy",
+    "weight": 0.85
   }
 ]

@@ -217,6 +217,55 @@ class SkillSearchService:
 
         return recommendations[:num_recommendations]
 
+    def find_nearest_from_candidates(
+        self,
+        query: str,
+        candidate_skills: List[str],
+        top_k: int = 5,
+        min_similarity: float = 0.0
+    ) -> List[Dict]:
+        """
+        Find the skills from a candidate list that are most similar to the query.
+        Useful for bridging user queries to 'Active Skills' that have content.
+
+        Args:
+            query: Search query
+            candidate_skills: List of allowed skill names (whitelist)
+            top_k: Number of results
+            min_similarity: Minimum similarity threshold
+
+        Returns:
+            List of dicts with name, score, and metadata
+        """
+        # Convert candidates to set for O(1) lookup
+        candidate_set = set(candidate_skills)
+        
+        # Search with a LARGE limit to ensure we don't miss candidates
+        # even if they are "far" in the global list.
+        # 5000 should cover most variations without being too slow.
+        search_limit = 5000
+        
+        results = self.indexer.search(
+            query=query,
+            top_k=search_limit,
+            min_similarity=min_similarity
+        )
+        
+        # Filter: keep only if in candidate_set
+        filtered_results = []
+        for name, score, meta in results:
+            if name in candidate_set:
+                filtered_results.append({
+                    "name": name,
+                    "score": score,
+                    "category": meta.get("category", "unknown"),
+                    "aliases": meta.get("aliases", "").split(",")
+                })
+                if len(filtered_results) >= top_k:
+                    break
+                    
+        return filtered_results
+
     def search_multiple_queries(
         self,
         queries: List[str],

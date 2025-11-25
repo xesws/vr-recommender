@@ -12015,5 +12015,101 @@
     "category": "technical",
     "aliases": [],
     "source_count": 1
+  },
+  {
+    "name": "Brain Science",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Neuroscience",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Psychology",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Medicine",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Anatomy",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Biology",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Lab Safety",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Science",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Physics",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Space Science",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Mathematics",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Health Science",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Surgery",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Remote Work",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Community Building",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
+  },
+  {
+    "name": "Social Interaction",
+    "category": "domain",
+    "aliases": [],
+    "source_count": 1
   }
 ]

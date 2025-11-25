@@ -12,7 +12,11 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Brain Science",
+      "Neuroscience",
+      "Psychology",
+      "Artificial Intelligence"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -66,7 +70,10 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Medicine",
+      "Anatomy",
+      "Biology"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -84,7 +91,10 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Medicine",
+      "Anatomy",
+      "Biology"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -174,14 +184,16 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Lab Safety",
+      "Science"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
   },
   {
     "app_id": "VR_Space_VR",
-    "name": "宇宙VR (Space VR)",
+    "name": "\u5b87\u5b99VR (Space VR)",
     "category": "education",
     "description": "Educational VR application that enhances learning through immersive experiences. Perfect for students and educators.",
     "features": [
@@ -192,7 +204,8 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Physics"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -228,7 +241,9 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Space Science",
+      "Physics"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -246,7 +261,11 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Geometry",
+      "Mathematics",
+      "Data Visualization",
+      "Calculus"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -264,7 +283,10 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Chemistry",
+      "Science",
+      "Molecular Biology"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -282,7 +304,11 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Medicine",
+      "Anatomy",
+      "Health Science",
+      "Biology"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -336,7 +362,9 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Physics",
+      "Astronomy"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -372,7 +400,8 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Astronomy"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -408,7 +437,9 @@
     "skills_developed": [
       "Learning",
       "Knowledge retention",
-      "Visual understanding"
+      "Visual understanding",
+      "Physics",
+      "Astronomy"
     ],
     "rating": 4.2,
     "price": "$0-19.99"
@@ -660,7 +691,10 @@
     "skills_developed": [
       "Practical skills",
       "Professional development",
-      "Technical training"
+      "Technical training",
+      "Medicine",
+      "Surgery",
+      "Health Science"
     ],
     "rating": 4.1,
     "price": "$10-49.99"
@@ -678,7 +712,10 @@
     "skills_developed": [
       "Practical skills",
       "Professional development",
-      "Technical training"
+      "Technical training",
+      "Medicine",
+      "Surgery",
+      "Health Science"
     ],
     "rating": 4.1,
     "price": "$10-49.99"
@@ -858,7 +895,11 @@
     "skills_developed": [
       "Productivity",
       "Remote work",
-      "Collaboration"
+      "Collaboration",
+      "Computer Science",
+      "Programming",
+      "Remote Work",
+      "Data Analysis"
     ],
     "rating": 4.3,
     "price": "$0-29.99"
@@ -876,7 +917,11 @@
     "skills_developed": [
       "Productivity",
       "Remote work",
-      "Collaboration"
+      "Collaboration",
+      "Computer Science",
+      "Programming",
+      "Remote Work",
+      "Data Analysis"
     ],
     "rating": 4.3,
     "price": "$0-29.99"
@@ -894,7 +939,9 @@
     "skills_developed": [
       "Productivity",
       "Remote work",
-      "Collaboration"
+      "Collaboration",
+      "Communication",
+      "Project Management"
     ],
     "rating": 4.3,
     "price": "$0-29.99"
@@ -1002,7 +1049,10 @@
     "skills_developed": [
       "Productivity",
       "Remote work",
-      "Collaboration"
+      "Collaboration",
+      "Communication",
+      "Community Building",
+      "Social Interaction"
     ],
     "rating": 4.3,
     "price": "$0-29.99"
@@ -1020,7 +1070,10 @@
     "skills_developed": [
       "Productivity",
       "Remote work",
-      "Collaboration"
+      "Collaboration",
+      "Creativity",
+      "Social Interaction",
+      "Game Design"
     ],
     "rating": 4.3,
     "price": "$0-29.99"
@@ -1074,7 +1127,9 @@
     "skills_developed": [
       "Productivity",
       "Remote work",
-      "Collaboration"
+      "Collaboration",
+      "Physics",
+      "Astronomy"
     ],
     "rating": 4.3,
     "price": "$0-29.99"

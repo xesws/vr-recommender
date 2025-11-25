@@ -22,6 +22,7 @@ Loading local embedding model: all-MiniLM-L6-v2
 ✓ Vector store initialized at vector_store/data/chroma
 ✓ Vector indexer initialized
 ✓ Connected to Neo4j at bolt://localhost:7687
+   [RAG] Loaded 51 active skills (skills with VR Apps)
 ✓ RAG VR Recommender ready!
 
 ======================================================================
@@ -58,9 +59,9 @@ Press CTRL+C to quit
   warnings.warn(
  * Debugger is active!
  * Debugger PIN: 929-036-735
-127.0.0.1 - - [24/Nov/2025 22:52:46] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [24/Nov/2025 22:52:46] "GET /api/admin/data/status HTTP/1.1" 200 -
-127.0.0.1 - - [24/Nov/2025 22:52:50] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [24/Nov/2025 23:05:42] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:05:42] "GET /api/admin/data/status HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:06:26] "GET / HTTP/1.1" 304 -
 
 ======================================================================
 INITIALIZING HEINZ RAG VR APP RECOMMENDER
@@ -74,6 +75,7 @@ Loading local embedding model: all-MiniLM-L6-v2
 ✓ Vector store initialized at vector_store/data/chroma
 ✓ Vector indexer initialized
 ✓ Connected to Neo4j at bolt://localhost:7687
+   [RAG] Loaded 51 active skills (skills with VR Apps)
 ✓ RAG VR Recommender ready!
 
 ======================================================================
@@ -96,61 +98,3244 @@ HEINZ RAG VR APP RECOMMENDER API
 📨 NEW CHAT REQUEST
 ======================================================================
 👤 Returning User: e7242652-8078-433a-93a0-df0339f902ec
-💬 Message: 'Machine Learning'
+💬 Message: 'Artificial Intelligence'
 🎯 Intent: recommendation
 → Extracting query data (hints for LLM)…
 
 🔄 Calling recommender.generate_recommendation()…
 
-🔍 Processing (RAG): Machine Learning
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.91it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.91it/s]
-127.0.0.1 - - [24/Nov/2025 22:53:04] "POST /chat HTTP/1.1" 200 -
-127.0.0.1 - - [24/Nov/2025 22:53:14] "POST /chat HTTP/1.1" 200 -
-127.0.0.1 - - [24/Nov/2025 22:53:41] "GET /api/admin/data/status HTTP/1.1" 200 -
-127.0.0.1 - - [24/Nov/2025 22:54:41] "GET /api/admin/data/status HTTP/1.1" 200 -
-127.0.0.1 - - [24/Nov/2025 22:55:41] "GET /api/admin/data/status HTTP/1.1" 200 -
-🔍 Search for 'Machine Learning':
-   • Support Vector Machines: 0.610
-   • Statistical Learning: 0.553
-   • Data Mining: 0.514
-   • Machine Learning: 0.510
-   • Random Forests: 0.501
-   • Supervised Learning: 0.472
-   • Structured Prediction: 0.470
-   • Bayesian Networks: 0.463
-   • Inference Algorithms: 0.460
-   • Pattern Recognition: 0.452
-   • Decision Trees: 0.449
-   • Predictive Modeling: 0.441
-   • Classification: 0.439
-   • Algorithmic Bias Analysis: 0.439
-   • Probabilistic Modeling: 0.427
-   • Object Recognition: 0.422
-   • Unsupervised Learning: 0.418
-   • Feedback-Driven Learning: 0.417
-   • Learning Evaluation Methods: 0.413
-   • Evolutionary Algorithms: 0.411
-   • Statistical Modeling: 0.406
-   • Problem Detection In Production: 0.402
-   • Neural Systems Analysis: 0.401
-   • Statistical Software: 0.401
-   • Manipulation Algorithms: 0.401
-   • Data-Driven Algorithms: 0.398
-   • Service Learning: 0.395
-   • Karnaugh Maps: 0.394
-   • Neural Program Assistance: 0.393
-   • Adaptation Analysis: 0.393
+🔍 Processing (RAG): Artificial Intelligence
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.94it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.94it/s]
+127.0.0.1 - - [24/Nov/2025 23:06:40] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:06:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:07:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+ * Detected change in '/Users/tq/Downloads/LLM_rec_sys/vr-recommender/vector_store/src/vector_store/search_service.py', reloading
+❌ Error: Error getting collection: Collection [e7ff2a5f-e834-4de8-92fe-fcf866b58857] does not exists.
 ✓ Got 0 VR apps
 📝 Logged interaction for user e7242652...
 ✅ Sending response
 
+ * Restarting with watchdog (fsevents)
+<frozen importlib._bootstrap>:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py:61: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.4' currently installed).
+  from pandas.core import (
+/opt/anaconda3/lib/python3.9/site-packages/pydantic/_internal/_fields.py:184: UserWarning: Field name "json" shadows an attribute in parent "BaseModel"; 
+  warnings.warn(
+/opt/anaconda3/lib/python3.9/site-packages/pydantic/_internal/_fields.py:184: UserWarning: Field name "schema" shadows an attribute in parent "Format"; 
+  warnings.warn(
+/opt/anaconda3/lib/python3.9/site-packages/pydantic/_internal/_fields.py:184: UserWarning: Field name "json" shadows an attribute in parent "Document"; 
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 929-036-735
+127.0.0.1 - - [24/Nov/2025 23:08:35] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [24/Nov/2025 23:08:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+
+======================================================================
+INITIALIZING HEINZ RAG VR APP RECOMMENDER
+======================================================================
+
+🔄 Initializing Services...
+✓ Database Logger ready
+✓ Data Manager ready
+Loading local embedding model: all-MiniLM-L6-v2
+✓ Model loaded successfully
+✓ Vector store initialized at vector_store/data/chroma
+✓ Vector indexer initialized
+✓ Connected to Neo4j at bolt://localhost:7687
+   [RAG] Loaded 78 active skills (skills with VR Apps)
+✓ RAG VR Recommender ready!
+
+======================================================================
+HEINZ RAG VR APP RECOMMENDER API
+======================================================================
+🚀 Starting on http://localhost:5001
+
+📍 Endpoints:
+   GET  http://localhost:5001/          → Chatbot
+   POST http://localhost:5001/chat      → Get recommendations
+   GET  http://localhost:5001/health    → Health check
+
+💡 Open: http://localhost:{port}
+======================================================================
+
+
+📄 GET / - Serving chatbot
 
 ======================================================================
 📨 NEW CHAT REQUEST
 ======================================================================
 👤 Returning User: e7242652-8078-433a-93a0-df0339f902ec
-💬 Message: 'Hi there'
-🎯 Intent: greeting
+💬 Message: 'Artificial Intelligence'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): Artificial Intelligence
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.21it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.20it/s]
+🔍 Search for 'Artificial Intelligence':
+   • Autonomous Agents: 0.587
+   • Autonomous Behaviors: 0.509
+   • Automated Reasoning: 0.485
+   • Reinforcement Learning: 0.480
+   • Reasoning And Planning: 0.470
+   • Artificial Intelligence: 0.465
+   • Machine Learning: 0.453
+   • Neural Program Assistance: 0.450
+   • Intelligent Behavior Design: 0.450
+   • Robot Integration: 0.442
+   • Autonomous Systems: 0.441
+   • Task Planning: 0.430
+   • Data-Driven Algorithms: 0.428
+   • Evolutionary Algorithms: 0.426
+   • Manipulation Algorithms: 0.426
+   • Deep Learning: 0.425
+   • Statistical Learning: 0.421
+   • Probabilistic Reasoning: 0.421
+   • Learning Systems: 0.420
+   • Support Vector Machines: 0.418
+   [RAG] Low direct matches (1). Attempting Semantic Bridge...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 115.29it/s]
+🔍 Search for 'Artificial Intelligence':
+   • Autonomous Agents: 0.587
+   • Autonomous Behaviors: 0.509
+   • Automated Reasoning: 0.485
+   • Reinforcement Learning: 0.480
+   • Reasoning And Planning: 0.470
+   • Artificial Intelligence: 0.465
+   • Machine Learning: 0.453
+   • Neural Program Assistance: 0.450
+   • Intelligent Behavior Design: 0.450
+   • Robot Integration: 0.442
+   • Autonomous Systems: 0.441
+   • Task Planning: 0.430
+   • Data-Driven Algorithms: 0.428
+   • Evolutionary Algorithms: 0.426
+   • Manipulation Algorithms: 0.426
+   • Deep Learning: 0.425
+   • Statistical Learning: 0.421
+   • Probabilistic Reasoning: 0.421
+   • Learning Systems: 0.420
+   • Support Vector Machines: 0.418
+   • Robot Learning From Demonstration: 0.413
+   • Robot Software Architecture: 0.413
+   • Problem Elicitation: 0.412
+   • Algorithmic Bias Analysis: 0.412
+   • Robotics Domain Knowledge: 0.408
+   • Data Mining: 0.403
+   • Heuristics: 0.403
+   • Sequential Algorithms: 0.399
+   • Neural Architectures: 0.399
+   • Problem Identification: 0.398
+   • Human-Robot Interaction: 0.397
+   • Neural Systems Analysis: 0.397
+   • Inference Algorithms: 0.396
+   • Multi-Agent Systems: 0.395
+   • Organizing Complex Information: 0.395
+   • Conversational Agents: 0.392
+   • Self-Directed Learning: 0.392
+   • Supervised Learning: 0.391
+   • Real-World Robot Implementation: 0.391
+   • Agent-Based Modeling: 0.391
+   • Bayesian Networks: 0.389
+   • Logical Error Detection: 0.388
+   • Computation: 0.387
+   • Automated Experimental Systems: 0.385
+   • Logic And Theoretical Computer Science: 0.384
+   • Data-Driven Decision Making: 0.383
+   • Cognitive Science Applications: 0.383
+   • Robotic Process Automation (Rpa): 0.383
+   • Systems-Level Problem Solving: 0.382
+   • Classification: 0.382
+   • Object Recognition: 0.382
+   • Robot Cognition: 0.381
+   • Robot Modeling: 0.381
+   • Scientific Computing: 0.379
+   • Game Theory: 0.379
+   • Unsupervised Learning: 0.379
+   • Computational Biology: 0.378
+   • Structured Prediction: 0.376
+   • Sequential Decision-Making: 0.375
+   • Cognitive Tutoring Systems: 0.374
+   • Feedback-Driven Learning: 0.373
+   • Question Answering: 0.373
+   • Mathematical Reasoning: 0.371
+   • Divide-And-Conquer Algorithms: 0.371
+   • Iterative Problem Solving: 0.370
+   • Decision Trees: 0.369
+   • Creative Problem Solving: 0.369
+   • Computational Medicine: 0.368
+   • Computational Thinking: 0.368
+   • Spatial Computing: 0.367
+   • Digital Logic Design: 0.366
+   • Creative Experimentation: 0.365
+   • Computer Arithmetic: 0.365
+   • Real-Time Adaptation: 0.365
+   • Virtual Experimentation: 0.364
+   • Analytical Reasoning: 0.364
+   • Navigation Algorithms: 0.364
+   • Action Systems (In Robotics): 0.364
+   • Text Processing: 0.364
+   • Karnaugh Maps: 0.363
+   • Decision-Making Optimization: 0.362
+   • Perception: 0.362
+   • Pac Learning Framework: 0.362
+   • Mechatronics: 0.361
+   • Data Processing: 0.359
+   • State Exploration Techniques: 0.359
+   • Realizability: 0.359
+   • Lifelong Learning: 0.357
+   • Computer Science Theory: 0.356
+   • Risk Management: 0.355
+   • Computer Science Fundamentals: 0.355
+   • Obstacle Avoidance: 0.355
+   • Application Of Academic Knowledge To Real-World Problems: 0.354
+   • Reasoning Under Uncertainty: 0.354
+   • Pattern Recognition: 0.352
+   • Technical Expertise: 0.352
+   • Neural Language Models: 0.351
+   • Computational Methods: 0.350
+   • Algorithm Design Principles: 0.350
+   • Divergent Thinking: 0.349
+   • Cognition: 0.348
+   • Computational Legal Reasoning: 0.348
+   • Scientific Problem Solving: 0.347
+   • Innovation In Computer Science: 0.345
+   • Brain Science: 0.345
+   • Independent Learning: 0.345
+   • Machine-Level Code: 0.345
+   • Logical Analysis: 0.344
+   • Systems Thinking: 0.344
+   • Speech Processing: 0.344
+   • Interface Optimization: 0.343
+   • Natural Selection Theory: 0.342
+   • Computer Vision: 0.341
+   • Autonomous Driving: 0.341
+   • Random Forests: 0.340
+   • Network Optimization: 0.339
+   • Code Optimization: 0.339
+   • Activity Planning: 0.338
+   • Probabilistic Modeling: 0.338
+   • Large-Scale Search Algorithms: 0.336
+   • Information Bias: 0.336
+   • Optimization: 0.336
+   • Scalability: 0.336
+   • Hands-On Learning: 0.335
+   • Information Retrieval: 0.335
+   • Advanced Control Algorithms: 0.335
+   • R Programming: 0.335
+   • Hardware Optimization: 0.334
+   • Scientific Information Evaluation: 0.334
+   • Cross-Disciplinary Problem Solving: 0.334
+   • Numerical Algorithms: 0.334
+   • Data Synthesis: 0.333
+   • Map-Based Algorithms: 0.333
+   • Natural Language Processing: 0.333
+   • Initiative: 0.333
+   • Decision Modeling Under Uncertainty: 0.333
+   • Algorithm Design: 0.333
+   • Memory Optimization: 0.332
+   • Data Science: 0.332
+   • Active Learning: 0.332
+   • Scalable Robotic Systems: 0.331
+   • Inductive Bias: 0.331
+   • Predictive Modeling: 0.330
+   • Real-Time Systems: 0.330
+   • Search Engine Optimization: 0.330
+   • Adaptation Analysis: 0.330
+   • Virtual Machines: 0.329
+   • Computational Organization Theory: 0.329
+   • Program Synthesis: 0.328
+   • Program Logics: 0.328
+   • Robot Control: 0.328
+   • Body Language: 0.327
+   • Brainstorming: 0.327
+   • Feature Engineering: 0.327
+   • Process Optimization: 0.327
+   • Problem Formulation: 0.327
+   • Problem Solving: 0.326
+   • Intention Setting: 0.326
+   • Image Detection: 0.326
+   • Conceptual Synthesis: 0.325
+   • Statistical Software: 0.325
+   • Machine Translation: 0.325
+   • Prototype Iteration: 0.325
+   • Learning Evaluation Methods: 0.325
+   • Bias Detection And Mitigation: 0.325
+   • Naive Bayes: 0.324
+   • Adaptability: 0.323
+   • Dexterous Manipulation: 0.322
+   • Social Learning: 0.322
+   • Signal Processing: 0.322
+   • Knowledge Graphs: 0.321
+   • Bioinformatics: 0.321
+   • Decomposing Problems Into Subtasks: 0.321
+   • Markov Chains: 0.321
+   • Control Systems: 0.321
+   • Reconnaissance: 0.320
+   • Temporal Logics: 0.320
+   • Game Engine Development: 0.320
+   • Computer Science: 0.320
+   • Network Science: 0.320
+   • Image Processing: 0.319
+   • Information Diffusion: 0.319
+   • Milestone Planning: 0.319
+   • Conflict Analysis: 0.318
+   • Linguistic Generalization: 0.318
+   • Robot Kinematics: 0.317
+   • Cognitive Science: 0.317
+   • Graph Neural Networks: 0.317
+   • Estimation: 0.317
+   • Idea Advancement: 0.316
+   • User Preference Learning: 0.315
+   • Behavioral Analysis: 0.315
+   • Image Sequencing: 0.314
+   • Knowledge Assessment Design: 0.314
+   • Robotics: 0.314
+   • Architecture Generation And Selection: 0.314
+   • Statistical Literacy: 0.313
+   • Computational Linguistics: 0.313
+   • Problem Detection In Production: 0.312
+   • Evolutionary Dynamics: 0.312
+   • Model Interpretability: 0.312
+   • Computational Complexity: 0.312
+   • Physics-Based Vision: 0.312
+   • Image Formation And Representation: 0.312
+   • Problem Analysis: 0.312
+   • Pytorch: 0.312
+   • Trajectory Optimization: 0.312
+   • Interactive Learning: 0.312
+   • Skill Practice Simulation: 0.312
+   • Collaborative Learning: 0.312
+   • Operationalization Of Ideas: 0.311
+   • Uncertainty In Manipulation: 0.311
+   • Mathematical Modeling: 0.311
+   • Statistical Modeling: 0.311
+   • Probability: 0.310
+   • Skill Training: 0.310
+   • Laboratory Robotics: 0.310
+   • Learning Facilitation: 0.309
+   • Process Identification For Automation: 0.309
+   • Parsing: 0.309
+   • Error Analysis: 0.309
+   • Self-Driving Systems: 0.309
+   • Decision Making: 0.309
+   • Advertising Engine Optimization: 0.308
+   • Dynamic Analysis: 0.307
+   • Mechanism Design: 0.306
+   • Neuroscience Of Learning: 0.306
+   • Financial Planning: 0.306
+   • Syntactic Analysis: 0.306
+   • Abstract Reasoning: 0.306
+   • Data Deconstruction: 0.305
+   • Heterogeneous Computing: 0.305
+   • Text Categorization: 0.305
+   • Cognitive Learning Skills: 0.305
+   • Parallel Algorithms: 0.305
+   • Naming Systems: 0.305
+   • Stochastic Behavior Modeling: 0.305
+   • Classical Logic: 0.304
+   • Deployment Of Robotic Systems: 0.304
+   • Jee Architecture: 0.304
+   • Dependability: 0.303
+   • Image Segmentation: 0.303
+   • Informal Learning Theory: 0.303
+   • Blender: 0.302
+   • Scenario Analysis: 0.302
+   • Path Planning: 0.302
+   • Assessment: 0.301
+   • Data Representation: 0.301
+   • Long-Term Planning: 0.301
+   • Algorithmic Fairness: 0.301
+   • Robot Testing: 0.301
+   • Continuous Awareness And Training: 0.300
+   • Test Planning: 0.300
+   • Illustrator: 0.300
+   • Software Construction: 0.300
+   • Data Organization: 0.298
+   • Process Automation Design: 0.298
+   • Information Filtering Evaluation: 0.298
+   • Computer Architecture Fundamentals: 0.298
+   • Constructive Logic: 0.298
+   • Soft Robotics: 0.298
+   • Participatory Decision-Making: 0.297
+   • Abstraction: 0.297
+   • Skill Development Strategy: 0.297
+   • Speech Perception Modeling: 0.297
+   • Multi-Environment Robotics: 0.296
+   • Risk-Based Decision Making: 0.296
+   • Clustering: 0.296
+   • System Evaluation: 0.296
+   • Algebraic Algorithms: 0.296
+   • Linguistic Analysis: 0.296
+   • Data-Driven Modeling: 0.295
+   • Value Proposition Design: 0.295
+   • Audio Understanding: 0.295
+   • Cyber Security: 0.295
+   • Systems Engineering: 0.295
+   • Assembly Language: 0.294
+   • Distributed Computing: 0.294
+   • Service Learning: 0.294
+   • Operational Semantics: 0.293
+   • Affective Learning: 0.293
+   • Actuation: 0.293
+   • Material Knowledge (Molten Glass): 0.293
+   • Manufacturing Robotics: 0.293
+   • Flight Operations Planning: 0.292
+   • Player Experience Analysis: 0.292
+   • Voting Behavior Analysis: 0.292
+   • History Of Computing: 0.292
+   • Model Evaluation: 0.291
+   • Polling And Prediction Interpretation: 0.291
+   • Selection (Conditionals): 0.291
+   • Large Language Models (Llms): 0.291
+   • Architectural Design: 0.291
+   • Theoretical Analysis: 0.290
+   • Confidence Building: 0.290
+   • System Dynamics: 0.290
+   • Compiler Design: 0.290
+   • Declarative Specifications: 0.290
+   • Data Reading: 0.290
+   • Ethical Reasoning: 0.290
+   • Tracking Systems: 0.289
+   • Robot Navigation: 0.289
+   • Adapting Projects To Personal Skills: 0.289
+   • Language Technologies: 0.288
+   • Bit Complexity: 0.288
+   • Storyboarding: 0.288
+   • Software Engineering: 0.287
+   • Interactive Systems: 0.287
+   • Large-Scale Training: 0.287
+   • Visual Arts Computing: 0.287
+   • Robotic Manipulation Of Plants: 0.287
+   • Question Answering (Qa): 0.287
+   • Cognitive, Social, And Affective Learning Dimensions: 0.287
+   • Decentralized Systems: 0.286
+   • Mechanical Engineering: 0.286
+   • Performance Evaluation And Optimization: 0.286
+   • Monte Carlo Methods: 0.286
+   • Information Extraction: 0.285
+   • Close Reading: 0.285
+   • Complex System Analysis: 0.285
+   • Interface Design: 0.285
+   • Software Verification: 0.285
+   • Intuitionistic Logic: 0.285
+   • Understanding Data Processes: 0.285
+   • Microcontroller Hardware: 0.284
+   • Strategy Implementation: 0.284
+   • Self-Paced Learning: 0.284
+   • Treatment Planning: 0.284
+   • Multisensory Experience Design: 0.284
+   • Persuasive Design: 0.284
+   • Sequence-To-Sequence Models: 0.283
+   • Genomics: 0.283
+   • Distributed Systems: 0.283
+   • Modularity: 0.283
+   • Computational Imaging: 0.282
+   • Causal Inference: 0.282
+   • Interdisciplinary Design: 0.282
+   • Mathematical Maturity: 0.282
+   • Ambient Intelligence: 0.281
+   • Visibility Algorithms: 0.281
+   • Human Language Representation: 0.280
+   • Application-Oriented Problem Solving: 0.280
+   • Physical Computing: 0.279
+   • Ground Robotics: 0.279
+   • Performance Theory: 0.279
+   • Code Generation: 0.278
+   • Domain Adaptation: 0.278
+   • Speech Technologies: 0.277
+   • Psychophysics: 0.277
+   • Model Building: 0.277
+   • Face Recognition: 0.276
+   • Program Robustness: 0.276
+   • Model Operationalization: 0.276
+   • Workflow Optimization: 0.276
+   • Model Evaluation (Code Generation): 0.276
+   • Vision-Mission-Objective Alignment: 0.276
+   • Critical Thinking: 0.276
+   • Text Analysis: 0.276
+   • Automated Theorem Proving: 0.275
+   • Complex System Development: 0.275
+   • Morphological And Syntactic Modeling: 0.274
+   • Internet Law: 0.274
+   • Zero-Shot Learning: 0.273
+   • Methodologies: 0.273
+   • Sense-Plan-Act Framework: 0.273
+   • Implementation: 0.273
+   • Np-Completeness: 0.273
+   • Traffic Routing Optimization: 0.273
+   • Critical Path Method: 0.273
+   • Customer Discovery: 0.273
+   • Recursion: 0.272
+   • Inclusive Learning Design: 0.272
+   • Generative Capacity Analysis: 0.271
+   • Image Editing: 0.271
+   • Evaluation: 0.271
+   • Bidding Algorithms: 0.271
+   • Statistics: 0.271
+   • Adaptive Environment Design: 0.271
+   • Network Analysis: 0.271
+   • Online Behavior Analysis: 0.271
+   • Infrastructure As Code (Iac): 0.270
+   • Automation Strategy Consulting: 0.270
+   • Data Interpretation: 0.270
+   • Product Solution Design: 0.269
+   • Dynamics Analysis: 0.269
+   • System Modeling: 0.269
+   • Generative Media: 0.269
+   • Collaboration With Experts: 0.269
+   • Large Dataset Processing: 0.269
+   • Project-Based Development: 0.269
+   • Technical Feasibility Assessment: 0.269
+   • Image Tracking: 0.268
+   • Compositional Modeling: 0.268
+   • Discursive Design Strategies: 0.268
+   • Story Maps: 0.267
+   • Strategy Impact Prediction: 0.267
+   • Digital Workflow: 0.267
+   • Mathematical Transforms: 0.267
+   • Symbolic Methods: 0.267
+   • Voice Control: 0.267
+   • System Integration: 0.266
+   • Human-Machine Interface (Hmi) Design: 0.266
+   • Aquatic Robotics: 0.266
+   • Interfaces: 0.266
+   • Graph Theory: 0.266
+   • Model Implementation: 0.266
+   • Medical Image Registration: 0.265
+   • Digital Media Proficiency: 0.265
+   • Practical Implementation: 0.265
+   • Critical Analysis: 0.265
+   • Random-Walk Methods: 0.265
+   • Result Analysis: 0.265
+   • Speech Synthesis: 0.265
+   • Problem Translation To Mathematical Framework: 0.265
+   • Academic Advisory Coordination: 0.264
+   • Data Structures: 0.264
+   • Trustworthiness Development: 0.264
+   • Space Mission Engineering: 0.263
+   • Human Factors In Technology: 0.263
+   • Patents: 0.263
+   • Goal And Constraint Definition: 0.263
+   • Electrical Engineering: 0.263
+   • Technical Writing: 0.262
+   • Prototyping With Found Objects: 0.262
+   • Maker Movement: 0.262
+   • Cyber-Physical Systems: 0.262
+   • High-Dimensional Data Processing: 0.262
+   • Networking: 0.262
+   • Grasshopper: 0.261
+   • Go: 0.261
+   • Political Analysis: 0.261
+   • Social Networking Systems: 0.261
+   • Result Interpretation For Decision-Making: 0.260
+   • Artistic Discussion And Dialogue: 0.260
+   • Pragmatics: 0.260
+   • Community Facilitation: 0.260
+   • Simulation: 0.260
+   • Interaction Design Principles: 0.259
+   • Neuroscience: 0.259
+   • Hardware Verification: 0.259
+   • Concurrency: 0.259
+   • International Law: 0.259
+   • Formal Verification: 0.259
+   • Mathematical Foundations: 0.259
+   • Dialog Systems: 0.259
+   • Health Decision-Making: 0.258
+   • Analytical Thinking: 0.258
+   • Internship Coordination: 0.258
+   • Stochastic Processes: 0.258
+   • Continuous Integration: 0.257
+   • Computational Photography: 0.257
+   • Linguistic Theory: 0.257
+   • Audio Processing: 0.257
+   • Resource Identification: 0.257
+   • Philosophy Of Information: 0.257
+   • Satisfiability (Sat): 0.257
+   • C++: 0.257
+   • Procedural Shape Generation: 0.257
+   • School Design: 0.257
+   • Design Verification: 0.257
+   • Creativity In Technical Design: 0.257
+   • Instructional Design: 0.256
+   • Network Flow Algorithms: 0.256
+   • Process Evaluation: 0.256
+   • Linear Algebra: 0.256
+   • Run Time Analysis: 0.256
+   • Social Dynamics: 0.256
+   • Cross-Lingual Learning: 0.255
+   • Calculus: 0.255
+   • Curiosity: 0.255
+   • Damage Containment: 0.255
+   • Music Generation: 0.255
+   • User Interface: 0.254
+   • Random Number Generation: 0.254
+   • Power And Authority: 0.254
+   • Interactive Documentary (Idoc) Development: 0.254
+   • Consensus Mechanisms: 0.254
+   • Scientific Inquiry: 0.254
+   • Formal Systems Understanding: 0.253
+   • Vehicle Dynamics: 0.253
+   • Localization: 0.253
+   • Digital Printing: 0.253
+   • Prototype Development: 0.253
+   • Medical Robotics Applications: 0.253
+   • Animation: 0.252
+   • Task Definition: 0.252
+   • Discrete Event Simulation: 0.252
+   • Solidworks: 0.252
+   • Human Capital Strategy: 0.251
+   • Iteration (Loops): 0.251
+   • Strategic Evaluation: 0.251
+   • Sound Implementation: 0.251
+   • Sensor Technology: 0.251
+   • Strategic Quote Crafting: 0.251
+   • Resource Organization: 0.251
+   • Inductive Definitions: 0.251
+   • Volunteer Coordination: 0.251
+   • Cybercrime Law: 0.251
+   • Facilitation Of Difficult Conversations: 0.251
+   • Game Development Fundamentals: 0.250
+   • Electoral Systems Analysis: 0.250
+   • Empirical Analysis: 0.250
+   • Creativity: 0.250
+   • Feedback Control: 0.250
+   • Social Network Analysis: 0.250
+   • High-Throughput Screening: 0.249
+   • Analytical Reading: 0.249
+   • Information Security: 0.249
+   • Ethical Decision-Making: 0.249
+   • Evidence Synthesis: 0.249
+   • Data Storytelling: 0.248
+   • Human-Computer Interaction (Hci): 0.248
+   • Project Evaluation: 0.248
+   • Composition: 0.247
+   • Project Decision-Making: 0.247
+   • Design Observation And Analysis: 0.247
+   • Personalized Medicine: 0.247
+   • Prototyping Smart Devices: 0.247
+   • Cloud Architecture: 0.247
+   • Continuous Audio Representations: 0.247
+   • Ethical Design: 0.246
+   • Visionary Thinking: 0.246
+   • Parameter Tuning: 0.246
+   • Scheduling: 0.246
+   • Art And Architecture Theory: 0.246
+   • Microsoft Project: 0.246
+   • Real-World Engineering Practices: 0.246
+   • Codebase Analysis: 0.246
+   • Buying Pattern Analysis: 0.245
+   • Reflection And Self-Assessment: 0.245
+   • Code Correctness Evaluation: 0.245
+   • Python: 0.245
+   • Embedded Systems: 0.245
+   • Human-Environment Interaction: 0.244
+   • Fitness Training Methodologies: 0.244
+   • Psychology: 0.244
+   • Motion Analysis: 0.244
+   • Semantics Definition: 0.244
+   • Sensor-Based System Design: 0.243
+   • Intellectual Health: 0.243
+   • Structured Discussion: 0.243
+   • Argumentative Reasoning: 0.243
+   • Aerospace Engineering: 0.243
+   • Phonetics: 0.243
+   • Scientific Reading And Analysis: 0.243
+   • Smart Environment Systems: 0.243
+   • Biological Constraints: 0.243
+   • Goal Setting: 0.242
+   • Cps (Cyber-Physical Systems): 0.242
+   • Phonology: 0.242
+   • Coalition Building: 0.242
+   • Timers: 0.242
+   • Database Management: 0.242
+   • Progress Tracking: 0.242
+   • Deliverable Creation: 0.242
+   • Data Correlation Analysis: 0.242
+   • Head Driven Phrase Structure Grammar: 0.242
+   • Immersive Learning Design: 0.242
+   • Formative Evaluation: 0.241
+   • Satellite Systems: 0.241
+   • Computer-Aided Drug Design: 0.241
+   • Situational And Environmental Analysis: 0.241
+   • Computer-Aided Protein Design: 0.241
+   • Phenotyping: 0.241
+   • Signal Processing (For Touch Sensors): 0.241
+   • Ethics In Computing: 0.241
+   • Financial Goal Setting: 0.240
+   • Usability Design: 0.240
+   • Actuator Integration: 0.240
+   • Photographic Objects: 0.240
+   • System Monitoring: 0.240
+   • Penn Treebank: 0.240
+   • Consortium Science: 0.239
+   • Functionality Verification: 0.239
+   • Software Security: 0.239
+   • Analog I/O: 0.239
+   • Sociolinguistics: 0.238
+   • Exploit Development: 0.238
+   • Domain-Specific Architecture Specialization: 0.238
+   • Object Detection Using Video Cameras: 0.238
+   • Team Formation: 0.237
+   • Accountability: 0.237
+   • Material Innovation: 0.237
+   • E-Learning Technologies: 0.237
+   • Scientific Innovation: 0.237
+   • Process-Structure-Property Optimization: 0.237
+   • Feedback Integration: 0.237
+   • Threat Emulation: 0.237
+   • Healthcare: 0.237
+   • Wheeled Robots: 0.236
+   • Cyberwarfare Concepts: 0.236
+   • Movement And Gesture Detection: 0.236
+   • Media Literacy: 0.236
+   • Critical Reflection: 0.236
+   • Philosophical Inquiry: 0.236
+   • Production System Assurance: 0.235
+   • Strategic Messaging: 0.235
+   • Staffing: 0.235
+   • Career Networking: 0.235
+   • System Design: 0.235
+   • Likelihood Functions: 0.235
+   • Quality Assurance Techniques: 0.235
+   • Human Anatomy: 0.235
+   • Customer Problem Definition: 0.235
+   • Smart Contracts: 0.234
+   • Global Perspective: 0.234
+   • Defect Analysis (E.G., Porosity): 0.234
+   • Reading And Analyzing Academic Papers: 0.234
+   • Data-Dependent Cpu/Gpu Optimization Analysis: 0.234
+   • Microeconomics: 0.234
+   • Graph Representation Learning: 0.234
+   • Context-Aware Computing: 0.234
+   • Feature Prioritization: 0.234
+   • Engineering Design Process: 0.234
+   • Algorithmic Privacy Reasoning: 0.233
+   • Static Analysis: 0.233
+   • Organizational Design And Change: 0.233
+   • Narrative Deconstruction: 0.233
+   • Use Graphical Methods To Analyze Statistical Bias: 0.233
+   • Evolutionary Tree Construction: 0.233
+   • Statistical Testing: 0.233
+   • Materials Science: 0.233
+   • Racing Strategies: 0.233
+   • Sequence Alignment: 0.233
+   • Everyday Sound Analysis: 0.232
+   • Fault Attacks And Defenses: 0.232
+   • Implicit Attitude Measurement: 0.232
+   • Front-End Development: 0.232
+   • Science: 0.232
+   • Memory Usage Analysis: 0.232
+   • Stereotypes And In-Group/Out-Group Dynamics: 0.232
+   • User Study Design: 0.232
+   • Case Study Analysis: 0.231
+   • Critical Reading: 0.231
+   • Constructive Dialogue: 0.231
+   • Big Data: 0.231
+   • Workflow Enhancement: 0.231
+   • Teamwork: 0.231
+   • Spacecraft Design: 0.231
+   • Categorial Grammar: 0.230
+   • Product Strategy: 0.230
+   • Science In Popular Media: 0.230
+   • Technology-Driven Innovation: 0.230
+   • Learning Experience Design: 0.230
+   • Anatomy: 0.230
+   • Space Science: 0.230
+   • Sensor Fusion: 0.229
+   • Intellectual Property In Cyberspace: 0.229
+   • Data Integration: 0.229
+   • Critical Analysis Of Medical Science: 0.229
+   • Numerical Approximation: 0.229
+   • Historical Analysis: 0.229
+   • Type Systems: 0.229
+   • Slicing Algorithms: 0.229
+   • Game Design: 0.228
+   • Aerial Robotics: 0.228
+   • Data Processing Pipelines: 0.228
+   • Analytical Writing: 0.228
+   • Multimodal System Design (Light, Heat, Sound): 0.228
+   • Instructional Proficiency: 0.228
+   • Product Development: 0.228
+   • Malware Analysis: 0.228
+   • Manufacturing Systems: 0.228
+   • Sports And Society: 0.228
+   • Resilience And Adaptability: 0.228
+   • Product Management: 0.227
+   • Environmental Adaptation: 0.227
+   • Experimental Design: 0.227
+   • Numeric Methods: 0.227
+   • Student-Led Discussion: 0.227
+   • Hash-Based Techniques: 0.227
+   • Advocacy And Persuasion: 0.227
+   • Networking Within Robotics Community: 0.227
+   • Legged Robots: 0.227
+   • Spatial Analysis: 0.226
+   • Language Comparison: 0.226
+   • Signal Categorization: 0.226
+   • Design Evaluation: 0.225
+   • Project Integration: 0.225
+   • Writing Skills: 0.225
+   • Deep Generative Models For Graphs: 0.225
+   • Lean Innovation: 0.225
+   • Current Events Analysis: 0.225
+   • Darkroom Developing: 0.225
+   • Play-Testing: 0.224
+   • Privacy Protection Technologies: 0.224
+   • Latent Dirichlet Allocation (Lda): 0.224
+   • Student Engagement: 0.224
+   • Competition Preparation: 0.224
+   • Grammar Formalisms: 0.224
+   • Gender Representation: 0.224
+   • Immersive Experience Design: 0.224
+   • Sustainability Planning: 0.224
+   • Occam'S Razor: 0.224
+   • Trees (Data Structures): 0.224
+   • Training And Development: 0.223
+   • Competitiveness Strategy: 0.223
+   • Transformational Game Design: 0.223
+   • Systems Biology: 0.223
+   • Political Dialogue And Debate: 0.223
+   • Organizational Information Flow: 0.223
+   • Mathematics: 0.223
+   • Thesis Development: 0.222
+   • Art Appreciation: 0.222
+   • Unstructured Environments: 0.222
+   • Electoral Mapping: 0.222
+   • Digital Camera Operation: 0.222
+   • Morphology: 0.222
+   • Equity And Inclusion Analysis: 0.222
+   • Photographic Meaning Construction: 0.222
+   • Collaborative Design: 0.221
+   • Execution Monitoring: 0.221
+   • Intellectual Property Law: 0.221
+   • Organizational Effectiveness: 0.221
+   • Focus And Presence: 0.221
+   • Data Transformation: 0.221
+   • Iterative Design Process: 0.220
+   • Code Refinement: 0.220
+   • System Specification: 0.220
+   • Teaching Techniques: 0.220
+   • Organizational Alignment: 0.220
+   • Infrastructure Development: 0.219
+   • Testing And Validation: 0.219
+   • Innovation: 0.219
+   • Topological Descriptors: 0.219
+   • Empathetic Engagement: 0.219
+   • Inspiring Others: 0.219
+   • Aesthetic Choices: 0.219
+   • Strategic Planning: 0.218
+   • Multilingual Modeling: 0.218
+   • Technical Acumen: 0.218
+   • Tradeoff Analysis: 0.218
+   • Academic Discussion: 0.218
+   • Emotional Awareness: 0.218
+   • Psychology Of Identity: 0.218
+   • Minimum Viable Product (Mvp) Development: 0.217
+   • Constructive Feedback: 0.217
+   • Low-Resource Language Modeling: 0.217
+   • Responsibility And Ethics: 0.217
+   • User Behavior Instrumentation: 0.217
+   • Code Review: 0.217
+   • Visual Arts Principles: 0.217
+   • Job Search Techniques: 0.216
+   • Inexact Matching: 0.216
+   • Media Production: 0.216
+   • Map Building: 0.216
+   • Programming: 0.216
+   • Auction Theory: 0.216
+   • Runtime Architecture: 0.216
+   • Model Performance Analysis: 0.216
+   • Hardware Integration: 0.215
+   • System Construction From Specification: 0.215
+   • Incident Response: 0.215
+   • Wealth Creation Systems: 0.215
+   • Music Technology: 0.215
+   • Asset-Based Framing: 0.215
+   • Design Alternatives Generation And Evaluation: 0.215
+   • Tool Selection And Evaluation: 0.215
+   • Privacy Engineering: 0.215
+   • Developmental Psychology Of Expression: 0.215
+   • Openness To New Ideas: 0.215
+   • Chemistry: 0.214
+   • Internship Navigation: 0.214
+   • Hands-On Lab Execution: 0.214
+   • Project Design And Innovation: 0.214
+   • Manufacturing Process Capabilities: 0.214
+   • Policy Analysis: 0.214
+   • Robotic Hand Design: 0.214
+   • System Validation: 0.214
+   • Smart Buildings And Homes: 0.213
+   • Resilient System Design: 0.213
+   • Augmented Reality (Ar): 0.213
+   • Visual Aesthetics: 0.213
+   • Critical Review: 0.213
+   • Navigating Political Diversity: 0.213
+   • Sentiment Analysis: 0.213
+   • Distributed Consensus: 0.213
+   • Iot Systems: 0.213
+   • Human Rights Advocacy: 0.212
+   • Cost Of Quality Analysis: 0.212
+   • Construction Grammar: 0.212
+   • Control Theory: 0.212
+   • Ego Strength In Team Settings: 0.212
+   • Diffusion Models: 0.212
+   • Interpret Empirical Results: 0.212
+   • Dependency Grammar: 0.212
+   • Philosophical Analysis: 0.212
+   • Quantitative Biology: 0.212
+   • Scale Reduction: 0.212
+   • Scientific Theory In Art: 0.211
+   • Welfare State Models: 0.211
+   • Exhibit Design: 0.211
+   • A/B Testing: 0.211
+   • Ethical Hacking: 0.211
+   • Adobe Photoshop: 0.210
+   • Education: 0.210
+   • Independent Work: 0.210
+   • Applied Mathematics: 0.210
+   • Interdisciplinary Analysis: 0.210
+   • Digitization Of Historical Data: 0.210
+   • Focus And Concentration: 0.209
+   • Self-Discipline: 0.209
+   • Technical Reading: 0.209
+   • Cognitive Study Of Haptic System: 0.209
+   • Prototyping Hci Gadgets: 0.209
+   • Glassblowing: 0.209
+   • Design Critique Facilitation: 0.209
+   • Science And Society: 0.209
+   • Independent Practice: 0.209
+   • Prototyping: 0.209
+   • Safety Analysis: 0.209
+   • Deployment Automation: 0.208
+   • Networking Technology And Protocols: 0.208
+   • Use Case Development: 0.208
+   • Business Model Design: 0.208
+   • Sequence Reconstruction: 0.208
+   • Geometric Modeling: 0.208
+   • Technology Regulation: 0.208
+   • Genomic Analysis: 0.208
+   • Linear Regression: 0.208
+   • Object State Manipulation: 0.208
+   • Cultural Advocacy: 0.207
+   • Realistic Simulations: 0.207
+   • Open-Source Qa Datasets: 0.207
+   • Diversity, Equity, And Inclusion (Dei): 0.207
+   • Technical Drawing: 0.207
+   • Discourse Analysis: 0.206
+   • Legal Process Understanding: 0.206
+   • Modern Hardware Platforms: 0.206
+   • Press And Politics Interplay: 0.206
+   • Decidable Classes: 0.206
+   • Entrepreneurial Mindset: 0.206
+   • Media And Art Analysis: 0.206
+   • Human Grasp Control Strategies: 0.206
+   • Collaborative Writing: 0.206
+   • Clear And Concise Phrasing: 0.206
+   • Educational Technology (Edtech): 0.206
+   • Tooling Integration: 0.205
+   • Latex: 0.205
+   • Design Theory: 0.205
+   • Asking High-Value Questions: 0.205
+   • Technology Business Value Analysis: 0.205
+   • Multi-Perspective Analysis: 0.205
+   • Interrupts: 0.204
+   • Productivity Tools: 0.204
+   • Dataset Curation: 0.204
+   • Consumer Behavior: 0.204
+   • Fragmentation Reduction: 0.204
+   • Network Security: 0.204
+   • Sequencing: 0.204
+   • Mesh Manipulation: 0.203
+   • Transportation: 0.203
+   • Tonal Values: 0.203
+   • Market Analysis: 0.203
+   • Arrays: 0.203
+   • Professional Development: 0.203
+   • Web Services: 0.203
+   • Linux: 0.203
+   • Environmental Stewardship: 0.203
+   • Time Series Analysis: 0.203
+   • Medical Training Methodologies: 0.203
+   • Legal Technology (Legaltech): 0.202
+   • Digital Process Transformation: 0.202
+   • Documentary Filmmaking: 0.202
+   • Paper Analysis: 0.202
+   • Economic Analysis: 0.202
+   • Medical Simulation Design: 0.202
+   • 3D Representation Modeling: 0.202
+   • Nucleic Acid Extraction: 0.202
+   • Natural Lighting Application: 0.202
+   • High-Level Language Constructs: 0.202
+   • Recommendation Systems: 0.201
+   • Internal Capabilities Assessment: 0.201
+   • 3D Scanning: 0.201
+   • Population Biology: 0.201
+   • Self-Identity Development: 0.201
+   • Public Trust In Science: 0.201
+   • Large-Scale Serving Systems: 0.201
+   • Requirements Analysis: 0.201
+   • Bioimage Analysis: 0.201
+   • Personal Development: 0.200
+   • Iterative Project Development: 0.200
+   • Audience Adaptation: 0.200
+   • Theater Production: 0.200
+   • DevOps: 0.200
+   • Air Pollution Analysis: 0.200
+   • Productivity Enhancement: 0.200
+   • Cryptography: 0.200
+   • Intersectional Analysis (Race, Gender, Sexual Orientation): 0.199
+   • Carbon-Aware Computing: 0.199
+   • Savings Strategy: 0.199
+   • Observation: 0.199
+   • Files (I/O): 0.199
+   • Incentive Design: 0.199
+   • Curriculum Development: 0.199
+   • Biological Data Interpretation: 0.199
+   • Navigation In Austere Environments: 0.199
+   • Attention To Detail: 0.199
+   • Budgeting: 0.199
+   • Cybersecurity: 0.198
+   • Genetic Drift: 0.198
+   • User Personalization: 0.198
+   • Academic Transition Skills: 0.198
+   • Data Analysis: 0.198
+   • Hands-On Demonstration: 0.198
+   • Fieldwork Adaptability: 0.198
+   • Visual Analysis: 0.197
+   • Political Processes: 0.197
+   • Ecological Thinking: 0.197
+   • Interactive Art: 0.197
+   • Lexical Functional Grammar: 0.197
+   • Visual Design Principles (Typography, Color, Composition): 0.197
+   • Quality Control (Molecular Biology): 0.197
+   • Team Management: 0.197
+   • Vulnerability Analysis: 0.197
+   • Genome Assembly: 0.197
+   • Automated Cell Image Analysis: 0.197
+   • Technology Impact Assessment: 0.197
+   • CI/CD: 0.197
+   • Hardware-Software Co-Design: 0.196
+   • Negotiation: 0.196
+   • Group Dynamics: 0.196
+   • Physics: 0.196
+   • Sustainable Science: 0.196
+   • Human Disease Diagnosis: 0.196
+   • Cultural Awareness: 0.195
+   • Health Technology: 0.195
+   • Conference Networking: 0.195
+   • Hardware Fabrication: 0.195
+   • Neurophysiology: 0.195
+   • Stata: 0.194
+   • String Compression: 0.194
+   • Autocad: 0.194
+   • Criminal Justice: 0.194
+   • 2D Graphics: 0.194
+   • Syntax Definition: 0.194
+   • Financial Literacy: 0.194
+   • Science Fiction As Cultural Analysis: 0.194
+   • Classroom Discourse Participation: 0.194
+   • Discrimination Analysis: 0.194
+   • Rhetorical Criticism: 0.193
+   • Synthesis Of Complex Material: 0.193
+   • Data Utilization: 0.193
+   • Assess Causal Assumptions: 0.193
+   • Persuasion: 0.193
+   • Gis (Geographic Information Systems): 0.193
+   • Agricultural Systems: 0.193
+   • Document Design For Readability: 0.193
+   • Data Preprocessing: 0.193
+   • Empathy: 0.193
+   • Processor And Computing Platforms History: 0.193
+   • Kinetic Sculpture: 0.192
+   • Genetics: 0.192
+   • Project Tools And Techniques: 0.192
+   • Long-Context Modeling: 0.192
+   • Social Interaction: 0.192
+   • Disease Risk Prediction: 0.192
+   • Scientific Method: 0.192
+   • Cultural Analysis: 0.191
+   • Power Dynamics In Technology: 0.191
+   • Biology: 0.191
+   • Environmental Justice: 0.191
+   • Operating System Design: 0.191
+   • Work Breakdown Structures: 0.191
+   • Unix: 0.191
+   • Preparing Talks: 0.191
+   • Educational Content Development: 0.191
+   • Software Architecture Styles: 0.190
+   • Project Management: 0.190
+   • Internship Professionalism: 0.190
+   • String Search: 0.190
+   • Haptic System Design: 0.190
+   • Open Source Movements: 0.190
+   • Blockchain: 0.190
+   • Senior Honors Thesis Preparation: 0.190
+   • Project Execution: 0.190
+   • Security Analysis: 0.190
+   • Artistic Expression: 0.189
+   • Problem Reframing: 0.189
+   • Interaction Design Materials Exploration: 0.189
+   • Spatial Design: 0.189
+   • Project Oversight: 0.189
+   • Project-Based Delivery Systems: 0.189
+   • Mechanical Structure Design: 0.189
+   • Financial Viability Analysis: 0.189
+   • Data Visualization: 0.189
+   • Independent Project Design: 0.189
+   • Narrative Analysis: 0.188
+   • Digital Economy: 0.188
+   • Social Sciences: 0.188
+   • Data Ethics: 0.188
+   • Authentic Self-Expression: 0.188
+   • Vision Setting: 0.187
+   • Literature Review: 0.187
+   • Metal Powder Processing: 0.187
+   • Imaging Systems: 0.187
+   • Projection Mapping: 0.187
+   • Patent Design Around: 0.187
+   • Haptics: 0.187
+   • Planetary Perspective: 0.187
+   • Patent Law: 0.187
+   • Historical Context Analysis: 0.186
+   • Contextual Dilemma Resolution: 0.186
+   • Scientific Literacy: 0.186
+   • Digital Documentation: 0.186
+   • Website Development: 0.186
+   • Conflict Of Interest Analysis: 0.186
+   • Guest Lecture Engagement: 0.185
+   • Argumentation And Persuasion: 0.185
+   • Discrete Audio Tokens: 0.185
+   • Application Domain Knowledge: 0.185
+   • Cooking And Food Preparation: 0.185
+   • Software Reliability Analysis: 0.185
+   • Sensor Integration: 0.185
+   • Industrial Design Principles: 0.184
+   • Process Improvement: 0.184
+   • Neighborhood Segregation: 0.184
+   • Analytics: 0.184
+   • Commercialization Of Genetic Data: 0.184
+   • Excel: 0.184
+   • Legal Impact Of Technology: 0.184
+   • Ray Tracing: 0.184
+   • Gender And Political Participation Analysis: 0.184
+   • Accounting: 0.183
+   • Genetic Variability Analysis: 0.183
+   • Cultural Competency: 0.183
+   • Academic-Professional Integration: 0.183
+   • Cloud Integration: 0.183
+   • Tf/Idf: 0.183
+   • Critical Scholarship Application: 0.182
+   • Legal Analysis: 0.182
+   • Digital Imaging: 0.182
+   • Design Thinking: 0.182
+   • Echo Chambers And Polarization: 0.182
+   • Collaborative Discussion: 0.182
+   • Performance Assessment: 0.182
+   • Rigorous Assurance Methods: 0.182
+   • E-Portfolio System: 0.181
+   • Energy Systems: 0.181
+   • Film And Media Analysis: 0.181
+   • Asset Editors: 0.181
+   • Shading: 0.181
+   • Free Speech Law: 0.181
+   • Societal Impacts Of Emerging Technologies: 0.181
+   • Implementation Validation: 0.181
+   • Resource Utilization: 0.181
+   • Asset Pipelines: 0.181
+   • Molecular Biology: 0.181
+   • Systems Testing: 0.181
+   • Creative Project Development: 0.180
+   • Seminar Discussion: 0.180
+   • Medicine: 0.180
+   • Photographic Installations: 0.180
+   • Digital Innovation: 0.180
+   • Software Performance Analysis: 0.179
+   • Domestic Terrorism: 0.179
+   • Community Outreach: 0.179
+   • Contextual Interpretation Of Social, Cultural, And Historical Factors: 0.178
+   • Social Popularity Analysis: 0.178
+   • Legal-Technology Interface Analysis: 0.178
+   • Suffix Trees: 0.178
+   • JavaScript: 0.177
+   • Geometric Transformations: 0.177
+   • Handling Variable-Sized Data: 0.177
+   • Digital Art Application: 0.177
+   • Environmental Sensing And Feedback Systems: 0.177
+   • Social Influence: 0.177
+   • Governance Models: 0.177
+   • Open Source Software (Oss): 0.177
+   • Arcgis Pro: 0.177
+   • Psycholinguistics: 0.176
+   • Population Health: 0.176
+   • Academic Collaboration: 0.176
+   • Astronomy: 0.176
+   • Prefetching: 0.176
+   • Connecting Academic Theory To Practice: 0.176
+   • Dramatic Writing: 0.175
+   • Privacy Systems Evaluation: 0.175
+   • Community Goals Analysis: 0.175
+   • Economic Principles: 0.175
+   • Bug Report Analysis: 0.175
+   • Internship Application: 0.175
+   • Graph Kernels: 0.175
+   • Practical Application Design: 0.174
+   • Tracking Progress Using Milestones: 0.174
+   • Software Quality Definition And Analysis: 0.174
+   • Project Design: 0.174
+   • Capstone Project Design: 0.174
+   • Cost-Benefit Analysis: 0.174
+   • Critical Infrastructure Protection: 0.174
+   • Ethical Impact Of Technology: 0.174
+   • 3D Vision: 0.173
+   • Auditing And Verification Processes: 0.173
+   • Self-Reflection: 0.173
+   • Communication: 0.172
+   • Library Preparation For Sequencing: 0.172
+   • Health Systems Comparison: 0.172
+   • Graphics: 0.172
+   • Nist Standards: 0.171
+   • Health Science: 0.171
+   • Academic Thesis Writing: 0.171
+   • Political Theory: 0.171
+   • Remote Collaboration Tools: 0.171
+   • Collaboration Tools Design: 0.171
+   • Knowledge Of Mental Health (Anxiety, Depression): 0.171
+   • Primary Source Analysis: 0.171
+   • Penetration Testing: 0.171
+   • Mentorship Engagement: 0.170
+   • Decarbonization Of Infrastructure: 0.170
+   • Audience Analysis: 0.170
+   • Netlogo: 0.170
+   • User-Centered Design: 0.170
+   • Industrial Application Development: 0.170
+   • Data Replication: 0.170
+   • 3D Visualizations: 0.170
+   • Legal Enforcement Knowledge: 0.169
+   • Academic Writing: 0.169
+   • Sampling Techniques: 0.168
+   • Cultural Humility: 0.168
+   • Climate Science: 0.168
+   • Israel-Palestine Conflict: 0.168
+   • Copyrights In A Networked World: 0.168
+   • Argument Defense: 0.168
+   • Visual Culture Studies: 0.168
+   • Leadership: 0.168
+   • Class Discussion And Debate: 0.168
+   • Pitching: 0.167
+   • Data Collection: 0.167
+   • Faculty Advisor Collaboration: 0.167
+   • Mobile And Pervasive Computing: 0.167
+   • Model Serving: 0.167
+   • Astrobiology: 0.167
+   • Legacy System Integration: 0.167
+   • Camera Calibration: 0.166
+   • Political Science: 0.166
+   • Collaboration With Educators: 0.166
+   • Tableau: 0.166
+   • Single-View 3D Prediction: 0.166
+   • Professional Work Ethic: 0.166
+   • Market Needs Analysis: 0.166
+   • Signal Characterization: 0.166
+   • Efficient Data Query: 0.165
+   • Design Artifact Creation: 0.165
+   • Data Tracing And Provenance: 0.165
+   • Social Identity Theory: 0.165
+   • Print Finishing: 0.165
+   • Feedback Solicitation: 0.165
+   • Surgical Procedures: 0.164
+   • Cross-Platform Development: 0.164
+   • Econometrics: 0.164
+   • Garbage Collection: 0.164
+   • Searchable Compressed Indices: 0.164
+   • American Exceptionalism: 0.164
+   • 3D Model Pipeline: 0.164
+   • Model Validation: 0.164
+   • Polynomials: 0.163
+   • Organizational Impact Analysis: 0.163
+   • Personal Wellness Assessment: 0.163
+   • Pcr Design And Execution: 0.163
+   • Portfolio Development: 0.163
+   • Product Branding: 0.163
+   • Debugging And Fault Fixing: 0.163
+   • Compliance Monitoring: 0.163
+   • Tone Control In Writing: 0.163
+   • Cover Letter Writing: 0.163
+   • Operational Reliability Engineering: 0.163
+   • Locking: 0.163
+   • Geometry: 0.162
+   • Behavioral Advertising Mitigation: 0.162
+   • Genetic Ancestry Analysis: 0.162
+   • Supply Chain Analysis: 0.162
+   • Class Participation: 0.162
+   • Safety Procedures (Hot Shop): 0.162
+   • Tactile Sensing: 0.162
+   • Materiality In Photography: 0.162
+   • Critical Analysis Of Medical And Literary Narratives: 0.161
+   • Operating Systems History: 0.161
+   • Dynamic Compilation: 0.161
+   • Shadow Pricing: 0.161
+   • Vr Development: 0.161
+   • Mission-Driven Entrepreneurship: 0.160
+   • Embedded Sensing: 0.160
+   • Career-Long Development: 0.160
+   • Architecture Tools Usage: 0.160
+   • Interview Preparation: 0.160
+   • Labor Market Discrimination: 0.160
+   • Gene Expression Quantification: 0.160
+   • Additive Manufacturing: 0.159
+   • Surgical Navigation: 0.159
+   • Public Sector Innovation: 0.158
+   • Formal Notations For Architecture: 0.158
+   • Reliable And Robust System Design: 0.158
+   • Wet Lab Techniques: 0.158
+   • Semi-Structured Interview Design: 0.158
+   • Academic Proposal And Approval Process: 0.158
+   • Integrity: 0.158
+   • Feedback Delivery: 0.157
+   • 3D Viewing: 0.157
+   • Mobile App Development: 0.157
+   • Entrepreneurship: 0.157
+   • Academic Administration: 0.157
+   • Genome Comparison: 0.157
+   • Photography Exposure: 0.156
+   • Proposal Writing: 0.156
+   • Institutional History (Carnegie Mellon): 0.156
+   • Tool Use (Glassblowing Tools): 0.155
+   • Debating Disciplinary Perspectives: 0.155
+   • Literary Analysis: 0.155
+   • Java: 0.154
+   • Study Abroad Planning: 0.154
+   • Portability In Software Design: 0.153
+   • Assignment Customization: 0.153
+   • Proteins: 0.153
+   • Research Methods: 0.153
+   • Energy Efficiency Analysis: 0.153
+   • Peace Studies: 0.152
+   • Business Strategy: 0.152
+   • Video Sketching: 0.152
+   • Microstructure-Property Relationships: 0.152
+   • Street Photography: 0.152
+   • Rotorcraft (E.G., Quadcopters): 0.152
+   • User Experience: 0.152
+   • Systemic Racism: 0.151
+   • Surveillance Ethics: 0.151
+   • Mockup Design: 0.151
+   • Genomic Data Ethics: 0.151
+   • Arabic Studies: 0.151
+   • Critical Analysis Of Environmental Narratives: 0.150
+   • Project Proposal Development: 0.150
+   • Tree Adjoining Grammar: 0.150
+   • Reflective Writing: 0.150
+   • Pedagogical Study Design: 0.150
+   • Suffix Arrays: 0.150
+   • Decolonial Scholarship: 0.150
+   • Visual Critique: 0.150
+   • Neuroanatomy: 0.150
+   • Cultural Discourse Analysis: 0.150
+   • Exporters (Game Assets): 0.150
+   • Medical Training Pedagogy: 0.149
+   • Photography: 0.149
+   • Government: 0.149
+   • Archival Analysis: 0.149
+   • Scholarship Opportunities: 0.149
+   • Multi-Screen Interface Design: 0.148
+   • Human Rights Awareness: 0.148
+   • Systematic Design Methodology: 0.148
+   • Drug-Target Interaction Analysis: 0.147
+   • Cryptoeconomics: 0.147
+   • FinTech: 0.147
+   • Human Evolution And Migration: 0.147
+   • Democratic Integrity: 0.147
+   • Formal Methods: 0.147
+   • Collaboration: 0.147
+   • Military Culture: 0.146
+   • Collaborative Project Work: 0.146
+   • Model Deployment: 0.146
+   • 3D Printing: 0.146
+   • Racial And Gender Equity Analysis: 0.146
+   • Humanities: 0.146
+   • Operating System Comparison: 0.145
+   • Philosophical Foundations Of Privacy: 0.145
+   • Health Care Organizational Structures: 0.145
+   • Dual-Use Technology Applications: 0.145
+   • Pricing Strategy: 0.144
+   • Reparative Justice Frameworks: 0.144
+   • Gender Studies: 0.144
+   • Technology Adoption: 0.144
+   • Debugging: 0.144
+   • Edtech: 0.144
+   • Morphosyntax: 0.143
+   • Node Embeddings: 0.143
+   • Lab Safety: 0.142
+   • Risk Assessment: 0.142
+   • Interactive Media Design: 0.142
+   • Elevator Pitch: 0.142
+   • Race And Identity Studies: 0.141
+   • Writing Workshops (Art Criticism): 0.141
+   • Drone Privacy Concerns: 0.141
+   • Global Cultural Engagement: 0.141
+   • Depth-Map Texture Modeling: 0.140
+   • Liberal Arts Contextualization: 0.140
+   • Politics Of Food: 0.139
+   • Application Of Biological Software Tools: 0.139
+   • Space Exploration And Colonization: 0.139
+   • Climate Change Mitigation Strategies: 0.139
+   • Applied Ethics: 0.139
+   • Constitutional Law: 0.139
+   • Photographic Equipment Usage: 0.139
+   • Interdisciplinary Collaboration: 0.139
+   • Public Speaking: 0.139
+   • Psychology Of Mood And Productivity: 0.139
+   • Middle Eastern History: 0.138
+   • Data Privacy: 0.138
+   • Academic-Industry Alignment: 0.138
+   • Social Rate Of Discount: 0.138
+   • Acoustic Signal Analysis: 0.137
+   • Trade Secret Law: 0.137
+   • Photogrammetry: 0.137
+   • Discussion Facilitation: 0.137
+   • Biomarker Discovery: 0.137
+   • Ethnographic Understanding: 0.137
+   • Language Universals: 0.136
+   • Conceptual Art Practices: 0.136
+   • Laser Welding: 0.136
+   • Customer Demand Forecasting: 0.136
+   • Ethical Considerations In Science: 0.136
+   • Sensing And Actuation Systems: 0.136
+   • Heterogeneous Compute Offloading: 0.136
+   • Industrial Manufacturing Trends: 0.135
+   • Customer Validation: 0.135
+   • Cryptography For Blockchains: 0.135
+   • Global Political Impact: 0.134
+   • Ethics: 0.134
+   • Proof Techniques: 0.134
+   • Sustainable Humanities: 0.134
+   • Landscape Photography: 0.134
+   • Startup Fundraising: 0.134
+   • Cad Tools: 0.134
+   • Workforce Transformation: 0.133
+   • Poverty Reduction Strategies: 0.133
+   • Foodways Studies: 0.133
+   • Spectral Graph Theory: 0.133
+   • Management: 0.133
+   • Coarticulation Analysis: 0.132
+   • History Of Science: 0.132
+   • Reproductive Justice: 0.132
+   • Prosody Analysis (Amplitude, Duration, Pitch): 0.131
+   • Economic Inequality Analysis: 0.131
+   • Two-Dimensional Representation: 0.131
+   • User Engagement: 0.131
+   • Educational Pedagogy: 0.131
+   • Community Engagement: 0.131
+   • Historical Interpretation: 0.131
+   • Html: 0.131
+   • Ethical Service: 0.130
+   • Academic Freedom Policies: 0.130
+   • Monitoring And Logging: 0.130
+   • Virtual Reality (Vr) Development: 0.130
+   • Group Critique And Feedback: 0.129
+   • Web Scraping: 0.129
+   • Intersectionality: 0.128
+   • Interviewing: 0.128
+   • Police Brutality: 0.128
+   • Product Requirements Gathering: 0.127
+   • Disease Mapping: 0.126
+   • Customer Feedback Analysis: 0.126
+   • Contemplative Practice: 0.126
+   • Social Good Applications: 0.126
+   • Whole-Genome Alignment: 0.125
+   • Surgery: 0.125
+   • Studio Photography Techniques: 0.125
+   • Still Life Photography: 0.125
+   • Human Hand Anatomy And Function: 0.125
+   • Code Documentation: 0.125
+   • Documentation: 0.124
+   • Trans-Border Crime: 0.124
+   • Audience Targeting: 0.124
+   • Content Authoring Tools: 0.124
+   • Fine Art Photography: 0.124
+   • Burrows-Wheeler Transform: 0.124
+   • Investor Engagement: 0.124
+   • Legal Rights Identification: 0.123
+   • Hybrid Analog-Digital Design: 0.123
+   • Ethical Reasoning In Health Contexts: 0.123
+127.0.0.1 - - [24/Nov/2025 23:08:56] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:09:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:10:24] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [24/Nov/2025 23:10:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+   • Climate Change Impact Assessment: 0.122
+   • Benchmark Datasets: 0.122
+   • Social Change Advocacy: 0.121
+   • Dashboards: 0.121
+   • Critical Analysis Of Museum Practices: 0.121
+   • Non-Destructive Testing / Inspection: 0.121
+   • Social Impact Of Technology: 0.121
+   • Attendance And Participation: 0.121
+   • Art History: 0.120
+   • Socioeconomic Factors Analysis: 0.120
+   • Health Outcomes Assessment: 0.120
+   • Carceral State: 0.120
+   • Community-Based Interventions: 0.120
+   • Active Listening: 0.120
+   • American Political Culture: 0.120
+   • Reportage Photography: 0.119
+   • Journaling (Reflective Practice): 0.119
+   • Economics: 0.118
+   • Precarious Masculinity: 0.118
+   • Transient Execution Attacks: 0.117
+   • Stock Market Interpretation: 0.117
+   • High-Velocity Deployment Strategies: 0.117
+   • Indesign: 0.116
+   • Log Collection And Analysis: 0.116
+   • Public Expenditure Evaluation: 0.116
+   • Israeli And Palestinian Cultural Studies: 0.116
+   • Health Promotion Strategy: 0.116
+   • Nutrition And Exercise Science: 0.115
+   • Faculty Collaboration: 0.115
+   • Jewish Studies: 0.114
+   • Culinary Anthropology: 0.114
+   • Human Disease Treatment: 0.114
+   • Transcript Assembly: 0.114
+   • Political Sovereignty Movements: 0.114
+   • Efficient Data Storage: 0.114
+   • Differentiable Rendering: 0.114
+   • Building Client Relationships: 0.113
+   • Food Studies: 0.113
+   • Technology-Driven Privacy Mitigation: 0.113
+   • Camera Limitations And Enhancements: 0.113
+   • Trusted Execution Environments (Tee): 0.112
+   • 3D Reconstruction: 0.112
+   • Stakeholder Engagement: 0.111
+   • Portraiture Photography: 0.111
+   • Report Writing: 0.111
+   • Artistic Documentation: 0.111
+   • Poster Design: 0.110
+   • Reporting: 0.110
+   • Debate: 0.109
+   • Wellness Wheel Model: 0.109
+   • Silicone Rubber Fabrication: 0.108
+   • Quality Metrics Analysis: 0.108
+   • Oral History Interpretation: 0.108
+   • Bioacoustics: 0.107
+   • Identity And Belonging: 0.107
+   • Externalities In Public Projects: 0.107
+   • Marketing: 0.107
+   • Social Justice: 0.107
+   • Behavioral Advertising Tracking: 0.106
+   • Phenotypic Trade-Offs: 0.106
+   • Rendering: 0.106
+   • Historical Analysis Of Free Speech: 0.106
+   • Cross-Functional Collaboration: 0.106
+   • Faa Certification Processes: 0.105
+   • Cryptocurrency: 0.105
+   • Literary Analysis Of Arab And Jewish Voices: 0.105
+   • Git: 0.105
+   • Business Impact Assessment: 0.104
+   • Cultural Studies: 0.104
+   • Advocacy For Democratic Participation: 0.104
+   • Carbon-Aware Workload Shifting: 0.104
+   • Laser Cutting: 0.103
+   • User Authorization: 0.103
+   • Youth Narrative And Ya Literature: 0.103
+   • Additive Manufacturing Market Analysis: 0.103
+   • Spectrographic Analysis: 0.103
+   • Microarchitectural Side-Channel Attacks: 0.102
+   • Business Acumen: 0.102
+   • Philosophy (Ethics): 0.102
+   • Photographic Lighting Techniques: 0.101
+   • Copyright Law: 0.100
+   • Social Inequality: 0.100
+   • Power And Institutional Critique: 0.099
+   • Argumentation And Debate On Health Topics: 0.099
+   • Attendance And Punctuality: 0.098
+   • Incomplete Markets: 0.097
+   • Social Impact Assessment: 0.097
+   • Raw File Handling: 0.097
+   • Institutional Wellness: 0.096
+   • Walking As Meditative Practice: 0.096
+   • Regulatory Impact Analysis: 0.095
+   • Environmental Issues In Science: 0.094
+   • Human Dignity Studies: 0.094
+   • Psychological Health Assessment: 0.093
+   • Distributed Ledgers: 0.092
+   • Caching: 0.092
+   • Values Alignment: 0.092
+   • Community History Analysis: 0.091
+   • Stewardship And Shared Ownership: 0.091
+   • Legal Protection Strategies: 0.091
+   • Social Well-Being: 0.091
+   • File Formats (For 3D Printing/Cad): 0.091
+   • Censorship And Free Expression Law: 0.088
+   • Phylogenetic Tree Reconstruction: 0.088
+   • Presentation: 0.088
+   • Health Disparities Analysis: 0.087
+   • Fluorescent Microscopy: 0.087
+   • Experimental Photography Methods: 0.086
+   • Industry Standards: 0.086
+   • Social Media Marketing: 0.086
+   • Research: 0.084
+   • Trademark Law: 0.083
+   • Preventative Health Behaviors: 0.083
+   • Electron Beam Welding: 0.083
+   • Regional Development: 0.083
+   • Environmental Health: 0.083
+   • Physical Health: 0.082
+   • International Student Compliance: 0.081
+   • Consulting: 0.081
+   • Writing For Publication: 0.080
+   • Margin Vs. Mission Tradeoffs: 0.080
+   • Finance: 0.079
+   • Molecular Dynamics Simulations: 0.078
+   • Disease Stratification: 0.078
+   • Contemporary Theater: 0.078
+   • Historical Preservation: 0.078
+   • Community Building: 0.076
+   • Agile: 0.075
+   • Campus Resource Navigation: 0.075
+   • Dental Procedures: 0.075
+   • Multi-View Stereo: 0.074
+   • Slide Crafting: 0.073
+   • Occupational Health: 0.073
+   • Legal And Regulatory Privacy Frameworks: 0.073
+   • Trans Issues: 0.073
+   • Refugee And Migration Studies: 0.073
+   • New Media Art Practices: 0.070
+   • Polymer And Metal Am Technologies: 0.070
+   • Privacy Principles: 0.069
+   • Emotional Health: 0.068
+   • Power Side-Channel Analysis: 0.067
+   • Brightfield Microscopy: 0.067
+   • Sociology: 0.063
+   • Mobile App Review Analysis: 0.062
+   • Remote Work: 0.061
+   • 3D Crop Mapping And Modeling: 0.061
+   • Legal Frameworks For Data: 0.059
+   • Poverty As A Social, Political, And Historical Phenomenon: 0.059
+   • Public Health: 0.058
+   • Historical Context Of Race: 0.056
+   • Resume Writing: 0.054
+   • Field Validation: 0.053
+   • Public Policy: 0.052
+   • Non-Profit Operations: 0.052
+   • Legal Compliance: 0.051
+   • Workspace Customization: 0.050
+   • Palestinian Culinary Traditions And Gendered Food Practices: 0.050
+   • Conservation Genomics: 0.049
+   • Spiritual Health: 0.048
+   • Analysis Of Epidemiological Data (E.G., Covid-19): 0.046
+   • Numerical Perturbation Schemes: 0.045
+   • Community Health: 0.043
+   • Contemporary Photography Trends: 0.041
+   • Historical Analysis Of Slavery And Colonialism: 0.037
+   • Indigenous Studies: 0.035
+   • Read Mapping: 0.030
+   • Local Community Development: 0.029
+   • Start-Up Development: 0.027
+   • Social Determinants Of Health: 0.027
+   • Cell Culture Maintenance: 0.027
+   • Colonialism And Artifact Repatriation: 0.026
+   • Food Insecurity And Hunger Studies: 0.025
+   • Lgbtq History: 0.024
+   • Sephardi, Ashkenazi, And Mizrahi Jewish Culinary History: 0.021
+   • Life Cycle Carbon Assessment (Lca): 0.020
+   • Historical Context Of Health: 0.018
+   • Circuit Design With 7400-Series Chips: 0.015
+   • Client-Facing Projects: 0.009
+   • Local History (Pittsburgh): 0.002
+   • E-Portfolio Documentation (Mycore): -0.012
+✓ Got 1 VR apps
+📝 Logged interaction for user e7242652...
+✅ Sending response
+
+
+📄 GET / - Serving chatbot
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+👤 Returning User: e7242652-8078-433a-93a0-df0339f902ec
+💬 Message: 'I want to learn Python programming'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): I want to learn Python programming
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 14.15it/s]
+🔍 Search for 'I want to learn Python programming':
+   • Python: 0.519
+   • Programming: 0.406
+   • Pytorch: 0.329
+   • R Programming: 0.314
+   • Computational Thinking: 0.308
+   • Program Logics: 0.299
+   • Program Synthesis: 0.295
+   • Hands-On Learning: 0.295
+   • Instructional Design: 0.295
+   • Computer Science Fundamentals: 0.295
+   • Interactive Learning: 0.289
+   • Instructional Proficiency: 0.288
+   • Machine-Level Code: 0.287
+   • Pac Learning Framework: 0.287
+   • Unix: 0.278
+   • Learning Systems: 0.278
+   • Cognitive Tutoring Systems: 0.276
+   • Code Documentation: 0.272
+   • Computer Science: 0.270
+   • Cognitive, Social, And Affective Learning Dimensions: 0.262
+   [RAG] Low direct matches (2). Attempting Semantic Bridge...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 116.23it/s]
+🔍 Search for 'I want to learn Python programming':
+   • Python: 0.519
+   • Programming: 0.406
+   • Pytorch: 0.329
+   • R Programming: 0.314
+   • Computational Thinking: 0.308
+   • Program Logics: 0.299
+   • Program Synthesis: 0.295
+   • Hands-On Learning: 0.295
+   • Instructional Design: 0.295
+   • Computer Science Fundamentals: 0.295
+   • Interactive Learning: 0.289
+   • Instructional Proficiency: 0.288
+   • Machine-Level Code: 0.287
+   • Pac Learning Framework: 0.287
+   • Unix: 0.278
+   • Learning Systems: 0.278
+   • Cognitive Tutoring Systems: 0.276
+   • Code Documentation: 0.272
+   • Computer Science: 0.270
+   • Cognitive, Social, And Affective Learning Dimensions: 0.262
+   • Robot Learning From Demonstration: 0.261
+   • Computational Biology: 0.260
+   • Computer Arithmetic: 0.257
+   • Unsupervised Learning: 0.254
+   • History Of Computing: 0.247
+   • Interactive Documentary (Idoc) Development: 0.245
+   • Skill Practice Simulation: 0.241
+   • Robot Modeling: 0.240
+   • Statistical Software: 0.239
+   • Neural Program Assistance: 0.236
+   • Informal Learning Theory: 0.236
+   • Assembly Language: 0.236
+   • Machine Learning: 0.234
+   • Scientific Computing: 0.233
+   • Computational Legal Reasoning: 0.233
+   • Automated Reasoning: 0.229
+   • Game Theory: 0.227
+   • Independent Learning: 0.226
+   • Pedagogical Study Design: 0.225
+   • Computational Medicine: 0.224
+   • Game Engine Development: 0.224
+   • Robot Integration: 0.223
+   • Body Language: 0.220
+   • Self-Directed Learning: 0.219
+   • Reasoning And Planning: 0.219
+   • Feedback-Driven Learning: 0.218
+   • Educational Pedagogy: 0.218
+   • Teaching Techniques: 0.218
+   • Algebraic Algorithms: 0.218
+   • Educational Content Development: 0.218
+   • Autonomous Behaviors: 0.218
+   • Collaborative Learning: 0.217
+   • Digital Printing: 0.217
+   • Autonomous Agents: 0.216
+   • Software Engineering: 0.216
+   • Medical Training Pedagogy: 0.215
+   • Iterative Problem Solving: 0.214
+   • Calculus: 0.213
+   • Computer Science Theory: 0.213
+   • Linux: 0.213
+   • Bioinformatics: 0.212
+   • Real-World Robot Implementation: 0.212
+   • School Design: 0.212
+   • Simulation: 0.212
+   • Education: 0.212
+   • Training And Development: 0.211
+   • Documentary Filmmaking: 0.211
+   • User Preference Learning: 0.210
+   • Curriculum Development: 0.209
+   • C++: 0.209
+   • Open Source Software (Oss): 0.208
+   • Computational Linguistics: 0.208
+   • Lifelong Learning: 0.207
+   • File Formats (For 3D Printing/Cad): 0.206
+   • E-Learning Technologies: 0.206
+   • Software Construction: 0.205
+   • Logic And Theoretical Computer Science: 0.205
+   • Academic Transition Skills: 0.205
+   • Syntax Definition: 0.205
+   • Mathematical Reasoning: 0.205
+   • Front-End Development: 0.204
+   • Active Learning: 0.204
+   • 2D Graphics: 0.203
+   • Documentation: 0.202
+   • Laboratory Robotics: 0.202
+   • Statistical Literacy: 0.202
+   • Reinforcement Learning: 0.202
+   • Navigation Algorithms: 0.201
+   • Intelligent Behavior Design: 0.200
+   • Robot Software Architecture: 0.200
+   • Mechanical Engineering: 0.198
+   • Professional Development: 0.198
+   • Computation: 0.198
+   • Blender: 0.197
+   • Action Systems (In Robotics): 0.197
+   • Malware Analysis: 0.196
+   • Knowledge Graphs: 0.196
+   • Open-Source Qa Datasets: 0.195
+   • Medical Training Methodologies: 0.195
+   • Learning Evaluation Methods: 0.194
+   • Linear Algebra: 0.194
+   • Software Verification: 0.194
+   • Adapting Projects To Personal Skills: 0.194
+   • Self-Paced Learning: 0.194
+   • Code Generation: 0.194
+   • Aquatic Robotics: 0.194
+   • Personal Development: 0.193
+   • Heterogeneous Computing: 0.193
+   • Data Science: 0.192
+   • Parallel Algorithms: 0.192
+   • Innovation In Computer Science: 0.192
+   • Application-Oriented Problem Solving: 0.192
+   • Cognitive Learning Skills: 0.190
+   • Learning Experience Design: 0.190
+   • Probabilistic Reasoning: 0.190
+   • Data Mining: 0.190
+   • Human-Robot Interaction: 0.190
+   • Web Scraping: 0.189
+   • Inclusive Learning Design: 0.189
+   • Digital Media Proficiency: 0.189
+   • Code Review: 0.188
+   • Abstraction: 0.188
+   • Syntactic Analysis: 0.188
+   • Website Development: 0.188
+   • Ethical Hacking: 0.188
+   • Software Security: 0.187
+   • Code Optimization: 0.187
+   • Robot Kinematics: 0.187
+   • Cross-Platform Development: 0.187
+   • Task Planning: 0.187
+   • Feature Engineering: 0.186
+   • Robotics Domain Knowledge: 0.185
+   • Algorithm Design: 0.185
+   • Spatial Computing: 0.185
+   • Problem Solving: 0.185
+   • Test Planning: 0.185
+   • Decision Trees: 0.185
+   • Inference Algorithms: 0.185
+   • User Study Design: 0.184
+   • Penn Treebank: 0.184
+   • Model Evaluation (Code Generation): 0.184
+   • Technical Expertise: 0.183
+   • Financial Planning: 0.183
+   • Adobe Photoshop: 0.182
+   • Storyboarding: 0.182
+   • Cross-Lingual Learning: 0.181
+   • Digital Documentation: 0.181
+   • Immersive Learning Design: 0.180
+   • Computational Methods: 0.180
+   • Affective Learning: 0.179
+   • Markov Chains: 0.179
+   • Logical Analysis: 0.179
+   • Electrical Engineering: 0.179
+   • Sequential Algorithms: 0.179
+   • Audio Understanding: 0.178
+   • Neuroscience Of Learning: 0.178
+   • Aerial Robotics: 0.178
+   • Writing Skills: 0.178
+   • Print Finishing: 0.177
+   • Robotic Process Automation (Rpa): 0.177
+   • Information Retrieval: 0.177
+   • Compiler Design: 0.176
+   • Mathematical Modeling: 0.176
+   • Cybersecurity: 0.176
+   • Computer-Aided Protein Design: 0.175
+   • Legal Process Understanding: 0.175
+   • Multi-Environment Robotics: 0.175
+   • Systems Engineering: 0.174
+   • Digital Logic Design: 0.172
+   • Go: 0.171
+   • Code Refinement: 0.171
+   • Linguistic Theory: 0.171
+   • Video Sketching: 0.170
+   • Systems-Level Problem Solving: 0.170
+   • Algorithm Design Principles: 0.170
+   • Symbolic Methods: 0.170
+   • Iterative Project Development: 0.169
+   • Proof Techniques: 0.169
+   • Robot Testing: 0.168
+   • Np-Completeness: 0.168
+   • User Interface: 0.168
+   • Manipulation Algorithms: 0.167
+   • Animation: 0.167
+   • Automated Theorem Proving: 0.167
+   • Low-Resource Language Modeling: 0.166
+   • Program Robustness: 0.166
+   • Parsing: 0.166
+   • Machine Translation: 0.166
+   • Network Science: 0.166
+   • Human Rights Advocacy: 0.165
+   • Random Forests: 0.165
+   • Probability: 0.165
+   • Mathematical Foundations: 0.164
+   • Path Planning: 0.164
+   • Cyber Security: 0.164
+   • Skill Training: 0.164
+   • Digital Workflow: 0.164
+   • Classroom Discourse Participation: 0.163
+   • Grammar Formalisms: 0.163
+   • Advanced Control Algorithms: 0.163
+   • Code Correctness Evaluation: 0.163
+   • Student Engagement: 0.163
+   • Zero-Shot Learning: 0.163
+   • DevOps: 0.163
+   • Robotic Hand Design: 0.162
+   • Probabilistic Modeling: 0.162
+   • Activity Planning: 0.162
+   • Operational Semantics: 0.162
+   • Behavioral Analysis: 0.162
+   • Bidding Algorithms: 0.162
+   • Predictive Modeling: 0.162
+   • Mathematical Maturity: 0.161
+   • Solidworks: 0.160
+   • Iteration (Loops): 0.160
+   • Study Abroad Planning: 0.160
+   • Interface Design: 0.160
+   • Virtual Experimentation: 0.159
+   • Cognitive Science Applications: 0.159
+   • Categorial Grammar: 0.159
+   • Statistical Learning: 0.159
+   • Git: 0.159
+   • Internet Law: 0.159
+   • Divide-And-Conquer Algorithms: 0.159
+   • Trajectory Optimization: 0.159
+   • Multilingual Modeling: 0.159
+   • Game Development Fundamentals: 0.159
+   • Formal Methods: 0.159
+   • Automated Experimental Systems: 0.158
+   • Skill Development Strategy: 0.158
+   • Project-Based Development: 0.158
+   • Data Synthesis: 0.158
+   • Robotics: 0.158
+   • Statistics: 0.157
+   • Understanding Data Processes: 0.157
+   • Numerical Algorithms: 0.157
+   • Research: 0.157
+   • Phonetics: 0.156
+   • Methodologies: 0.156
+   • Data Processing: 0.156
+   • Persuasion: 0.156
+   • Stochastic Behavior Modeling: 0.156
+   • 3D Visualizations: 0.156
+   • Data Representation: 0.156
+   • Robot Cognition: 0.155
+   • Knowledge Assessment Design: 0.155
+   • Geometric Modeling: 0.155
+   • Wheeled Robots: 0.155
+   • Internship Professionalism: 0.155
+   • Learning Facilitation: 0.155
+   • Ecological Thinking: 0.154
+   • Project Tools And Techniques: 0.154
+   • Internship Coordination: 0.154
+   • Robot Navigation: 0.154
+   • Usability Design: 0.154
+   • Discrete Event Simulation: 0.154
+   • Medical Simulation Design: 0.154
+   • Debugging: 0.153
+   • Voting Behavior Analysis: 0.153
+   • Interviewing: 0.153
+   • Spectral Graph Theory: 0.153
+   • Bit Complexity: 0.153
+   • Data-Driven Decision Making: 0.153
+   • Legged Robots: 0.152
+   • Codebase Analysis: 0.152
+   • Ground Robotics: 0.152
+   • Visual Arts Computing: 0.151
+   • Latex: 0.151
+   • Graph Theory: 0.151
+   • Exploit Development: 0.151
+   • Scientific Reading And Analysis: 0.150
+   • 3D Representation Modeling: 0.150
+   • Financial Literacy: 0.150
+   • High-Level Language Constructs: 0.150
+   • Medical Robotics Applications: 0.150
+   • Autocad: 0.150
+   • Reasoning Under Uncertainty: 0.150
+   • Legal Enforcement Knowledge: 0.149
+   • Problem Elicitation: 0.149
+   • Automation Strategy Consulting: 0.149
+   • Knowledge Of Mental Health (Anxiety, Depression): 0.149
+   • Heuristics: 0.149
+   • Intuitionistic Logic: 0.149
+   • Assessment: 0.149
+   • Formative Evaluation: 0.149
+   • Supervised Learning: 0.149
+   • Social Learning: 0.148
+   • Molecular Dynamics Simulations: 0.148
+   • 3D Viewing: 0.148
+   • Legal Analysis: 0.148
+   • Classical Logic: 0.148
+   • Computational Complexity: 0.148
+   • Process Optimization: 0.148
+   • Brainstorming: 0.148
+   • Dynamics Analysis: 0.148
+   • Visual Design Principles (Typography, Color, Composition): 0.147
+   • Creative Experimentation: 0.147
+   • Computer-Aided Drug Design: 0.147
+   • Decidable Classes: 0.147
+   • Cognitive Science: 0.146
+   • Genomics: 0.146
+   • Physical Computing: 0.146
+   • Start-Up Development: 0.146
+   • Recursion: 0.146
+   • Interfaces: 0.146
+   • Statistical Modeling: 0.146
+   • Penetration Testing: 0.145
+   • Motion Analysis: 0.145
+   • Stata: 0.145
+   • Data Reading: 0.144
+   • Multi-Agent Systems: 0.144
+   • User Experience: 0.144
+   • Data Storytelling: 0.143
+   • Analytics: 0.143
+   • Engineering Design Process: 0.143
+   • Mobile App Development: 0.143
+   • Manufacturing Robotics: 0.143
+   • Computational Photography: 0.143
+   • Scheduling: 0.143
+   • Face Recognition: 0.143
+   • Semantics Definition: 0.143
+   • Trees (Data Structures): 0.142
+   • Testing And Validation: 0.142
+   • Student-Led Discussion: 0.142
+   • Robot Control: 0.142
+   • Statistical Testing: 0.142
+   • Infrastructure As Code (Iac): 0.142
+   • Structured Prediction: 0.142
+   • Interview Preparation: 0.142
+   • Graph Representation Learning: 0.142
+   • Adaptive Environment Design: 0.141
+   • Interactive Systems: 0.141
+   • User Behavior Instrumentation: 0.141
+   • Application Of Biological Software Tools: 0.141
+   • Html: 0.140
+   • Distributed Computing: 0.140
+   • Static Analysis: 0.140
+   • Mechatronics: 0.140
+   • Discursive Design Strategies: 0.139
+   • E-Portfolio Documentation (Mycore): 0.139
+   • Networking Technology And Protocols: 0.139
+   • Soft Robotics: 0.139
+   • Online Behavior Analysis: 0.139
+   • Technical Writing: 0.139
+   • Voice Control: 0.139
+   • International Law: 0.139
+   • Arabic Studies: 0.139
+   • Content Authoring Tools: 0.139
+   • Compositional Modeling: 0.138
+   • Operating System Design: 0.138
+   • System Modeling: 0.138
+   • Java: 0.138
+   • Natural Language Processing: 0.138
+   • Internship Navigation: 0.138
+   • Microcontroller Hardware: 0.138
+   • Sociolinguistics: 0.138
+   • Human-Computer Interaction (Hci): 0.138
+   • Virtual Machines: 0.138
+   • Pattern Recognition: 0.138
+   • Actuation: 0.138
+   • Cryptography For Blockchains: 0.138
+   • Conversational Agents: 0.137
+   • Educational Technology (Edtech): 0.137
+   • Morphological And Syntactic Modeling: 0.137
+   • Legal Technology (Legaltech): 0.137
+   • Cad Tools: 0.137
+   • Community Outreach: 0.137
+   • 3D Model Pipeline: 0.137
+   • State Exploration Techniques: 0.137
+   • Cooking And Food Preparation: 0.137
+   • Technical Drawing: 0.137
+   • Prototyping Hci Gadgets: 0.136
+   • Guest Lecture Engagement: 0.136
+   • Play-Testing: 0.136
+   • User Authorization: 0.136
+   • Fault Attacks And Defenses: 0.135
+   • Neural Language Models: 0.135
+   • Control Systems: 0.135
+   • Physics-Based Vision: 0.135
+   • Library Preparation For Sequencing: 0.134
+   • Pragmatics: 0.134
+   • Security Analysis: 0.134
+   • Use Case Development: 0.134
+   • Negotiation: 0.134
+   • Procedural Shape Generation: 0.134
+   • Software Performance Analysis: 0.134
+   • Satisfiability (Sat): 0.134
+   • Human Language Representation: 0.134
+   • Cryptography: 0.133
+   • Occam'S Razor: 0.133
+   • Career-Long Development: 0.133
+   • Construction Grammar: 0.133
+   • Dexterous Manipulation: 0.133
+   • Karnaugh Maps: 0.132
+   • Design Thinking: 0.132
+   • Process Automation Design: 0.132
+   • Product Development: 0.132
+   • Lexical Functional Grammar: 0.132
+   • Connecting Academic Theory To Practice: 0.132
+   • Constructive Logic: 0.131
+   • Participatory Decision-Making: 0.131
+   • Vulnerability Analysis: 0.131
+   • Composition: 0.131
+   • Microsoft Project: 0.131
+   • Copyright Law: 0.131
+   • Sequence-To-Sequence Models: 0.131
+   • 3D Scanning: 0.131
+   • Navigation In Austere Environments: 0.131
+   • Slicing Algorithms: 0.131
+   • Buying Pattern Analysis: 0.131
+   • Perception: 0.131
+   • Psychophysics: 0.130
+   • Interaction Design Materials Exploration: 0.130
+   • Hands-On Lab Execution: 0.130
+   • Polynomials: 0.130
+   • Context-Aware Computing: 0.130
+   • Financial Goal Setting: 0.130
+   • Interrupts: 0.130
+   • Prosody Analysis (Amplitude, Duration, Pitch): 0.130
+   • Data-Driven Algorithms: 0.130
+   • Visual Aesthetics: 0.130
+   • Monte Carlo Methods: 0.130
+   • Technical Feasibility Assessment: 0.130
+   • Cybercrime Law: 0.129
+   • Network Security: 0.129
+   • Genomic Analysis: 0.129
+   • Human Grasp Control Strategies: 0.129
+   • Modularity: 0.129
+   • Requirements Analysis: 0.129
+   • Adaptation Analysis: 0.129
+   • Problem Analysis: 0.128
+   • Advocacy And Persuasion: 0.128
+   • Obstacle Avoidance: 0.128
+   • Search Engine Optimization: 0.128
+   • Deep Learning: 0.128
+   • Game Design: 0.128
+   • Climate Science: 0.128
+   • Timers: 0.128
+   • Data Processing Pipelines: 0.128
+   • Computational Organization Theory: 0.128
+   • Application Of Academic Knowledge To Real-World Problems: 0.128
+   • Agent-Based Modeling: 0.128
+   • Additive Manufacturing: 0.128
+   • Phonology: 0.128
+   • Bayesian Networks: 0.128
+   • Goal And Constraint Definition: 0.127
+   • Data Organization: 0.127
+   • Question Answering (Qa): 0.127
+   • Tableau: 0.127
+   • Media Literacy: 0.127
+   • Initiative: 0.126
+   • Project Design: 0.126
+   • Declarative Specifications: 0.126
+   • Defect Analysis (E.G., Porosity): 0.126
+   • Criminal Justice: 0.126
+   • Player Experience Analysis: 0.125
+   • Reading And Analyzing Academic Papers: 0.125
+   • Support Vector Machines: 0.125
+   • Fitness Training Methodologies: 0.125
+   • Vr Development: 0.125
+   • Infrastructure Development: 0.125
+   • Excel: 0.125
+   • Linguistic Analysis: 0.125
+   • Interface Optimization: 0.124
+   • Tooling Integration: 0.124
+   • Still Life Photography: 0.124
+   • Question Answering: 0.123
+   • Reflection And Self-Assessment: 0.123
+   • Geometric Transformations: 0.123
+   • Software Reliability Analysis: 0.123
+   • Technical Acumen: 0.123
+   • Idea Advancement: 0.123
+   • Memory Usage Analysis: 0.123
+   • Single-View 3D Prediction: 0.123
+   • Dashboards: 0.123
+   • Organizing Complex Information: 0.123
+   • Likelihood Functions: 0.122
+   • Academic-Professional Integration: 0.122
+   • 3D Printing: 0.122
+   • Internship Application: 0.122
+   • Suffix Trees: 0.122
+   • Language Technologies: 0.122
+   • Phylogenetic Tree Reconstruction: 0.122
+   • Evolutionary Tree Construction: 0.122
+   • Evolutionary Algorithms: 0.122
+   • Random-Walk Methods: 0.122
+   • Interaction Design Principles: 0.121
+   • Files (I/O): 0.121
+   • Text Categorization: 0.121
+   • Social Networking Systems: 0.121
+   • Ray Tracing: 0.121
+   • Time Series Analysis: 0.121
+   • Quality Assurance Techniques: 0.121
+   • Geometry: 0.120
+   • Operating Systems History: 0.120
+   • Scenario Analysis: 0.120
+   • Situational And Environmental Analysis: 0.120
+   • Arcgis Pro: 0.120
+   • Human-Environment Interaction: 0.120
+   • Problem Translation To Mathematical Framework: 0.120
+   • Divergent Thinking: 0.120
+   • Community Facilitation: 0.119
+   • Clustering: 0.119
+   • Gis (Geographic Information Systems): 0.119
+   • Image Editing: 0.119
+   • Network Flow Algorithms: 0.119
+   • Logical Error Detection: 0.119
+   • Blockchain: 0.119
+   • Model Building: 0.119
+   • System Specification: 0.119
+   • Interdisciplinary Design: 0.118
+   • Cognition: 0.118
+   • Linguistic Generalization: 0.118
+   • Optimization: 0.118
+   • System Construction From Specification: 0.118
+   • Text Processing: 0.118
+   • Netlogo: 0.118
+   • Process Evaluation: 0.118
+   • Privacy Engineering: 0.118
+   • Modern Hardware Platforms: 0.118
+   • Academic Advisory Coordination: 0.117
+   • Spatial Analysis: 0.117
+   • Computational Imaging: 0.117
+   • Space Mission Engineering: 0.117
+   • Creative Project Development: 0.117
+   • Scholarship Opportunities: 0.117
+   • Legal-Technology Interface Analysis: 0.117
+   • Sustainability Planning: 0.116
+   • Patent Law: 0.116
+   • Run Time Analysis: 0.116
+   • Scientific Literacy: 0.116
+   • Hardware Fabrication: 0.116
+   • Data-Driven Modeling: 0.116
+   • Processor And Computing Platforms History: 0.116
+   • Robotic Manipulation Of Plants: 0.116
+   • Social Sciences: 0.116
+   • Language Universals: 0.116
+   • Classification: 0.116
+   • Scientific Problem Solving: 0.115
+   • International Student Compliance: 0.115
+   • Treatment Planning: 0.115
+   • Feedback Solicitation: 0.115
+   • Realistic Simulations: 0.115
+   • Social Network Analysis: 0.115
+   • Web Services: 0.115
+   • Prototyping: 0.115
+   • Landscape Photography: 0.115
+   • Gender And Political Participation Analysis: 0.115
+   • Technical Reading: 0.115
+   • Information Security: 0.114
+   • Artistic Discussion And Dialogue: 0.114
+   • Critical Analysis Of Medical Science: 0.114
+   • Error Analysis: 0.114
+   • Workflow Optimization: 0.114
+   • Hardware Optimization: 0.114
+   • Argumentative Reasoning: 0.114
+   • Threat Emulation: 0.114
+   • Cross-Disciplinary Problem Solving: 0.114
+   • Networking Within Robotics Community: 0.114
+   • Deployment Of Robotic Systems: 0.113
+   • Close Reading: 0.113
+   • Functionality Verification: 0.113
+   • Traffic Routing Optimization: 0.113
+   • Business Model Design: 0.113
+   • Realizability: 0.113
+   • Complex System Development: 0.113
+   • Academic Writing: 0.113
+   • Information Extraction: 0.112
+   • Production System Assurance: 0.112
+   • Career Networking: 0.112
+   • Naive Bayes: 0.112
+   • Intention Setting: 0.112
+   • Cryptoeconomics: 0.112
+   • Data Visualization: 0.111
+   • Laser Welding: 0.111
+   • Dependency Grammar: 0.111
+   • Project Execution: 0.111
+   • Metal Powder Processing: 0.111
+   • Visual Analysis: 0.111
+   • Real-World Engineering Practices: 0.111
+   • Data Integration: 0.111
+   • Long-Term Planning: 0.111
+   • Darkroom Developing: 0.111
+   • Street Photography: 0.110
+   • Abstract Reasoning: 0.110
+   • Spacecraft Design: 0.110
+   • Temporal Logics: 0.110
+   • Systems Testing: 0.110
+   • Open Source Movements: 0.110
+   • Mechanical Structure Design: 0.110
+   • Immersive Experience Design: 0.110
+   • Cultural Advocacy: 0.110
+   • Signal Processing: 0.110
+   • Communication: 0.110
+   • Evolutionary Dynamics: 0.110
+   • User Personalization: 0.110
+   • Formal Verification: 0.110
+   • Systems Thinking: 0.110
+   • Music Generation: 0.109
+   • Execution Monitoring: 0.109
+   • Scientific Information Evaluation: 0.109
+   • Graph Kernels: 0.108
+   • Milestone Planning: 0.108
+   • Accounting: 0.108
+   • Rigorous Assurance Methods: 0.108
+   • Vehicle Dynamics: 0.108
+   • Data Correlation Analysis: 0.108
+   • Object Recognition: 0.108
+   • Environmental Stewardship: 0.108
+   • Model Interpretability: 0.107
+   • Persuasive Design: 0.107
+   • String Search: 0.107
+   • Space Exploration And Colonization: 0.107
+   • Graph Neural Networks: 0.107
+   • Memory Optimization: 0.107
+   • Tool Selection And Evaluation: 0.107
+   • Image Segmentation: 0.107
+   • Practical Implementation: 0.106
+   • Ethical Reasoning: 0.106
+   • Mechanism Design: 0.106
+   • Illustrator: 0.106
+   • Materials Science: 0.106
+   • Mathematics: 0.106
+   • Studio Photography Techniques: 0.106
+   • Long-Context Modeling: 0.106
+   • Creative Problem Solving: 0.106
+   • Adaptability: 0.106
+   • Computer Architecture Fundamentals: 0.106
+   • Model Implementation: 0.105
+   • Practical Application Design: 0.105
+   • Cyberwarfare Concepts: 0.105
+   • System Design: 0.105
+   • Bug Report Analysis: 0.105
+   • Personalized Medicine: 0.105
+   • Value Proposition Design: 0.105
+   • Genome Assembly: 0.104
+   • Autonomous Systems: 0.104
+   • Story Maps: 0.104
+   • Computer Vision: 0.104
+   • 3D Vision: 0.104
+   • Random Number Generation: 0.104
+   • Arrays: 0.104
+   • Aesthetic Choices: 0.104
+   • Recommendation Systems: 0.104
+   • Resource Organization: 0.104
+   • Curiosity: 0.103
+   • Ethics In Computing: 0.103
+   • Multimodal System Design (Light, Heat, Sound): 0.103
+   • Project Integration: 0.103
+   • Feedback Control: 0.103
+   • Augmented Reality (Ar): 0.103
+   • User-Centered Design: 0.102
+   • Speech Processing: 0.102
+   • Ethical Design: 0.102
+   • Goal Setting: 0.102
+   • Culinary Anthropology: 0.102
+   • Electron Beam Welding: 0.102
+   • Sampling Techniques: 0.102
+   • Iterative Design Process: 0.101
+   • Tactile Sensing: 0.101
+   • Dramatic Writing: 0.101
+   • Log Collection And Analysis: 0.101
+   • Linear Regression: 0.101
+   • Service Learning: 0.101
+   • Advertising Engine Optimization: 0.101
+   • Autonomous Driving: 0.101
+   • Data Analysis: 0.100
+   • Consumer Behavior: 0.100
+   • Focus And Presence: 0.100
+   • Free Speech Law: 0.100
+   • Large Language Models (Llms): 0.100
+   • Institutional History (Carnegie Mellon): 0.100
+   • Speech Synthesis: 0.100
+   • Concurrency: 0.100
+   • Portability In Software Design: 0.100
+   • Deployment Automation: 0.100
+   • Project Management: 0.099
+   • Sequence Alignment: 0.099
+   • Head Driven Phrase Structure Grammar: 0.099
+   • Sound Implementation: 0.099
+   • Decision-Making Optimization: 0.099
+   • Data Deconstruction: 0.099
+   • Causal Inference: 0.098
+   • Speech Perception Modeling: 0.098
+   • Smart Contracts: 0.098
+   • Mathematical Transforms: 0.098
+   • Molecular Biology: 0.098
+   • Software Quality Definition And Analysis: 0.098
+   • Self-Driving Systems: 0.098
+   • Collaborative Writing: 0.098
+   • Academic Discussion: 0.098
+   • Proposal Writing: 0.098
+   • Productivity Tools: 0.097
+   • Hardware Verification: 0.097
+   • E-Portfolio System: 0.097
+   • Remote Collaboration Tools: 0.097
+   • Safety Analysis: 0.097
+   • Critical Scholarship Application: 0.097
+   • Genome Comparison: 0.097
+   • Localization: 0.097
+   • Photographic Meaning Construction: 0.097
+   • Complex System Analysis: 0.097
+   • Polymer And Metal Am Technologies: 0.097
+   • Privacy Protection Technologies: 0.097
+   • Social Dynamics: 0.096
+   • Real-Time Adaptation: 0.096
+   • Consulting: 0.096
+   • Indesign: 0.096
+   • Neural Systems Analysis: 0.096
+   • Writing Workshops (Art Criticism): 0.096
+   • Ethics: 0.096
+   • Image Processing: 0.096
+   • Implementation: 0.096
+   • Model Operationalization: 0.096
+   • Visual Arts Principles: 0.096
+   • Aerospace Engineering: 0.096
+   • Project Evaluation: 0.095
+   • Bioacoustics: 0.095
+   • Reconnaissance: 0.095
+   • Formal Systems Understanding: 0.095
+   • Artificial Intelligence: 0.095
+   • Algorithmic Bias Analysis: 0.095
+   • Legal Rights Identification: 0.095
+   • Flight Operations Planning: 0.095
+   • Task Definition: 0.095
+   • Sequence Reconstruction: 0.095
+   • Design Verification: 0.095
+   • Everyday Sound Analysis: 0.095
+   • Decision Modeling Under Uncertainty: 0.094
+   • Disease Risk Prediction: 0.094
+   • Photographic Lighting Techniques: 0.094
+   • Continuous Audio Representations: 0.094
+   • Academic Administration: 0.094
+   • Policy Analysis: 0.094
+   • System Dynamics: 0.094
+   • Shading: 0.094
+   • Quantitative Biology: 0.094
+   • Risk Management: 0.094
+   • System Integration: 0.094
+   • Job Search Techniques: 0.094
+   • Rotorcraft (E.G., Quadcopters): 0.094
+   • Cognitive Study Of Haptic System: 0.093
+   • Discrete Audio Tokens: 0.093
+   • Dynamic Analysis: 0.093
+   • Data Interpretation: 0.093
+   • Strategy Implementation: 0.093
+   • Gender Representation: 0.093
+   • Critical Thinking: 0.093
+   • Scalable Robotic Systems: 0.093
+   • Continuous Awareness And Training: 0.093
+   • Information Filtering Evaluation: 0.093
+   • Air Pollution Analysis: 0.093
+   • Police Brutality: 0.092
+   • Environmental Justice: 0.092
+   • Process Identification For Automation: 0.092
+   • Portfolio Development: 0.092
+   • Debugging And Fault Fixing: 0.092
+   • Artistic Documentation: 0.092
+   • Numeric Methods: 0.092
+   • Humanities: 0.091
+   • Debating Disciplinary Perspectives: 0.091
+   • Data-Dependent Cpu/Gpu Optimization Analysis: 0.091
+   • Intersectional Analysis (Race, Gender, Sexual Orientation): 0.091
+   • Population Biology: 0.091
+   • Sense-Plan-Act Framework: 0.091
+   • Graphics: 0.091
+   • Grasshopper: 0.091
+   • Developmental Psychology Of Expression: 0.091
+   • Burrows-Wheeler Transform: 0.091
+   • Speech Technologies: 0.090
+   • Project Proposal Development: 0.090
+   • Tf/Idf: 0.090
+   • Applied Mathematics: 0.090
+   • Class Participation: 0.090
+   • Human Hand Anatomy And Function: 0.090
+   • Portraiture Photography: 0.090
+   • Operating System Comparison: 0.090
+   • Large-Scale Search Algorithms: 0.090
+   • Naming Systems: 0.090
+   • Academic Freedom Policies: 0.090
+   • Marketing: 0.090
+   • Psychology: 0.090
+   • Result Analysis: 0.090
+   • Networking: 0.090
+   • Transcript Assembly: 0.089
+   • Trademark Law: 0.089
+   • Staffing: 0.089
+   • Middle Eastern History: 0.089
+   • Mentorship Engagement: 0.089
+   • Structured Discussion: 0.089
+   • Socioeconomic Factors Analysis: 0.089
+   • Algorithmic Fairness: 0.089
+   • Photographic Equipment Usage: 0.089
+   • Network Optimization: 0.089
+   • Creativity: 0.089
+   • Monitoring And Logging: 0.089
+   • Audio Processing: 0.089
+   • CI/CD: 0.088
+   • Virtual Reality (Vr) Development: 0.088
+   • Nutrition And Exercise Science: 0.088
+   • Biology: 0.088
+   • Risk-Based Decision Making: 0.088
+   • Responsibility And Ethics: 0.088
+   • Project Design And Innovation: 0.088
+   • Algorithmic Privacy Reasoning: 0.088
+   • Stochastic Processes: 0.088
+   • Analytical Thinking: 0.088
+   • Systems Biology: 0.088
+   • Paper Analysis: 0.088
+   • Strategic Planning: 0.088
+   • Model Evaluation: 0.088
+   • Wet Lab Techniques: 0.088
+   • Feedback Integration: 0.088
+   • Space Science: 0.088
+   • Contextual Interpretation Of Social, Cultural, And Historical Factors: 0.087
+   • Lab Safety: 0.087
+   • Sustainable Science: 0.087
+   • Financial Viability Analysis: 0.087
+   • Performance Evaluation And Optimization: 0.087
+   • Theater Production: 0.087
+   • Theoretical Analysis: 0.087
+   • System Evaluation: 0.087
+   • Material Innovation: 0.087
+   • Semi-Structured Interview Design: 0.087
+   • Topological Descriptors: 0.086
+   • Scalability: 0.086
+   • Health Decision-Making: 0.086
+   • Argument Defense: 0.086
+   • Historical Analysis: 0.085
+   • Local Community Development: 0.085
+   • Continuous Integration: 0.085
+   • Health Science: 0.085
+   • Economic Inequality Analysis: 0.085
+   • JavaScript: 0.085
+   • Sequential Decision-Making: 0.085
+   • Environmental Adaptation: 0.085
+   • Cultural Competency: 0.085
+   • Auditing And Verification Processes: 0.084
+   • Historical Context Analysis: 0.084
+   • Brain Science: 0.084
+   • Actuator Integration: 0.084
+   • Self-Discipline: 0.084
+   • Prototype Development: 0.084
+   • Supply Chain Analysis: 0.084
+   • Unstructured Environments: 0.084
+   • Film And Media Analysis: 0.084
+   • Multi-Screen Interface Design: 0.084
+   • Edtech: 0.084
+   • Collaboration Tools Design: 0.083
+   • Map Building: 0.083
+   • Current Events Analysis: 0.083
+   • Data Structures: 0.083
+   • Interactive Art: 0.083
+   • Mesh Manipulation: 0.082
+   • Tree Adjoining Grammar: 0.082
+   • Searchable Compressed Indices: 0.082
+   • Agile: 0.082
+   • Sustainable Humanities: 0.082
+   • Primary Source Analysis: 0.082
+   • Political Analysis: 0.082
+   • Resume Writing: 0.082
+   • Risk Assessment: 0.081
+   • Large-Scale Training: 0.081
+   • Photography Exposure: 0.081
+   • Domestic Terrorism: 0.081
+   • Prototype Iteration: 0.081
+   • Case Study Analysis: 0.081
+   • Healthcare: 0.081
+   • String Compression: 0.080
+   • Material Knowledge (Molten Glass): 0.080
+   • High-Dimensional Data Processing: 0.080
+   • Evidence Synthesis: 0.080
+   • Additive Manufacturing Market Analysis: 0.080
+   • Proteins: 0.080
+   • Sentiment Analysis: 0.080
+   • Conflict Analysis: 0.079
+   • Political Dialogue And Debate: 0.079
+   • Market Analysis: 0.079
+   • Prefetching: 0.079
+   • Morphosyntax: 0.079
+   • Political Science: 0.079
+   • Emotional Awareness: 0.079
+   • Map-Based Algorithms: 0.079
+   • Empirical Analysis: 0.079
+   • Scientific Inquiry: 0.078
+   • Biological Data Interpretation: 0.078
+   • Philosophy Of Information: 0.078
+   • Manufacturing Process Capabilities: 0.078
+   • Data Tracing And Provenance: 0.078
+   • Legal Protection Strategies: 0.078
+   • Dynamic Compilation: 0.078
+   • Shadow Pricing: 0.078
+   • Safety Procedures (Hot Shop): 0.078
+   • Internal Capabilities Assessment: 0.077
+   • Visibility Algorithms: 0.077
+   • Cps (Cyber-Physical Systems): 0.077
+   • Industrial Application Development: 0.076
+   • Model Performance Analysis: 0.076
+   • Workflow Enhancement: 0.076
+   • Narrative Analysis: 0.076
+   • Digital Process Transformation: 0.076
+   • Decentralized Systems: 0.076
+   • Gender Studies: 0.076
+   • Problem Formulation: 0.076
+   • Assignment Customization: 0.076
+   • Health Outcomes Assessment: 0.076
+   • Coalition Building: 0.076
+   • Gene Expression Quantification: 0.076
+   • Self-Identity Development: 0.076
+   • Media Production: 0.076
+   • Incentive Design: 0.076
+   • Photographic Objects: 0.075
+   • Consortium Science: 0.075
+   • Independent Practice: 0.075
+   • Analog I/O: 0.075
+   • Human-Machine Interface (Hmi) Design: 0.075
+   • Bioimage Analysis: 0.075
+   • Copyrights In A Networked World: 0.075
+   • Dataset Curation: 0.074
+   • Sequencing: 0.074
+   • Language Comparison: 0.074
+   • Laser Cutting: 0.074
+   • Haptic System Design: 0.074
+   • Mobile And Pervasive Computing: 0.074
+   • Environmental Sensing And Feedback Systems: 0.073
+   • Analytical Reasoning: 0.073
+   • Critical Analysis: 0.073
+   • Drug-Target Interaction Analysis: 0.073
+   • Microeconomics: 0.073
+   • Academic Proposal And Approval Process: 0.073
+   • Leadership: 0.073
+   • Independent Project Design: 0.073
+   • Ethnographic Understanding: 0.073
+   • Market Needs Analysis: 0.073
+   • Constitutional Law: 0.073
+   • Physics: 0.073
+   • Medical Image Registration: 0.072
+   • Social Interaction: 0.072
+   • Legal And Regulatory Privacy Frameworks: 0.072
+   • Natural Selection Theory: 0.072
+   • Teamwork: 0.072
+   • Smart Environment Systems: 0.072
+   • Historical Analysis Of Slavery And Colonialism: 0.072
+   • Class Discussion And Debate: 0.071
+   • Photography: 0.071
+   • Rhetorical Criticism: 0.071
+   • Polling And Prediction Interpretation: 0.070
+   • Contemplative Practice: 0.070
+   • Sports And Society: 0.070
+   • Compliance Monitoring: 0.070
+   • Movement And Gesture Detection: 0.070
+   • Image Formation And Representation: 0.070
+   • Competition Preparation: 0.070
+   • Capstone Project Design: 0.069
+   • Seminar Discussion: 0.069
+   • Hybrid Analog-Digital Design: 0.069
+   • Discourse Analysis: 0.069
+   • Data Utilization: 0.069
+   • Inductive Definitions: 0.069
+   • Conceptual Synthesis: 0.069
+   • Cost Of Quality Analysis: 0.069
+   • Empathy: 0.069
+   • Community-Based Interventions: 0.069
+   • Silicone Rubber Fabrication: 0.069
+   • Human Capital Strategy: 0.069
+   • Human Rights Awareness: 0.069
+   • Materiality In Photography: 0.068
+   • Embedded Systems: 0.068
+   • Prototyping Smart Devices: 0.068
+   • Intellectual Property Law: 0.068
+   • Control Theory: 0.068
+   • Medicine: 0.068
+   • Trustworthiness Development: 0.068
+   • Prototyping With Found Objects: 0.068
+   • Distributed Systems: 0.067
+   • Image Tracking: 0.067
+   • Interdisciplinary Analysis: 0.067
+   • Community Goals Analysis: 0.067
+   • Critical Path Method: 0.067
+   • Cost-Benefit Analysis: 0.067
+   • Presentation: 0.067
+   • Genetics: 0.067
+   • Type Systems: 0.066
+   • Experimental Design: 0.066
+   • Creativity In Technical Design: 0.066
+   • Generative Media: 0.066
+   • Science: 0.066
+   • Camera Calibration: 0.066
+   • Reflective Writing: 0.066
+   • Data Transformation: 0.065
+   • Argumentation And Persuasion: 0.065
+   • Asset Editors: 0.065
+   • Historical Analysis Of Free Speech: 0.065
+   • Decolonial Scholarship: 0.065
+   • History Of Science: 0.065
+   • Image Detection: 0.065
+   • Two-Dimensional Representation: 0.065
+   • Real-Time Systems: 0.064
+   • Philosophical Inquiry: 0.064
+   • Dependability: 0.064
+   • Decomposing Problems Into Subtasks: 0.064
+   • Synthesis Of Complex Material: 0.064
+   • Business Strategy: 0.064
+   • Electoral Systems Analysis: 0.064
+   • Poverty Reduction Strategies: 0.064
+   • Analysis Of Epidemiological Data (E.G., Covid-19): 0.064
+   • Trade Secret Law: 0.063
+   • Privacy Principles: 0.063
+   • Psychological Health Assessment: 0.063
+   • Auction Theory: 0.063
+   • Global Perspective: 0.063
+   • Software Architecture Styles: 0.063
+   • Quality Control (Molecular Biology): 0.063
+   • Press And Politics Interplay: 0.063
+   • Big Data: 0.063
+   • Organizational Design And Change: 0.062
+   • Digital Camera Operation: 0.062
+   • 3D Reconstruction: 0.062
+   • Signal Processing (For Touch Sensors): 0.062
+   • Jee Architecture: 0.062
+   • Scientific Method: 0.062
+   • Cloud Integration: 0.062
+   • Sensor Fusion: 0.062
+   • Photogrammetry: 0.062
+   • Hands-On Demonstration: 0.062
+   • Spectrographic Analysis: 0.061
+   • Ambient Intelligence: 0.061
+   • Philosophical Analysis: 0.061
+   • Strategic Quote Crafting: 0.061
+   • Workspace Customization: 0.061
+   • Document Design For Readability: 0.061
+   • Hash-Based Techniques: 0.061
+   • Discrimination Analysis: 0.061
+   • Genetic Variability Analysis: 0.061
+   • Hardware-Software Co-Design: 0.061
+   • Community Building: 0.061
+   • Collaborative Discussion: 0.060
+   • Patents: 0.060
+   • Collaboration With Educators: 0.060
+   • Design Observation And Analysis: 0.060
+   • Implicit Attitude Measurement: 0.059
+   • Suffix Arrays: 0.059
+   • Surgical Navigation: 0.059
+   • Racing Strategies: 0.059
+   • Differentiable Rendering: 0.059
+   • Photographic Installations: 0.059
+   • Neuroscience: 0.059
+   • Constructive Dialogue: 0.059
+   • Glassblowing: 0.059
+   • Interactive Media Design: 0.059
+   • Application Domain Knowledge: 0.059
+   • Product Solution Design: 0.059
+   • Commercialization Of Genetic Data: 0.059
+   • Design Alternatives Generation And Evaluation: 0.058
+   • Faa Certification Processes: 0.058
+   • Use Graphical Methods To Analyze Statistical Bias: 0.058
+   • Anatomy: 0.058
+   • Database Management: 0.058
+   • Text Analysis: 0.058
+   • Ethical Decision-Making: 0.057
+   • Competitiveness Strategy: 0.057
+   • Clear And Concise Phrasing: 0.057
+   • Digital Art Application: 0.057
+   • Tool Use (Glassblowing Tools): 0.056
+   • Rendering: 0.056
+   • Visionary Thinking: 0.056
+   • Nist Standards: 0.056
+   • Acoustic Signal Analysis: 0.056
+   • Human Anatomy: 0.056
+   • Campus Resource Navigation: 0.056
+   • Collaborative Design: 0.056
+   • Visual Critique: 0.056
+   • Thesis Development: 0.056
+   • Operational Reliability Engineering: 0.056
+   • Entrepreneurship: 0.055
+   • Transportation: 0.055
+   • Human Factors In Technology: 0.055
+   • Strategy Impact Prediction: 0.055
+   • Incident Response: 0.055
+   • Music Technology: 0.055
+   • Israeli And Palestinian Cultural Studies: 0.055
+   • Power And Authority: 0.055
+   • FinTech: 0.054
+   • Climate Change Impact Assessment: 0.054
+   • Attendance And Punctuality: 0.054
+   • Mockup Design: 0.054
+   • Coarticulation Analysis: 0.054
+   • Decision Making: 0.054
+   • Formal Notations For Architecture: 0.054
+   • Sensor Technology: 0.054
+   • Philosophy (Ethics): 0.054
+   • Trans-Border Crime: 0.053
+   • Astrobiology: 0.053
+   • Deliverable Creation: 0.053
+   • Parameter Tuning: 0.053
+   • Senior Honors Thesis Preparation: 0.053
+   • Depth-Map Texture Modeling: 0.053
+   • Digitization Of Historical Data: 0.053
+   • A/B Testing: 0.053
+   • Digital Imaging: 0.052
+   • Transformational Game Design: 0.052
+   • Preparing Talks: 0.052
+   • Chemistry: 0.052
+   • Peace Studies: 0.052
+   • Volunteer Coordination: 0.052
+   • Trusted Execution Environments (Tee): 0.052
+   • Dental Procedures: 0.052
+   • Professional Work Ethic: 0.052
+   • Refugee And Migration Studies: 0.052
+   • Project Decision-Making: 0.052
+   • Psycholinguistics: 0.052
+   • Design Theory: 0.052
+   • Carbon-Aware Computing: 0.052
+   • Social Popularity Analysis: 0.052
+   • Critical Infrastructure Protection: 0.052
+   • Diffusion Models: 0.051
+   • Community History Analysis: 0.051
+   • Customer Discovery: 0.051
+   • Applied Ethics: 0.051
+   • Group Dynamics: 0.050
+   • Product Branding: 0.050
+   • Architectural Design: 0.050
+   • Israel-Palestine Conflict: 0.050
+   • Data Collection: 0.050
+   • Selection (Conditionals): 0.050
+   • Dialog Systems: 0.050
+   • Confidence Building: 0.049
+   • Research Methods: 0.049
+   • Generative Capacity Analysis: 0.049
+   • Cryptocurrency: 0.049
+   • Sensing And Actuation Systems: 0.049
+   • Network Analysis: 0.049
+   • Deep Generative Models For Graphs: 0.048
+   • Natural Lighting Application: 0.048
+   • Local History (Pittsburgh): 0.048
+   • Self-Reflection: 0.048
+   • Human Disease Diagnosis: 0.048
+   • Analytical Reading: 0.047
+   • Finance: 0.047
+   • Node Embeddings: 0.047
+   • Astronomy: 0.047
+   • Intellectual Property In Cyberspace: 0.047
+   • Efficient Data Query: 0.047
+   • Experimental Photography Methods: 0.046
+   • Data Preprocessing: 0.046
+   • Jewish Studies: 0.046
+   • Social Justice: 0.046
+   • Hardware Integration: 0.046
+   • Operationalization Of Ideas: 0.046
+   • Attendance And Participation: 0.046
+   • Personal Wellness Assessment: 0.045
+   • 3D Crop Mapping And Modeling: 0.045
+   • Image Sequencing: 0.045
+   • Project Oversight: 0.045
+   • Social Change Advocacy: 0.045
+   • Health Systems Comparison: 0.045
+   • Haptics: 0.045
+   • Technology Regulation: 0.045
+   • Legal Frameworks For Data: 0.044
+   • Human Evolution And Migration: 0.044
+   • Manufacturing Systems: 0.044
+   • System Monitoring: 0.044
+   • Data Replication: 0.044
+   • Management: 0.044
+   • Energy Efficiency Analysis: 0.044
+   • Exhibit Design: 0.043
+   • Community Health: 0.043
+   • Pcr Design And Execution: 0.043
+   • Legal Compliance: 0.043
+   • Analytical Writing: 0.043
+   • Problem Identification: 0.042
+   • Problem Detection In Production: 0.042
+   • Legacy System Integration: 0.042
+   • Argumentation And Debate On Health Topics: 0.042
+   • Art Appreciation: 0.042
+   • System Validation: 0.042
+   • Lgbtq History: 0.042
+   • Business Acumen: 0.041
+   • Tone Control In Writing: 0.041
+   • Narrative Deconstruction: 0.041
+   • Critical Analysis Of Environmental Narratives: 0.041
+   • Tracking Systems: 0.041
+   • Asking High-Value Questions: 0.041
+   • Raw File Handling: 0.041
+   • Authentic Self-Expression: 0.041
+   • Economic Analysis: 0.041
+   • Genomic Data Ethics: 0.041
+   • Human Dignity Studies: 0.041
+   • Academic Thesis Writing: 0.040
+   • Biological Constraints: 0.040
+   • Legal Impact Of Technology: 0.040
+   • Design Artifact Creation: 0.040
+   • Pricing Strategy: 0.040
+   • Benchmark Datasets: 0.040
+   • Sociology: 0.039
+   • Government: 0.039
+   • Work Breakdown Structures: 0.039
+   • Wellness Wheel Model: 0.039
+   • Active Listening: 0.039
+   • Scientific Theory In Art: 0.039
+   • Genetic Ancestry Analysis: 0.039
+   • Cover Letter Writing: 0.039
+   • Critical Reading: 0.038
+   • Reportage Photography: 0.038
+   • Walking As Meditative Practice: 0.038
+   • Racial And Gender Equity Analysis: 0.038
+   • Morphology: 0.038
+   • Caching: 0.038
+   • Science Fiction As Cultural Analysis: 0.038
+   • Evaluation: 0.038
+   • Domain Adaptation: 0.037
+   • Whole-Genome Alignment: 0.037
+   • Performance Assessment: 0.037
+   • Neurophysiology: 0.037
+   • Result Interpretation For Decision-Making: 0.037
+   • Economic Principles: 0.037
+   • Multi-Perspective Analysis: 0.037
+   • Dual-Use Technology Applications: 0.036
+   • Economics: 0.036
+   • Asset-Based Framing: 0.036
+   • Political Processes: 0.036
+   • Projection Mapping: 0.036
+   • Model Validation: 0.036
+   • Signal Categorization: 0.036
+   • Social Rate Of Discount: 0.036
+   • Conservation Genomics: 0.036
+   • Censorship And Free Expression Law: 0.036
+   • Art History: 0.036
+   • Implementation Validation: 0.035
+   • Data Ethics: 0.035
+   • Savings Strategy: 0.035
+   • Palestinian Culinary Traditions And Gendered Food Practices: 0.035
+   • Collaborative Project Work: 0.035
+   • Visual Culture Studies: 0.035
+   • Journaling (Reflective Practice): 0.035
+   • Cultural Analysis: 0.035
+   • Health Technology: 0.035
+   • Damage Containment: 0.035
+   • Stock Market Interpretation: 0.034
+   • Non-Destructive Testing / Inspection: 0.034
+   • Sensor-Based System Design: 0.034
+   • Welfare State Models: 0.034
+   • Report Writing: 0.033
+   • Reparative Justice Frameworks: 0.033
+   • Estimation: 0.033
+   • Read Mapping: 0.033
+   • Customer Demand Forecasting: 0.033
+   • Openness To New Ideas: 0.032
+   • Media And Art Analysis: 0.032
+   • Maker Movement: 0.032
+   • Conference Networking: 0.032
+   • Advocacy For Democratic Participation: 0.031
+   • Assess Causal Assumptions: 0.031
+   • Resource Identification: 0.031
+   • Social Good Applications: 0.031
+   • Feature Prioritization: 0.031
+   • Equity And Inclusion Analysis: 0.031
+   • Process Improvement: 0.031
+   • Large Dataset Processing: 0.031
+   • Cultural Studies: 0.031
+   • Multi-View Stereo: 0.030
+   • Constructive Feedback: 0.030
+   • Automated Cell Image Analysis: 0.030
+   • Mission-Driven Entrepreneurship: 0.030
+   • Innovation: 0.030
+   • Systematic Design Methodology: 0.030
+   • Object Detection Using Video Cameras: 0.030
+   • Remote Work: 0.030
+   • Cultural Discourse Analysis: 0.029
+   • Econometrics: 0.029
+   • Psychology Of Mood And Productivity: 0.029
+   • Behavioral Advertising Tracking: 0.029
+   • Budgeting: 0.029
+   • Design Critique Facilitation: 0.029
+   • Performance Theory: 0.029
+   • Reporting: 0.029
+   • Numerical Perturbation Schemes: 0.029
+   • Literary Analysis Of Arab And Jewish Voices: 0.029
+   • Industry Standards: 0.028
+   • Science And Society: 0.028
+   • Audience Analysis: 0.028
+   • Technology Business Value Analysis: 0.028
+   • Social Identity Theory: 0.028
+   • Ethical Reasoning In Health Contexts: 0.028
+   • Startup Fundraising: 0.028
+   • Scientific Innovation: 0.028
+   • Product Management: 0.028
+   • Oral History Interpretation: 0.028
+   • Health Disparities Analysis: 0.027
+   • Governance Models: 0.027
+   • Entrepreneurial Mindset: 0.027
+   • Political Sovereignty Movements: 0.027
+   • Climate Change Mitigation Strategies: 0.027
+   • Multisensory Experience Design: 0.026
+   • Privacy Systems Evaluation: 0.026
+   • Faculty Advisor Collaboration: 0.026
+   • Interpret Empirical Results: 0.026
+   • Social Inequality: 0.026
+   • Surgical Procedures: 0.026
+   • Uncertainty In Manipulation: 0.025
+   • Information Diffusion: 0.025
+   • Occupational Health: 0.025
+   • Exporters (Game Assets): 0.025
+   • Conflict Of Interest Analysis: 0.025
+   • Locking: 0.025
+   • Team Formation: 0.025
+   • Observation: 0.025
+   • Behavioral Advertising Mitigation: 0.025
+   • Inspiring Others: 0.024
+   • Public Speaking: 0.024
+   • Product Strategy: 0.024
+   • Tradeoff Analysis: 0.024
+   • Architecture Generation And Selection: 0.023
+   • Vision-Mission-Objective Alignment: 0.023
+   • Critical Reflection: 0.023
+   • Empathetic Engagement: 0.023
+   • Fine Art Photography: 0.023
+   • Digital Economy: 0.023
+   • Vision Setting: 0.022
+   • Distributed Consensus: 0.022
+   • Focus And Concentration: 0.022
+   • Industrial Design Principles: 0.021
+   • Debate: 0.021
+   • Spatial Design: 0.020
+   • Intellectual Health: 0.020
+   • Art And Architecture Theory: 0.020
+   • Numerical Approximation: 0.020
+   • Integrity: 0.020
+   • Patent Design Around: 0.020
+   • Reproductive Justice: 0.020
+   • Resource Utilization: 0.020
+   • Architecture Tools Usage: 0.020
+   • Population Health: 0.019
+   • Resilient System Design: 0.019
+   • Ethical Considerations In Science: 0.019
+   • Historical Interpretation: 0.019
+   • Academic Collaboration: 0.018
+   • Model Deployment: 0.018
+   • Process-Structure-Property Optimization: 0.018
+   • Human Disease Treatment: 0.018
+   • Bias Detection And Mitigation: 0.017
+   • Sephardi, Ashkenazi, And Mizrahi Jewish Culinary History: 0.017
+   • Garbage Collection: 0.017
+   • Political Theory: 0.017
+   • Latent Dirichlet Allocation (Lda): 0.017
+   • Contemporary Theater: 0.017
+   • Critical Review: 0.017
+   • Quality Metrics Analysis: 0.017
+   • Community Engagement: 0.016
+   • Psychology Of Identity: 0.016
+   • Regulatory Impact Analysis: 0.016
+   • Social Media Marketing: 0.016
+   • Philosophical Foundations Of Privacy: 0.016
+   • Data Privacy: 0.016
+   • Drone Privacy Concerns: 0.015
+   • Contextual Dilemma Resolution: 0.015
+   • Literature Review: 0.015
+   • Pitching: 0.015
+   • Cultural Awareness: 0.015
+   • Writing For Publication: 0.015
+   • Environmental Health: 0.015
+   • Progress Tracking: 0.015
+   • Politics Of Food: 0.015
+   • Organizational Effectiveness: 0.015
+   • Inductive Bias: 0.014
+127.0.0.1 - - [24/Nov/2025 23:10:53] "POST /chat HTTP/1.1" 200 -
+   • Phenotyping: 0.014
+   • Planetary Perspective: 0.014
+   • Field Validation: 0.014
+   • Slide Crafting: 0.013
+   • Artistic Expression: 0.013
+   • Cloud Architecture: 0.013
+   • Customer Validation: 0.012
+   • Customer Feedback Analysis: 0.012
+   • Life Cycle Carbon Assessment (Lca): 0.012
+   • Precarious Masculinity: 0.012
+   • Biomarker Discovery: 0.012
+   • Non-Profit Operations: 0.012
+   • Collaboration With Experts: 0.011
+   • Tonal Values: 0.011
+   • Social Well-Being: 0.011
+   • Transient Execution Attacks: 0.011
+   • Tracking Progress Using Milestones: 0.011
+   • Signal Characterization: 0.010
+   • Neuroanatomy: 0.010
+   • Discussion Facilitation: 0.009
+   • Collaboration: 0.009
+   • Emotional Health: 0.008
+   • Inexact Matching: 0.008
+   • Ethical Service: 0.008
+   • Model Serving: 0.008
+   • Preventative Health Behaviors: 0.008
+   • Team Management: 0.007
+   • Intersectionality: 0.007
+   • Physical Health: 0.007
+   • Customer Problem Definition: 0.006
+   • User Engagement: 0.006
+   • Incomplete Markets: 0.006
+   • Democratic Integrity: 0.006
+   • Cultural Humility: 0.006
+   • Fieldwork Adaptability: 0.006
+   • Public Trust In Science: 0.005
+   • Wealth Creation Systems: 0.005
+   • Building Client Relationships: 0.005
+   • Workforce Transformation: 0.005
+   • Public Policy: 0.005
+   • Navigating Political Diversity: 0.005
+   • Attention To Detail: 0.004
+   • Accountability: 0.004
+   • Object State Manipulation: 0.004
+   • Labor Market Discrimination: 0.004
+   • Embedded Sensing: 0.004
+   • Facilitation Of Difficult Conversations: 0.003
+   • Fragmentation Reduction: 0.003
+   • Asset Pipelines: 0.002
+   • Smart Buildings And Homes: 0.002
+   • Agricultural Systems: 0.002
+   • Strategic Evaluation: 0.002
+   • Race And Identity Studies: 0.002
+   • Food Studies: 0.002
+   • Echo Chambers And Polarization: 0.002
+   • Youth Narrative And Ya Literature: 0.002
+   • Technology Impact Assessment: 0.002
+   • Military Culture: 0.002
+   • Information Bias: 0.001
+   • Ego Strength In Team Settings: 0.001
+   • Power Side-Channel Analysis: 0.001
+   • American Political Culture: 0.001
+   • Heterogeneous Compute Offloading: 0.001
+   • Kinetic Sculpture: 0.001
+   • Energy Systems: 0.000
+   • Project-Based Delivery Systems: 0.000
+   • Resilience And Adaptability: 0.000
+   • Stakeholder Engagement: -0.000
+   • Independent Work: -0.001
+   • New Media Art Practices: -0.001
+   • Identity And Belonging: -0.001
+   • Literary Analysis: -0.001
+   • Scale Reduction: -0.001
+   • Iot Systems: -0.001
+   • Nucleic Acid Extraction: -0.002
+   • Surveillance Ethics: -0.002
+   • Lean Innovation: -0.002
+   • Contemporary Photography Trends: -0.003
+   • Electoral Mapping: -0.003
+   • Conceptual Art Practices: -0.004
+   • Archival Analysis: -0.004
+   • Social Influence: -0.005
+   • Efficient Data Storage: -0.005
+   • Global Cultural Engagement: -0.005
+   • Science In Popular Media: -0.006
+   • Client-Facing Projects: -0.006
+   • Foodways Studies: -0.006
+   • Handling Variable-Sized Data: -0.006
+   • Historical Context Of Race: -0.006
+   • Genetic Drift: -0.006
+   • Ethical Impact Of Technology: -0.007
+   • Environmental Issues In Science: -0.008
+   • Design Evaluation: -0.008
+   • Strategic Messaging: -0.008
+   • Organizational Impact Analysis: -0.009
+   • Brightfield Microscopy: -0.009
+   • Colonialism And Artifact Repatriation: -0.009
+   • Mobile App Review Analysis: -0.010
+   • Minimum Viable Product (Mvp) Development: -0.010
+   • Sensor Integration: -0.010
+   • Health Promotion Strategy: -0.010
+   • Product Requirements Gathering: -0.011
+   • Critical Analysis Of Medical And Literary Narratives: -0.012
+   • Stereotypes And In-Group/Out-Group Dynamics: -0.013
+   • Liberal Arts Contextualization: -0.013
+   • Spiritual Health: -0.013
+   • High-Throughput Screening: -0.013
+   • Systemic Racism: -0.014
+   • Imaging Systems: -0.015
+   • Organizational Information Flow: -0.015
+   • American Exceptionalism: -0.015
+   • Circuit Design With 7400-Series Chips: -0.015
+   • Audience Adaptation: -0.016
+   • Historical Preservation: -0.016
+   • Academic-Industry Alignment: -0.016
+   • Disease Mapping: -0.017
+   • Group Critique And Feedback: -0.017
+   • Poverty As A Social, Political, And Historical Phenomenon: -0.018
+   • Investor Engagement: -0.018
+   • Technology-Driven Innovation: -0.019
+   • Public Health: -0.019
+   • Runtime Architecture: -0.019
+   • Historical Context Of Health: -0.019
+   • Cyber-Physical Systems: -0.019
+   • Distributed Ledgers: -0.020
+   • Elevator Pitch: -0.021
+   • Organizational Alignment: -0.021
+   • Power Dynamics In Technology: -0.021
+   • Large-Scale Serving Systems: -0.022
+   • Microstructure-Property Relationships: -0.023
+   • Fluorescent Microscopy: -0.023
+   • Diversity, Equity, And Inclusion (Dei): -0.023
+   • Audience Targeting: -0.024
+   • Feedback Delivery: -0.024
+   • Neighborhood Segregation: -0.024
+   • Digital Innovation: -0.025
+   • Surgery: -0.025
+   • Satellite Systems: -0.025
+   • Business Impact Assessment: -0.025
+   • Neural Architectures: -0.026
+   • Trans Issues: -0.027
+   • Global Political Impact: -0.027
+   • Technology Adoption: -0.027
+   • Problem Reframing: -0.028
+   • Values Alignment: -0.028
+   • Regional Development: -0.029
+   • Faculty Collaboration: -0.030
+   • Industrial Manufacturing Trends: -0.031
+   • Phenotypic Trade-Offs: -0.032
+   • Power And Institutional Critique: -0.032
+   • Critical Analysis Of Museum Practices: -0.033
+   • Social Impact Assessment: -0.033
+   • Stewardship And Shared Ownership: -0.034
+   • Food Insecurity And Hunger Studies: -0.034
+   • Domain-Specific Architecture Specialization: -0.035
+   • Poster Design: -0.035
+   • Productivity Enhancement: -0.036
+   • Microarchitectural Side-Channel Attacks: -0.038
+   • Health Care Organizational Structures: -0.038
+   • Reliable And Robust System Design: -0.039
+   • High-Velocity Deployment Strategies: -0.039
+   • Institutional Wellness: -0.040
+   • Social Determinants Of Health: -0.041
+   • Margin Vs. Mission Tradeoffs: -0.042
+   • Externalities In Public Projects: -0.044
+   • Indigenous Studies: -0.044
+   • Carceral State: -0.045
+   • Consensus Mechanisms: -0.046
+   • Societal Impacts Of Emerging Technologies: -0.046
+   • Public Sector Innovation: -0.047
+   • Camera Limitations And Enhancements: -0.048
+   • Decarbonization Of Infrastructure: -0.049
+   • Interdisciplinary Collaboration: -0.051
+   • Public Expenditure Evaluation: -0.054
+   • Cell Culture Maintenance: -0.057
+   • Technology-Driven Privacy Mitigation: -0.061
+   • Disease Stratification: -0.062
+   • Social Impact Of Technology: -0.077
+   • Carbon-Aware Workload Shifting: -0.081
+   • Cross-Functional Collaboration: -0.093
+✓ Got 2 VR apps
 📝 Logged interaction for user e7242652...
 ✅ Sending response
 
@@ -159,12 +3344,1638 @@ HEINZ RAG VR APP RECOMMENDER API
 📨 NEW CHAT REQUEST
 ======================================================================
 👤 Returning User: e7242652-8078-433a-93a0-df0339f902ec
-💬 Message: 'AI'
+💬 Message: 'Can you recommend apps for Calculus and Math?'
 🎯 Intent: recommendation
 → Extracting query data (hints for LLM)…
 
 🔄 Calling recommender.generate_recommendation()…
 
-🔍 Processing (RAG): AI
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.43it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.43it/s]
-127.0.0.1 - - [24/Nov/2025 22:55:46] "POST /chat HTTP/1.1" 200 -
+🔍 Processing (RAG): Can you recommend apps for Calculus and Math?
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.35it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.35it/s]
+🔍 Search for 'Can you recommend apps for Calculus and Math?':
+   • Calculus: 0.497
+   • Mobile App Development: 0.359
+   • Mathematical Transforms: 0.358
+   • Open-Source Qa Datasets: 0.351
+   • Mathematical Modeling: 0.340
+   • Computer Arithmetic: 0.340
+   • Proof Techniques: 0.339
+   • Application-Oriented Problem Solving: 0.325
+   • Numerical Algorithms: 0.322
+   • Symbolic Methods: 0.321
+   • Neural Program Assistance: 0.318
+   • Pac Learning Framework: 0.311
+   • Mathematical Foundations: 0.306
+   • Navigation Algorithms: 0.306
+   • Cognitive Science Applications: 0.306
+   • Self-Paced Learning: 0.303
+   • Scientific Reading And Analysis: 0.303
+   • Algebraic Algorithms: 0.300
+   • Statistical Software: 0.299
+   • Numeric Methods: 0.298
+   [RAG] Low direct matches (1). Attempting Semantic Bridge...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 113.25it/s]
+🔍 Search for 'Can you recommend apps for Calculus and Math?':
+   • Calculus: 0.497
+   • Mobile App Development: 0.359
+   • Mathematical Transforms: 0.358
+   • Open-Source Qa Datasets: 0.351
+   • Mathematical Modeling: 0.340
+   • Computer Arithmetic: 0.340
+   • Proof Techniques: 0.339
+   • Application-Oriented Problem Solving: 0.325
+   • Numerical Algorithms: 0.322
+   • Symbolic Methods: 0.321
+   • Neural Program Assistance: 0.318
+   • Pac Learning Framework: 0.311
+   • Mathematical Foundations: 0.306
+   • Navigation Algorithms: 0.306
+   • Cognitive Science Applications: 0.306
+   • Self-Paced Learning: 0.303
+   • Scientific Reading And Analysis: 0.303
+   • Algebraic Algorithms: 0.300
+   • Statistical Software: 0.299
+   • Numeric Methods: 0.298
+   • Cognitive Tutoring Systems: 0.297
+   • Mathematical Reasoning: 0.297
+   • Analytical Reading: 0.294
+   • Hands-On Learning: 0.294
+   • Computational Methods: 0.294
+   • Monte Carlo Methods: 0.292
+   • Robot Kinematics: 0.288
+   • Technical Reading: 0.286
+   • Productivity Tools: 0.284
+   • Bayesian Networks: 0.281
+   • Scalability: 0.281
+   • Student Engagement: 0.281
+   • Instructional Proficiency: 0.277
+   • Problem Solving: 0.277
+   • Reinforcement Learning: 0.276
+   • E-Learning Technologies: 0.275
+   • Personalized Medicine: 0.275
+   • Cad Tools: 0.274
+   • Mathematics: 0.274
+   • Decision Trees: 0.272
+   • Mathematical Maturity: 0.271
+   • Trajectory Optimization: 0.270
+   • Optimization: 0.269
+   • Teaching Techniques: 0.268
+   • Polynomials: 0.268
+   • Statistical Literacy: 0.264
+   • Application Of Biological Software Tools: 0.263
+   • Learning Systems: 0.263
+   • Learning Evaluation Methods: 0.262
+   • Everyday Sound Analysis: 0.262
+   • Data Mining: 0.261
+   • Advanced Control Algorithms: 0.260
+   • 2D Graphics: 0.260
+   • Abstraction: 0.259
+   • Spatial Computing: 0.258
+   • Applied Mathematics: 0.258
+   • Practical Application Design: 0.258
+   • Computational Biology: 0.256
+   • Mobile App Review Analysis: 0.256
+   • Instructional Design: 0.255
+   • Tooling Integration: 0.255
+   • Interdisciplinary Analysis: 0.254
+   • Collaborative Learning: 0.253
+   • Adapting Projects To Personal Skills: 0.253
+   • Computation: 0.253
+   • Computational Medicine: 0.252
+   • Game Theory: 0.252
+   • Program Logics: 0.252
+   • Manipulation Algorithms: 0.251
+   • Knowledge Graphs: 0.251
+   • Time Series Analysis: 0.250
+   • Automated Reasoning: 0.249
+   • Excel: 0.249
+   • Computer Science Fundamentals: 0.249
+   • Sequential Algorithms: 0.248
+   • Analytics: 0.247
+   • User Study Design: 0.246
+   • Unsupervised Learning: 0.246
+   • Project Tools And Techniques: 0.245
+   • Run Time Analysis: 0.245
+   • Syntactic Analysis: 0.244
+   • Software Engineering: 0.244
+   • Neural Systems Analysis: 0.243
+   • Parallel Algorithms: 0.243
+   • Motion Analysis: 0.242
+   • Reading And Analyzing Academic Papers: 0.242
+   • User Behavior Instrumentation: 0.241
+   • Ray Tracing: 0.240
+   • Usability Design: 0.240
+   • Data Reading: 0.240
+   • Text Analysis: 0.239
+   • Divide-And-Conquer Algorithms: 0.239
+   • Real-Time Adaptation: 0.239
+   • Pytorch: 0.238
+   • Predictive Modeling: 0.236
+   • Graph Neural Networks: 0.236
+   • Probabilistic Modeling: 0.235
+   • Statistical Learning: 0.234
+   • Program Synthesis: 0.233
+   • Tool Selection And Evaluation: 0.233
+   • Neural Language Models: 0.232
+   • Skill Practice Simulation: 0.232
+   • Solidworks: 0.231
+   • Dual-Use Technology Applications: 0.231
+   • Statistical Modeling: 0.231
+   • User Preference Learning: 0.230
+   • Geometric Modeling: 0.230
+   • Computer-Aided Drug Design: 0.230
+   • Physics-Based Vision: 0.230
+   • Programming: 0.229
+   • 3D Visualizations: 0.229
+   • Algorithm Design: 0.229
+   • Software Performance Analysis: 0.229
+   • Active Learning: 0.229
+   • Cost-Benefit Analysis: 0.228
+   • Visual Analysis: 0.227
+   • Context-Aware Computing: 0.227
+   • Analytical Reasoning: 0.227
+   • Map-Based Algorithms: 0.227
+   • Game Engine Development: 0.225
+   • Pedagogical Study Design: 0.225
+   • Play-Testing: 0.224
+   • Static Analysis: 0.224
+   • Systems-Level Problem Solving: 0.223
+   • Signal Processing (For Touch Sensors): 0.223
+   • Computational Thinking: 0.223
+   • School Design: 0.223
+   • Signal Processing: 0.223
+   • Physical Computing: 0.222
+   • Illustrator: 0.222
+   • Analytical Thinking: 0.222
+   • Microeconomics: 0.222
+   • Error Analysis: 0.222
+   • Logical Analysis: 0.220
+   • Formative Evaluation: 0.220
+   • Mechanical Engineering: 0.220
+   • 3D Viewing: 0.220
+   • Automated Experimental Systems: 0.219
+   • Dynamics Analysis: 0.219
+   • Visual Arts Computing: 0.219
+   • Text Processing: 0.219
+   • Real-Time Systems: 0.218
+   • Scientific Computing: 0.218
+   • R Programming: 0.218
+   • Iterative Problem Solving: 0.217
+   • Interdisciplinary Design: 0.217
+   • Go: 0.217
+   • Heterogeneous Computing: 0.216
+   • Curriculum Development: 0.216
+   • Dashboards: 0.216
+   • Architecture Tools Usage: 0.215
+   • Interactive Learning: 0.215
+   • Geometry: 0.215
+   • Medical Robotics Applications: 0.215
+   • Feedback-Driven Learning: 0.215
+   • Open Source Software (Oss): 0.214
+   • Numerical Approximation: 0.214
+   • Coarticulation Analysis: 0.214
+   • Market Analysis: 0.213
+   • Test Planning: 0.213
+   • Information Retrieval: 0.212
+   • Obstacle Avoidance: 0.212
+   • Real-World Engineering Practices: 0.212
+   • Statistics: 0.211
+   • Economic Analysis: 0.210
+   • Machine Learning: 0.210
+   • Practical Implementation: 0.210
+   • Student-Led Discussion: 0.210
+   • Performance Evaluation And Optimization: 0.209
+   • Codebase Analysis: 0.209
+   • Random Forests: 0.208
+   • Reasoning And Planning: 0.208
+   • Feature Engineering: 0.208
+   • Buying Pattern Analysis: 0.207
+   • Academic-Professional Integration: 0.207
+   • Realizability: 0.207
+   • Sequence-To-Sequence Models: 0.207
+   • Machine Translation: 0.207
+   • Problem Translation To Mathematical Framework: 0.206
+   • Data Integration: 0.206
+   • History Of Computing: 0.205
+   • Paper Analysis: 0.205
+   • Automated Cell Image Analysis: 0.204
+   • Independent Learning: 0.204
+   • Spatial Analysis: 0.204
+   • Front-End Development: 0.204
+   • Inference Algorithms: 0.204
+   • Mobile And Pervasive Computing: 0.204
+   • Realistic Simulations: 0.204
+   • Data Processing: 0.203
+   • Policy Analysis: 0.203
+   • Simulation: 0.203
+   • Robot Modeling: 0.203
+   • Close Reading: 0.203
+   • Audio Understanding: 0.203
+   • Content Authoring Tools: 0.203
+   • Interface Optimization: 0.202
+   • Statistical Testing: 0.202
+   • Software Security: 0.202
+   • Security Analysis: 0.201
+   • Recommendation Systems: 0.201
+   • Digital Workflow: 0.201
+   • Defect Analysis (E.G., Porosity): 0.201
+   • Analytical Writing: 0.200
+   • Software Construction: 0.200
+   • Current Events Analysis: 0.200
+   • Data-Driven Algorithms: 0.200
+   • Code Optimization: 0.200
+   • Memory Usage Analysis: 0.200
+   • Question Answering: 0.200
+   • Interface Design: 0.199
+   • Formal Methods: 0.199
+   • Hardware Optimization: 0.199
+   • Dynamic Analysis: 0.199
+   • Software Verification: 0.198
+   • Low-Resource Language Modeling: 0.198
+   • Medical Simulation Design: 0.198
+   • Technical Writing: 0.197
+   • Idea Advancement: 0.197
+   • Timers: 0.197
+   • Bidding Algorithms: 0.196
+   • Problem Analysis: 0.196
+   • Divergent Thinking: 0.196
+   • Task Planning: 0.196
+   • Lifelong Learning: 0.195
+   • Information Filtering Evaluation: 0.195
+   • Robot Integration: 0.195
+   • Linguistic Analysis: 0.194
+   • Tracking Progress Using Milestones: 0.194
+   • Online Behavior Analysis: 0.194
+   • Self-Driving Systems: 0.194
+   • Political Analysis: 0.194
+   • Analog I/O: 0.193
+   • Network Analysis: 0.193
+   • Behavioral Analysis: 0.193
+   • Data Analysis: 0.193
+   • Memory Optimization: 0.192
+   • Linux: 0.192
+   • Prototyping Hci Gadgets: 0.192
+   • Animation: 0.192
+   • Robot Software Architecture: 0.191
+   • Language Technologies: 0.191
+   • Assessment: 0.190
+   • Continuous Audio Representations: 0.190
+   • Logical Error Detection: 0.190
+   • Blender: 0.190
+   • Data-Dependent Cpu/Gpu Optimization Analysis: 0.190
+   • Digital Media Proficiency: 0.190
+   • Traffic Routing Optimization: 0.190
+   • Deep Learning: 0.190
+   • Open Source Movements: 0.189
+   • Result Analysis: 0.189
+   • Sound Implementation: 0.188
+   • Data Synthesis: 0.188
+   • Linear Algebra: 0.188
+   • Adobe Photoshop: 0.188
+   • Cross-Disciplinary Problem Solving: 0.188
+   • System Modeling: 0.188
+   • Design Alternatives Generation And Evaluation: 0.187
+   • Digital Logic Design: 0.187
+   • Temporal Logics: 0.187
+   • Model Evaluation (Code Generation): 0.186
+   • Navigation In Austere Environments: 0.186
+   • Activity Planning: 0.186
+   • Large-Scale Search Algorithms: 0.186
+   • Internship Navigation: 0.186
+   • Quantitative Biology: 0.185
+   • Virtual Experimentation: 0.185
+   • State Exploration Techniques: 0.185
+   • Internship Application: 0.184
+   • Phonetics: 0.184
+   • Writing Skills: 0.184
+   • Adaptability: 0.184
+   • JavaScript: 0.183
+   • Path Planning: 0.183
+   • Question Answering (Qa): 0.183
+   • Scholarship Opportunities: 0.182
+   • Computational Imaging: 0.182
+   • Scientific Problem Solving: 0.182
+   • Morphosyntax: 0.182
+   • Digital Documentation: 0.182
+   • Economic Inequality Analysis: 0.182
+   • Continuous Integration: 0.182
+   • Learning Facilitation: 0.182
+   • Portability In Software Design: 0.181
+   • Multi-Screen Interface Design: 0.181
+   • Historical Analysis: 0.181
+   • Constructive Logic: 0.181
+   • Model Evaluation: 0.181
+   • Guest Lecture Engagement: 0.180
+   • Suffix Trees: 0.180
+   • Cognitive, Social, And Affective Learning Dimensions: 0.180
+   • Data-Driven Modeling: 0.180
+   • Application Of Academic Knowledge To Real-World Problems: 0.180
+   • Cross-Platform Development: 0.180
+   • Rigorous Assurance Methods: 0.179
+   • Support Vector Machines: 0.179
+   • Interfaces: 0.179
+   • Microsoft Project: 0.179
+   • Academic Transition Skills: 0.179
+   • Robot Navigation: 0.179
+   • Medical Training Methodologies: 0.179
+   • Hardware Integration: 0.179
+   • Data Visualization: 0.179
+   • Inclusive Learning Design: 0.179
+   • Model Performance Analysis: 0.178
+   • Image Editing: 0.178
+   • Decomposing Problems Into Subtasks: 0.178
+   • Clustering: 0.178
+   • Project Integration: 0.178
+   • Image Segmentation: 0.178
+   • Aquatic Robotics: 0.178
+   • Python: 0.178
+   • User Personalization: 0.178
+   • Data Science: 0.177
+   • Algorithm Design Principles: 0.177
+   • Campus Resource Navigation: 0.177
+   • Proposal Writing: 0.177
+   • Discourse Analysis: 0.177
+   • Machine-Level Code: 0.177
+   • Computational Linguistics: 0.177
+   • Scalable Robotic Systems: 0.177
+   • Storyboarding: 0.176
+   • Soft Robotics: 0.176
+   • Market Needs Analysis: 0.176
+   • Modern Hardware Platforms: 0.176
+   • Classical Logic: 0.176
+   • Requirements Analysis: 0.176
+   • Humanities: 0.175
+   • Autonomous Behaviors: 0.175
+   • Advertising Engine Optimization: 0.175
+   • Educational Technology (Edtech): 0.174
+   • File Formats (For 3D Printing/Cad): 0.174
+   • Large Language Models (Llms): 0.174
+   • Speech Technologies: 0.174
+   • Dexterous Manipulation: 0.173
+   • Cognitive Learning Skills: 0.173
+   • Materials Science: 0.173
+   • Probabilistic Reasoning: 0.173
+   • Code Review: 0.173
+   • Laboratory Robotics: 0.173
+   • Object Recognition: 0.173
+   • Project Evaluation: 0.172
+   • Software Reliability Analysis: 0.172
+   • Process Optimization: 0.172
+   • Numerical Perturbation Schemes: 0.172
+   • Web Services: 0.172
+   • Search Engine Optimization: 0.172
+   • Financial Planning: 0.172
+   • Conversational Agents: 0.171
+   • Self-Directed Learning: 0.171
+   • Brainstorming: 0.171
+   • Milestone Planning: 0.171
+   • Tableau: 0.171
+   • Java: 0.170
+   • Informal Learning Theory: 0.170
+   • Multilingual Modeling: 0.170
+   • Systems Engineering: 0.170
+   • Hands-On Lab Execution: 0.170
+   • Parameter Tuning: 0.170
+   • Acoustic Signal Analysis: 0.169
+   • Asset Editors: 0.169
+   • Algorithmic Bias Analysis: 0.169
+   • Aerospace Engineering: 0.169
+   • Arabic Studies: 0.169
+   • Model Interpretability: 0.168
+   • Real-World Robot Implementation: 0.168
+   • Immersive Learning Design: 0.168
+   • C++: 0.168
+   • Library Preparation For Sequencing: 0.168
+   • Reasoning Under Uncertainty: 0.168
+   • Linear Regression: 0.167
+   • Surgical Navigation: 0.167
+   • Single-View 3D Prediction: 0.167
+   • Workflow Enhancement: 0.167
+   • Mechatronics: 0.167
+   • Financial Literacy: 0.167
+   • Structured Prediction: 0.167
+   • Vehicle Dynamics: 0.167
+   • Complex System Analysis: 0.167
+   • Cloud Integration: 0.167
+   • 3D Scanning: 0.167
+   • Type Systems: 0.166
+   • Grammar Formalisms: 0.166
+   • Technical Expertise: 0.166
+   • Procedural Shape Generation: 0.166
+   • Pattern Recognition: 0.166
+   • System Integration: 0.166
+   • Media Literacy: 0.165
+   • Personal Development: 0.165
+   • Psychophysics: 0.165
+   • Multi-Perspective Analysis: 0.165
+   • Data-Driven Decision Making: 0.164
+   • Concurrency: 0.164
+   • Network Science: 0.164
+   • Education: 0.164
+   • Computer Science: 0.163
+   • Physics: 0.163
+   • Creative Problem Solving: 0.162
+   • Debugging: 0.162
+   • Compiler Design: 0.162
+   • Affective Learning: 0.162
+   • Tool Use (Glassblowing Tools): 0.162
+   • Scale Reduction: 0.162
+   • Network Flow Algorithms: 0.162
+   • Code Documentation: 0.162
+   • Malware Analysis: 0.162
+   • Actuation: 0.161
+   • Functionality Verification: 0.161
+   • Image Tracking: 0.161
+   • Electrical Engineering: 0.161
+   • Exploit Development: 0.161
+   • Collaboration Tools Design: 0.160
+   • Geometric Transformations: 0.160
+   • Multisensory Experience Design: 0.159
+   • Distributed Computing: 0.159
+   • Interrupts: 0.159
+   • Creative Experimentation: 0.159
+   • Voice Control: 0.159
+   • Scheduling: 0.159
+   • Use Case Development: 0.158
+   • Game Development Fundamentals: 0.158
+   • Workflow Optimization: 0.158
+   • Systems Thinking: 0.158
+   • Agent-Based Modeling: 0.158
+   • Karnaugh Maps: 0.158
+   • Tonal Values: 0.158
+   • Scenario Analysis: 0.158
+   • Document Design For Readability: 0.157
+   • Website Development: 0.157
+   • Systems Testing: 0.157
+   • Tradeoff Analysis: 0.157
+   • Smart Contracts: 0.157
+   • Autocad: 0.157
+   • Methodologies: 0.157
+   • Stata: 0.156
+   • Remote Collaboration Tools: 0.156
+   • Autonomous Agents: 0.156
+   • Cross-Lingual Learning: 0.156
+   • Visibility Algorithms: 0.156
+   • Feedback Integration: 0.155
+   • Testing And Validation: 0.155
+   • Econometrics: 0.155
+   • Computational Complexity: 0.155
+   • Social Sciences: 0.155
+   • System Evaluation: 0.155
+   • Research: 0.155
+   • Performance Assessment: 0.155
+   • Stochastic Behavior Modeling: 0.155
+   • Logic And Theoretical Computer Science: 0.155
+   • Critical Reading: 0.154
+   • Project-Based Development: 0.154
+   • Penn Treebank: 0.154
+   • Drug-Target Interaction Analysis: 0.154
+   • Molecular Dynamics Simulations: 0.154
+   • Audio Processing: 0.154
+   • Action Systems (In Robotics): 0.154
+   • Technical Drawing: 0.154
+   • Scientific Information Evaluation: 0.153
+   • Model Building: 0.153
+   • Research Methods: 0.153
+   • Visual Aesthetics: 0.153
+   • Speech Perception Modeling: 0.152
+   • High-Dimensional Data Processing: 0.152
+   • Microcontroller Hardware: 0.152
+   • Natural Language Processing: 0.152
+   • Computational Legal Reasoning: 0.152
+   • Prosody Analysis (Amplitude, Duration, Pitch): 0.152
+   • Unix: 0.152
+   • Classroom Discourse Participation: 0.152
+   • A/B Testing: 0.152
+   • Hybrid Analog-Digital Design: 0.152
+   • Latex: 0.152
+   • Music Generation: 0.151
+   • Discursive Design Strategies: 0.151
+   • Genomic Analysis: 0.151
+   • Edtech: 0.151
+   • Model Operationalization: 0.151
+   • Control Systems: 0.150
+   • Progress Tracking: 0.150
+   • Movement And Gesture Detection: 0.150
+   • Privacy Protection Technologies: 0.150
+   • Benchmark Datasets: 0.150
+   • Landscape Photography: 0.150
+   • Faculty Advisor Collaboration: 0.149
+   • Bug Report Analysis: 0.149
+   • Decision-Making Optimization: 0.149
+   • Probability: 0.148
+   • Classification: 0.148
+   • Data Organization: 0.148
+   • Cultural Analysis: 0.148
+   • Intelligent Behavior Design: 0.148
+   • Computer Science Theory: 0.148
+   • Heuristics: 0.148
+   • Space Mission Engineering: 0.148
+   • Game Design: 0.148
+   • Literary Analysis: 0.147
+   • 3D Representation Modeling: 0.147
+   • Problem Elicitation: 0.147
+   • Collaborative Writing: 0.147
+   • Operational Semantics: 0.147
+   • Diffusion Models: 0.147
+   • Vulnerability Analysis: 0.147
+   • Focus And Concentration: 0.147
+   • Automated Theorem Proving: 0.146
+   • Digitization Of Historical Data: 0.146
+   • Actuator Integration: 0.146
+   • Fault Attacks And Defenses: 0.146
+   • Data Representation: 0.146
+   • Arcgis Pro: 0.145
+   • Robot Testing: 0.145
+   • User Engagement: 0.145
+   • Computer-Aided Protein Design: 0.145
+   • Learning Experience Design: 0.145
+   • Primary Source Analysis: 0.145
+   • Video Sketching: 0.145
+   • System Dynamics: 0.145
+   • Suffix Arrays: 0.144
+   • Quality Metrics Analysis: 0.144
+   • Bioinformatics: 0.144
+   • Parsing: 0.144
+   • Interaction Design Materials Exploration: 0.144
+   • Senior Honors Thesis Preparation: 0.144
+   • Model Implementation: 0.143
+   • Literature Review: 0.143
+   • Penetration Testing: 0.143
+   • Financial Viability Analysis: 0.143
+   • Arrays: 0.143
+   • Face Recognition: 0.143
+   • Player Experience Analysis: 0.143
+   • Graph Theory: 0.143
+   • Advocacy And Persuasion: 0.143
+   • Medical Training Pedagogy: 0.143
+   • Privacy Engineering: 0.143
+   • Disease Risk Prediction: 0.143
+   • Slicing Algorithms: 0.142
+   • Neural Architectures: 0.142
+   • Human Grasp Control Strategies: 0.142
+   • Cryptography For Blockchains: 0.142
+   • Astronomy: 0.142
+   • Nutrition And Exercise Science: 0.142
+   • Network Optimization: 0.142
+   • Persuasive Design: 0.142
+   • Visual Design Principles (Typography, Color, Composition): 0.142
+   • Digital Printing: 0.142
+   • Career Networking: 0.142
+   • Quality Assurance Techniques: 0.141
+   • Hash-Based Techniques: 0.141
+   • Academic Administration: 0.141
+   • Data Processing Pipelines: 0.141
+   • Legal-Technology Interface Analysis: 0.141
+   • Heterogeneous Compute Offloading: 0.141
+   • Text Categorization: 0.141
+   • Wet Lab Techniques: 0.141
+   • Interactive Systems: 0.140
+   • Visual Arts Principles: 0.140
+   • Dependability: 0.140
+   • Program Robustness: 0.140
+   • Legal Analysis: 0.140
+   • Intuitionistic Logic: 0.140
+   • Treatment Planning: 0.140
+   • Multimodal System Design (Light, Heat, Sound): 0.139
+   • Multi-View Stereo: 0.139
+   • Interviewing: 0.139
+   • Adaptation Analysis: 0.139
+   • User Experience: 0.139
+   • Body Language: 0.139
+   • Training And Development: 0.138
+   • Log Collection And Analysis: 0.138
+   • Educational Pedagogy: 0.138
+   • Natural Lighting Application: 0.138
+   • Data Correlation Analysis: 0.138
+   • Discrete Event Simulation: 0.138
+   • Bioacoustics: 0.138
+   • Code Refinement: 0.138
+   • Community Outreach: 0.138
+   • Use Graphical Methods To Analyze Statistical Bias: 0.138
+   • Augmented Reality (Ar): 0.137
+   • Code Generation: 0.137
+   • Depth-Map Texture Modeling: 0.137
+   • Strategy Implementation: 0.137
+   • Story Maps: 0.137
+   • Artificial Intelligence: 0.137
+   • Sampling Techniques: 0.137
+   • Academic Advisory Coordination: 0.136
+   • Cooking And Food Preparation: 0.136
+   • Professional Development: 0.136
+   • Supervised Learning: 0.136
+   • Social Network Analysis: 0.136
+   • Robotics: 0.136
+   • Aesthetic Choices: 0.136
+   • Academic Discussion: 0.136
+   • Image Processing: 0.136
+   • User Interface: 0.135
+   • Trees (Data Structures): 0.135
+   • String Compression: 0.135
+   • Empathetic Engagement: 0.135
+   • Initiative: 0.135
+   • Historical Context Analysis: 0.135
+   • Lexical Functional Grammar: 0.135
+   • Service Learning: 0.135
+   • Safety Analysis: 0.134
+   • Conflict Analysis: 0.134
+   • Critical Scholarship Application: 0.134
+   • Risk Management: 0.134
+   • Case Study Analysis: 0.134
+   • Digital Art Application: 0.134
+   • Cognitive Science: 0.134
+   • Strategy Impact Prediction: 0.133
+   • Documentation: 0.133
+   • Economics: 0.133
+   • Domain Adaptation: 0.133
+   • Graphics: 0.133
+   • Large Dataset Processing: 0.133
+   • Energy Efficiency Analysis: 0.132
+   • Educational Content Development: 0.132
+   • Automation Strategy Consulting: 0.132
+   • Speech Synthesis: 0.132
+   • Collaboration With Educators: 0.132
+   • Software Architecture Styles: 0.132
+   • Political Science: 0.132
+   • Robotic Manipulation Of Plants: 0.132
+   • 3D Model Pipeline: 0.131
+   • Evolutionary Algorithms: 0.131
+   • Gis (Geographic Information Systems): 0.131
+   • Glassblowing: 0.131
+   • Air Pollution Analysis: 0.131
+   • Wheeled Robots: 0.131
+   • Application Domain Knowledge: 0.131
+   • Abstract Reasoning: 0.131
+   • Argumentative Reasoning: 0.131
+   • Implementation: 0.130
+   • Image Detection: 0.130
+   • Social Popularity Analysis: 0.130
+   • Computer Vision: 0.130
+   • Tracking Systems: 0.130
+   • Multi-Agent Systems: 0.130
+   • Theoretical Analysis: 0.130
+   • Architectural Design: 0.130
+   • Searchable Compressed Indices: 0.130
+   • Empathy: 0.130
+   • Community-Based Interventions: 0.130
+   • Dramatic Writing: 0.130
+   • Information Extraction: 0.129
+   • Discrete Audio Tokens: 0.129
+   • Active Listening: 0.129
+   • Independent Practice: 0.129
+   • Execution Monitoring: 0.129
+   • Industrial Application Development: 0.129
+   • Business Model Design: 0.128
+   • Speech Processing: 0.128
+   • Music Technology: 0.128
+   • Social Good Applications: 0.128
+   • Generative Media: 0.128
+   • Ecological Thinking: 0.127
+   • Design Thinking: 0.127
+   • Voting Behavior Analysis: 0.127
+   • Biomarker Discovery: 0.126
+   • Phonology: 0.126
+   • Patents: 0.126
+   • Material Knowledge (Molten Glass): 0.126
+   • Connecting Academic Theory To Practice: 0.126
+   • Linguistic Theory: 0.126
+   • Feedback Control: 0.126
+   • Data Storytelling: 0.126
+   • Web Scraping: 0.125
+   • Bioimage Analysis: 0.125
+   • Cost Of Quality Analysis: 0.125
+   • Localization: 0.125
+   • String Search: 0.125
+   • Project Proposal Development: 0.125
+   • Critical Analysis Of Medical Science: 0.125
+   • Narrative Analysis: 0.125
+   • Skill Development Strategy: 0.125
+   • User Authorization: 0.125
+   • Dependency Grammar: 0.124
+   • Sense-Plan-Act Framework: 0.124
+   • Git: 0.124
+   • Naming Systems: 0.124
+   • Internet Law: 0.124
+   • Decision Modeling Under Uncertainty: 0.124
+   • Medicine: 0.124
+   • Mentorship Engagement: 0.123
+   • Database Management: 0.123
+   • Prototyping Smart Devices: 0.123
+   • Computer Architecture Fundamentals: 0.123
+   • Long-Context Modeling: 0.123
+   • Job Search Techniques: 0.123
+   • Categorial Grammar: 0.123
+   • Thesis Development: 0.122
+   • Studio Photography Techniques: 0.122
+   • Compositional Modeling: 0.122
+   • Robotics Domain Knowledge: 0.122
+   • Social Networking Systems: 0.122
+   • Evaluation: 0.122
+   • Supply Chain Analysis: 0.121
+   • Process Evaluation: 0.121
+   • Html: 0.121
+   • Staffing: 0.121
+   • Haptics: 0.121
+   • Generative Capacity Analysis: 0.121
+   • Customer Discovery: 0.120
+   • Large-Scale Training: 0.120
+   • Internship Coordination: 0.120
+   • Constructive Feedback: 0.120
+   • Pragmatics: 0.120
+   • Darkroom Developing: 0.120
+   • High-Throughput Screening: 0.120
+   • Jee Architecture: 0.120
+   • Innovation In Computer Science: 0.120
+   • Knowledge Assessment Design: 0.120
+   • Resource Organization: 0.120
+   • Domain-Specific Architecture Specialization: 0.120
+   • Discrimination Analysis: 0.120
+   • Cryptocurrency: 0.119
+   • Technology Business Value Analysis: 0.119
+   • Cultural Advocacy: 0.119
+   • Threat Emulation: 0.119
+   • Hardware Verification: 0.119
+   • Mesh Manipulation: 0.119
+   • Construction Grammar: 0.119
+   • Cryptography: 0.118
+   • Shadow Pricing: 0.118
+   • Non-Destructive Testing / Inspection: 0.118
+   • Chemistry: 0.118
+   • Hardware-Software Co-Design: 0.118
+   • Assembly Language: 0.118
+   • Critical Analysis: 0.118
+   • Feedback Delivery: 0.118
+   • Organizing Complex Information: 0.118
+   • Code Correctness Evaluation: 0.118
+   • Topological Descriptors: 0.118
+   • Electoral Systems Analysis: 0.118
+   • Health Science: 0.117
+   • Virtual Reality (Vr) Development: 0.117
+   • Language Comparison: 0.117
+   • Naive Bayes: 0.117
+   • Embedded Sensing: 0.116
+   • Study Abroad Planning: 0.116
+   • Technical Acumen: 0.116
+   • Reflection And Self-Assessment: 0.116
+   • Robot Learning From Demonstration: 0.116
+   • Design Observation And Analysis: 0.116
+   • 3D Vision: 0.115
+   • Autonomous Driving: 0.115
+   • Legal Technology (Legaltech): 0.115
+   • Morphological And Syntactic Modeling: 0.115
+   • Map Building: 0.115
+   • Ethical Reasoning: 0.115
+   • Seminar Discussion: 0.115
+   • Efficient Data Query: 0.115
+   • Equity And Inclusion Analysis: 0.115
+   • Modularity: 0.115
+   • Critical Path Method: 0.115
+   • Ground Robotics: 0.114
+   • Graph Representation Learning: 0.114
+   • Capstone Project Design: 0.114
+   • Project Management: 0.114
+   • Financial Goal Setting: 0.114
+   • Carbon-Aware Computing: 0.114
+   • Iterative Project Development: 0.114
+   • Neuroscience Of Learning: 0.113
+   • Scientific Method: 0.113
+   • Cyber Security: 0.113
+   • Health Outcomes Assessment: 0.112
+   • Design Verification: 0.112
+   • Np-Completeness: 0.112
+   • Technical Feasibility Assessment: 0.112
+   • Software Quality Definition And Analysis: 0.112
+   • Sensor Technology: 0.112
+   • Aerial Robotics: 0.112
+   • Film And Media Analysis: 0.112
+   • Sentiment Analysis: 0.112
+   • Legacy System Integration: 0.112
+   • Immersive Experience Design: 0.112
+   • Shading: 0.112
+   • Customer Demand Forecasting: 0.111
+   • Scientific Literacy: 0.111
+   • Networking: 0.111
+   • Tone Control In Writing: 0.111
+   • Project Execution: 0.111
+   • Bit Complexity: 0.111
+   • Personal Wellness Assessment: 0.111
+   • Random Number Generation: 0.110
+   • Multi-Environment Robotics: 0.110
+   • Declarative Specifications: 0.110
+   • Tactile Sensing: 0.110
+   • Value Proposition Design: 0.110
+   • Intersectional Analysis (Race, Gender, Sexual Orientation): 0.110
+   • Vr Development: 0.110
+   • Long-Term Planning: 0.110
+   • Ambient Intelligence: 0.109
+   • Situational And Environmental Analysis: 0.109
+   • Human Hand Anatomy And Function: 0.109
+   • Savings Strategy: 0.109
+   • DevOps: 0.109
+   • Spectrographic Analysis: 0.109
+   • Pricing Strategy: 0.109
+   • Knowledge Of Mental Health (Anxiety, Depression): 0.109
+   • Human-Computer Interaction (Hci): 0.108
+   • Critical Thinking: 0.108
+   • Racing Strategies: 0.108
+   • Satisfiability (Sat): 0.107
+   • Additive Manufacturing: 0.107
+   • Marketing: 0.107
+   • Product Management: 0.107
+   • Social Rate Of Discount: 0.106
+   • Hands-On Demonstration: 0.106
+   • Human Rights Advocacy: 0.106
+   • Anatomy: 0.105
+   • Design Evaluation: 0.105
+   • Product Strategy: 0.105
+   • Data Utilization: 0.105
+   • Internship Professionalism: 0.105
+   • Nist Standards: 0.105
+   • Science: 0.105
+   • Sensor Integration: 0.105
+   • Operating System Comparison: 0.105
+   • Differentiable Rendering: 0.104
+   • Fieldwork Adaptability: 0.104
+   • Dialog Systems: 0.104
+   • Coalition Building: 0.104
+   • International Student Compliance: 0.104
+   • Analysis Of Epidemiological Data (E.G., Covid-19): 0.104
+   • Medical Image Registration: 0.104
+   • Indesign: 0.104
+   • Interaction Design Principles: 0.103
+   • Interdisciplinary Collaboration: 0.103
+   • Blockchain: 0.102
+   • Gender Studies: 0.102
+   • Dataset Curation: 0.102
+   • Random-Walk Methods: 0.102
+   • Decidable Classes: 0.102
+   • Empirical Analysis: 0.102
+   • Writing Workshops (Art Criticism): 0.101
+   • Risk Assessment: 0.101
+   • Prototyping With Found Objects: 0.101
+   • Perception: 0.101
+   • Debugging And Fault Fixing: 0.101
+   • Camera Calibration: 0.101
+   • Morphology: 0.101
+   • Health Systems Comparison: 0.100
+   • Human-Robot Interaction: 0.100
+   • Ethical Hacking: 0.100
+   • Asset-Based Framing: 0.100
+   • Problem Identification: 0.100
+   • Audience Analysis: 0.100
+   • Trustworthiness Development: 0.100
+   • Conceptual Synthesis: 0.100
+   • Productivity Enhancement: 0.099
+   • Iteration (Loops): 0.099
+   • Interactive Art: 0.099
+   • Mockup Design: 0.099
+   • Climate Science: 0.099
+   • Brain Science: 0.099
+   • Portfolio Development: 0.099
+   • Biology: 0.099
+   • Attendance And Punctuality: 0.098
+   • Markov Chains: 0.098
+   • Product Solution Design: 0.098
+   • Graph Kernels: 0.098
+   • Community Facilitation: 0.098
+   • Theater Production: 0.098
+   • Head Driven Phrase Structure Grammar: 0.098
+   • Robotic Hand Design: 0.098
+   • Biological Constraints: 0.098
+   • Photogrammetry: 0.098
+   • Strategic Evaluation: 0.097
+   • Deliverable Creation: 0.097
+   • Academic Freedom Policies: 0.097
+   • Digital Economy: 0.097
+   • Decision Making: 0.097
+   • Dynamic Compilation: 0.096
+   • Project Design: 0.096
+   • Consumer Behavior: 0.096
+   • Information Diffusion: 0.096
+   • Focus And Presence: 0.096
+   • High-Level Language Constructs: 0.096
+   • Goal Setting: 0.095
+   • Skill Training: 0.095
+   • Linguistic Generalization: 0.095
+   • Legged Robots: 0.095
+   • Algorithmic Fairness: 0.095
+   • Sociolinguistics: 0.095
+   • Behavioral Advertising Mitigation: 0.095
+   • Flight Operations Planning: 0.094
+   • Runtime Architecture: 0.094
+   • Project-Based Delivery Systems: 0.094
+   • Media And Art Analysis: 0.094
+   • Computational Photography: 0.094
+   • Neuroanatomy: 0.094
+   • Fitness Training Methodologies: 0.094
+   • Material Innovation: 0.093
+   • Collaborative Design: 0.093
+   • Operationalization Of Ideas: 0.093
+   • Spacecraft Design: 0.093
+   • Product Development: 0.093
+   • Stochastic Processes: 0.093
+   • Rotorcraft (E.G., Quadcopters): 0.093
+   • Infrastructure Development: 0.093
+   • Causal Inference: 0.093
+   • Historical Analysis Of Slavery And Colonialism: 0.092
+   • Social Dynamics: 0.092
+   • Facilitation Of Difficult Conversations: 0.091
+   • Deep Generative Models For Graphs: 0.091
+   • Virtual Machines: 0.091
+   • Cloud Architecture: 0.091
+   • Asking High-Value Questions: 0.091
+   • Collaborative Discussion: 0.091
+   • Sensor Fusion: 0.090
+   • Interactive Media Design: 0.090
+   • 3D Crop Mapping And Modeling: 0.090
+   • Process Automation Design: 0.090
+   • Lab Safety: 0.090
+   • Liberal Arts Contextualization: 0.090
+   • Monitoring And Logging: 0.090
+   • Efficient Data Storage: 0.089
+   • Organizational Effectiveness: 0.089
+   • Sensing And Actuation Systems: 0.089
+   • Prototype Development: 0.089
+   • Reconnaissance: 0.089
+   • Negotiation: 0.089
+   • Technology Impact Assessment: 0.089
+   • Formal Verification: 0.089
+   • Networking Technology And Protocols: 0.089
+   • Strategic Planning: 0.089
+   • Inspiring Others: 0.088
+   • Persuasion: 0.088
+   • Tf/Idf: 0.088
+   • Adaptive Environment Design: 0.088
+   • Production System Assurance: 0.088
+   • FinTech: 0.088
+   • Evolutionary Dynamics: 0.088
+   • Scientific Inquiry: 0.088
+   • Career-Long Development: 0.088
+   • Behavioral Advertising Tracking: 0.088
+   • Zero-Shot Learning: 0.088
+   • Understanding Data Processes: 0.088
+   • Agricultural Systems: 0.088
+   • Lgbtq History: 0.088
+   • 3D Reconstruction: 0.088
+   • Health Decision-Making: 0.087
+   • Audience Targeting: 0.087
+   • Manufacturing Robotics: 0.087
+   • Privacy Principles: 0.087
+   • Mechanism Design: 0.087
+   • Interactive Documentary (Idoc) Development: 0.087
+   • Contemplative Practice: 0.087
+   • Psychology: 0.087
+   • Genomics: 0.087
+   • Artistic Documentation: 0.087
+   • Still Life Photography: 0.086
+   • Continuous Awareness And Training: 0.086
+   • Data Tracing And Provenance: 0.086
+   • Compliance Monitoring: 0.086
+   • Population Biology: 0.086
+   • Creativity In Technical Design: 0.086
+   • Processor And Computing Platforms History: 0.086
+   • Satellite Systems: 0.085
+   • Trans-Border Crime: 0.085
+   • Problem Reframing: 0.085
+   • E-Portfolio Documentation (Mycore): 0.085
+   • Competition Preparation: 0.085
+   • Power Side-Channel Analysis: 0.084
+   • History Of Science: 0.084
+   • Creative Project Development: 0.084
+   • 3D Printing: 0.084
+   • Hardware Fabrication: 0.084
+   • Exporters (Game Assets): 0.084
+   • Project Decision-Making: 0.084
+   • Space Science: 0.083
+   • Node Embeddings: 0.083
+   • Consulting: 0.083
+   • Problem Detection In Production: 0.083
+   • Molecular Biology: 0.083
+   • Astrobiology: 0.083
+   • Composition: 0.083
+   • Conflict Of Interest Analysis: 0.082
+   • Economic Principles: 0.082
+   • Resume Writing: 0.082
+   • Electron Beam Welding: 0.082
+   • Emotional Awareness: 0.082
+   • Deployment Automation: 0.082
+   • Health Technology: 0.082
+   • Healthcare: 0.082
+   • Quality Control (Molecular Biology): 0.082
+   • Implementation Validation: 0.081
+   • Human Anatomy: 0.081
+   • Business Strategy: 0.081
+   • Science In Popular Media: 0.081
+   • Sports And Society: 0.081
+   • Bias Detection And Mitigation: 0.081
+   • Sequence Reconstruction: 0.080
+   • Structured Discussion: 0.080
+   • Systematic Design Methodology: 0.080
+   • Consortium Science: 0.080
+   • Wellness Wheel Model: 0.079
+   • Sequencing: 0.079
+   • Gender And Political Participation Analysis: 0.079
+   • Robot Control: 0.079
+   • Neurophysiology: 0.079
+   • Systems Biology: 0.079
+   • Attention To Detail: 0.079
+   • Regional Development: 0.079
+   • Syntax Definition: 0.079
+   • Infrastructure As Code (Iac): 0.079
+   • Cognition: 0.079
+   • Decentralized Systems: 0.078
+   • System Monitoring: 0.078
+   • Design Critique Facilitation: 0.078
+   • Asset Pipelines: 0.078
+   • Recursion: 0.078
+   • Self-Discipline: 0.078
+   • User-Centered Design: 0.078
+   • Computational Organization Theory: 0.078
+   • Start-Up Development: 0.077
+   • Constructive Dialogue: 0.077
+   • Institutional History (Carnegie Mellon): 0.077
+   • Caching: 0.076
+   • E-Portfolio System: 0.076
+   • Media Production: 0.076
+   • Human Language Representation: 0.076
+   • Openness To New Ideas: 0.076
+   • Tree Adjoining Grammar: 0.076
+   • Sequence Alignment: 0.076
+   • Scientific Innovation: 0.076
+   • Inexact Matching: 0.076
+   • Haptic System Design: 0.076
+   • Sequential Decision-Making: 0.075
+   • Latent Dirichlet Allocation (Lda): 0.075
+   • Smart Buildings And Homes: 0.075
+   • Cover Letter Writing: 0.075
+   • Political Processes: 0.075
+   • Spatial Design: 0.075
+   • Burrows-Wheeler Transform: 0.074
+   • Sensor-Based System Design: 0.074
+   • System Specification: 0.074
+   • Networking Within Robotics Community: 0.074
+   • Prototype Iteration: 0.073
+   • Selection (Conditionals): 0.073
+   • Academic Writing: 0.073
+   • Brightfield Microscopy: 0.073
+   • Refugee And Migration Studies: 0.073
+   • Budgeting: 0.073
+   • Project Design And Innovation: 0.073
+   • Complex System Development: 0.073
+   • Faa Certification Processes: 0.072
+   • Rhetorical Criticism: 0.072
+   • Gene Expression Quantification: 0.072
+   • Feedback Solicitation: 0.072
+   • Academic Collaboration: 0.072
+   • Neuroscience: 0.071
+   • Non-Profit Operations: 0.071
+   • Mechanical Structure Design: 0.071
+   • Auction Theory: 0.071
+   • Startup Fundraising: 0.070
+   • Internal Capabilities Assessment: 0.070
+   • Data Transformation: 0.070
+   • Network Security: 0.070
+   • Collaborative Project Work: 0.070
+   • Performance Theory: 0.070
+   • Socioeconomic Factors Analysis: 0.070
+   • Additive Manufacturing Market Analysis: 0.070
+   • Strategic Messaging: 0.070
+   • Genetic Drift: 0.070
+   • Distributed Systems: 0.070
+   • Management: 0.070
+   • Cognitive Study Of Haptic System: 0.069
+   • Sustainable Science: 0.069
+   • Copyright Law: 0.069
+   • Technology Adoption: 0.069
+   • Polling And Prediction Interpretation: 0.069
+   • Operational Reliability Engineering: 0.069
+   • Environmental Sensing And Feedback Systems: 0.069
+   • Data Structures: 0.069
+   • Estimation: 0.068
+   • Food Studies: 0.068
+   • Autonomous Systems: 0.068
+   • Formal Notations For Architecture: 0.068
+   • Engineering Design Process: 0.068
+   • Reflective Writing: 0.068
+   • Experimental Photography Methods: 0.068
+   • Robotic Process Automation (Rpa): 0.068
+   • Resource Identification: 0.067
+   • Debating Disciplinary Perspectives: 0.067
+   • Unstructured Environments: 0.067
+   • Problem Formulation: 0.067
+   • Data Interpretation: 0.067
+   • Attendance And Participation: 0.067
+   • Occam'S Razor: 0.067
+   • Likelihood Functions: 0.067
+   • Finance: 0.067
+   • Algorithmic Privacy Reasoning: 0.066
+   • Class Participation: 0.066
+   • Dental Procedures: 0.066
+   • Creativity: 0.066
+   • Art Appreciation: 0.066
+   • Data Collection: 0.066
+   • Genome Comparison: 0.066
+   • Psycholinguistics: 0.066
+   • Community Engagement: 0.066
+   • Laser Welding: 0.066
+   • Jewish Studies: 0.065
+   • Indigenous Studies: 0.065
+   • Fragmentation Reduction: 0.065
+   • Silicone Rubber Fabrication: 0.065
+   • Cell Culture Maintenance: 0.065
+   • Psychology Of Mood And Productivity: 0.065
+   • Grasshopper: 0.065
+   • Global Perspective: 0.065
+   • Poverty Reduction Strategies: 0.065
+   • Press And Politics Interplay: 0.064
+   • Biological Data Interpretation: 0.064
+   • Privacy Systems Evaluation: 0.064
+   • Journaling (Reflective Practice): 0.064
+   • Agile: 0.064
+   • Operating Systems History: 0.064
+   • Organizational Impact Analysis: 0.064
+   • Visionary Thinking: 0.064
+   • Distributed Consensus: 0.063
+   • Faculty Collaboration: 0.063
+   • Imaging Systems: 0.063
+   • Sustainability Planning: 0.063
+   • Operating System Design: 0.063
+   • Deployment Of Robotic Systems: 0.063
+   • Commercialization Of Genetic Data: 0.063
+   • Elevator Pitch: 0.062
+   • Model Serving: 0.062
+   • Big Data: 0.062
+   • Collaboration With Experts: 0.062
+   • Natural Selection Theory: 0.062
+   • Interview Preparation: 0.062
+   • Photography Exposure: 0.062
+   • Participatory Decision-Making: 0.062
+   • Criminal Justice: 0.062
+   • Vision-Mission-Objective Alignment: 0.062
+   • Lean Innovation: 0.061
+   • Architecture Generation And Selection: 0.061
+   • Transportation: 0.061
+   • Energy Systems: 0.061
+   • Robot Cognition: 0.061
+   • Client-Facing Projects: 0.061
+   • Volunteer Coordination: 0.061
+   • Philosophical Analysis: 0.061
+   • Phenotypic Trade-Offs: 0.060
+   • Legal Impact Of Technology: 0.060
+   • Academic Proposal And Approval Process: 0.060
+   • High-Velocity Deployment Strategies: 0.060
+   • Academic Thesis Writing: 0.060
+   • Ethics In Computing: 0.060
+   • Netlogo: 0.060
+   • Curiosity: 0.060
+   • Ethics: 0.060
+   • Risk-Based Decision Making: 0.060
+   • Embedded Systems: 0.059
+   • Margin Vs. Mission Tradeoffs: 0.059
+   • Safety Procedures (Hot Shop): 0.059
+   • Visual Culture Studies: 0.059
+   • Print Finishing: 0.059
+   • Prefetching: 0.059
+   • Argumentation And Persuasion: 0.059
+   • International Law: 0.058
+   • Synthesis Of Complex Material: 0.058
+   • Power Dynamics In Technology: 0.058
+   • Files (I/O): 0.058
+   • Teamwork: 0.058
+   • Social Learning: 0.058
+   • Decolonial Scholarship: 0.058
+   • Audience Adaptation: 0.058
+   • Legal Frameworks For Data: 0.057
+   • Human-Machine Interface (Hmi) Design: 0.057
+   • Experimental Design: 0.057
+   • Investor Engagement: 0.057
+   • Work Breakdown Structures: 0.057
+   • Regulatory Impact Analysis: 0.056
+   • Human-Environment Interaction: 0.056
+   • Incomplete Markets: 0.056
+   • Rendering: 0.056
+   • Smart Environment Systems: 0.056
+   • Middle Eastern History: 0.056
+   • Conference Networking: 0.056
+   • Transformational Game Design: 0.056
+   • Street Photography: 0.055
+   • Group Dynamics: 0.055
+   • Racial And Gender Equity Analysis: 0.055
+   • Evolutionary Tree Construction: 0.055
+   • Object Detection Using Video Cameras: 0.055
+   • Iot Systems: 0.055
+   • Cryptoeconomics: 0.055
+   • Critical Review: 0.054
+   • Free Speech Law: 0.054
+   • Constitutional Law: 0.054
+   • Electoral Mapping: 0.054
+   • Spectral Graph Theory: 0.053
+   • Artistic Discussion And Dialogue: 0.053
+   • Building Client Relationships: 0.053
+   • Vision Setting: 0.053
+   • Data Deconstruction: 0.053
+   • Pitching: 0.052
+   • Competitiveness Strategy: 0.052
+   • Photographic Lighting Techniques: 0.051
+   • Climate Change Impact Assessment: 0.051
+   • Science Fiction As Cultural Analysis: 0.050
+   • Reliable And Robust System Design: 0.050
+   • Phenotyping: 0.050
+   • Documentary Filmmaking: 0.050
+   • Authentic Self-Expression: 0.049
+   • Foodways Studies: 0.049
+   • Independent Project Design: 0.049
+   • Signal Categorization: 0.049
+   • Model Validation: 0.049
+   • Scientific Theory In Art: 0.049
+   • Argument Defense: 0.048
+   • Resource Utilization: 0.048
+   • Evidence Synthesis: 0.048
+   • Formal Systems Understanding: 0.048
+   • Legal Protection Strategies: 0.048
+   • Genetics: 0.048
+   • System Construction From Specification: 0.048
+   • Trans Issues: 0.048
+   • Writing For Publication: 0.048
+   • Slide Crafting: 0.048
+   • Language Universals: 0.047
+   • Intention Setting: 0.047
+   • Communication: 0.047
+   • Customer Feedback Analysis: 0.047
+   • Social Change Advocacy: 0.047
+   • Israel-Palestine Conflict: 0.046
+   • Environmental Justice: 0.046
+   • Industry Standards: 0.046
+   • Health Disparities Analysis: 0.045
+   • Portraiture Photography: 0.045
+   • Societal Impacts Of Emerging Technologies: 0.045
+   • Ethical Design: 0.045
+   • Handling Variable-Sized Data: 0.044
+   • Community History Analysis: 0.044
+   • Large-Scale Serving Systems: 0.044
+   • Design Theory: 0.044
+   • Model Deployment: 0.044
+   • Data Privacy: 0.043
+   • Incentive Design: 0.043
+   • Visual Critique: 0.043
+   • Photography: 0.043
+   • Science And Society: 0.043
+   • Cyberwarfare Concepts: 0.043
+   • Process-Structure-Property Optimization: 0.042
+   • Information Security: 0.042
+   • Accounting: 0.042
+   • Social Media Marketing: 0.042
+   • Preparing Talks: 0.042
+   • Locking: 0.042
+   • Welfare State Models: 0.042
+   • Self-Reflection: 0.041
+   • Uncertainty In Manipulation: 0.041
+   • Assess Causal Assumptions: 0.041
+   • Psychological Health Assessment: 0.041
+   • Damage Containment: 0.041
+   • Observation: 0.041
+   • Polymer And Metal Am Technologies: 0.040
+   • Contemporary Photography Trends: 0.040
+   • CI/CD: 0.040
+   • Task Definition: 0.040
+   • Microstructure-Property Relationships: 0.040
+   • System Design: 0.039
+   • Copyrights In A Networked World: 0.039
+   • Historical Analysis Of Free Speech: 0.039
+   • Class Discussion And Debate: 0.039
+   • Signal Characterization: 0.039
+   • Art History: 0.039
+   • Police Brutality: 0.039
+   • Human Factors In Technology: 0.039
+   • Business Impact Assessment: 0.039
+   • Kinetic Sculpture: 0.039
+   • Implicit Attitude Measurement: 0.039
+   • Transient Execution Attacks: 0.039
+   • Prototyping: 0.038
+   • Intellectual Property Law: 0.038
+   • Environmental Adaptation: 0.038
+   • System Validation: 0.038
+   • Manufacturing Systems: 0.038
+   • Technology Regulation: 0.038
+   • Surgery: 0.038
+   • Stakeholder Engagement: 0.038
+   • Resilience And Adaptability: 0.037
+   • Legal Enforcement Knowledge: 0.037
+   • Patent Law: 0.037
+   • Carbon-Aware Workload Shifting: 0.037
+   • Fluorescent Microscopy: 0.037
+   • Local Community Development: 0.037
+   • Image Sequencing: 0.036
+   • Phylogenetic Tree Reconstruction: 0.036
+   • Clear And Concise Phrasing: 0.036
+   • Strategic Quote Crafting: 0.035
+   • Confidence Building: 0.035
+   • Result Interpretation For Decision-Making: 0.035
+   • Health Promotion Strategy: 0.035
+   • Product Branding: 0.035
+   • Political Dialogue And Debate: 0.034
+   • Cybersecurity: 0.034
+   • Data Ethics: 0.034
+   • Information Bias: 0.034
+   • Exhibit Design: 0.034
+   • Process Improvement: 0.034
+   • Control Theory: 0.034
+   • Ethical Impact Of Technology: 0.033
+   • Semantics Definition: 0.033
+   • Project Oversight: 0.033
+   • Sustainable Humanities: 0.033
+   • Political Sovereignty Movements: 0.032
+   • Public Speaking: 0.032
+   • Collaboration: 0.032
+   • Critical Analysis Of Medical And Literary Narratives: 0.032
+   • Walking As Meditative Practice: 0.032
+   • Navigating Political Diversity: 0.032
+   • Surgical Procedures: 0.031
+   • Feature Prioritization: 0.031
+   • Assignment Customization: 0.031
+   • Proteins: 0.030
+   • Argumentation And Debate On Health Topics: 0.030
+   • Data Replication: 0.030
+   • Contemporary Theater: 0.030
+   • Self-Identity Development: 0.030
+   • Read Mapping: 0.030
+   • Design Artifact Creation: 0.029
+   • Product Requirements Gathering: 0.029
+   • Trusted Execution Environments (Tee): 0.029
+   • Public Trust In Science: 0.029
+   • Nucleic Acid Extraction: 0.029
+   • Reporting: 0.029
+   • Echo Chambers And Polarization: 0.028
+   • Domestic Terrorism: 0.028
+   • Inductive Bias: 0.028
+   • Resilient System Design: 0.028
+   • Auditing And Verification Processes: 0.028
+   • Cultural Studies: 0.028
+   • Incident Response: 0.027
+   • Community Goals Analysis: 0.027
+   • Externalities In Public Projects: 0.027
+   • Maker Movement: 0.027
+   • Digital Imaging: 0.027
+   • Independent Work: 0.027
+   • Iterative Design Process: 0.027
+   • Projection Mapping: 0.026
+   • Distributed Ledgers: 0.026
+   • Report Writing: 0.026
+   • Developmental Psychology Of Expression: 0.026
+   • Genetic Variability Analysis: 0.026
+   • Industrial Manufacturing Trends: 0.025
+   • Youth Narrative And Ya Literature: 0.025
+   • Technology-Driven Innovation: 0.025
+   • Circuit Design With 7400-Series Chips: 0.025
+   • Minimum Viable Product (Mvp) Development: 0.025
+   • Public Expenditure Evaluation: 0.025
+   • Garbage Collection: 0.025
+   • Goal And Constraint Definition: 0.023
+   • Genetic Ancestry Analysis: 0.023
+   • Literary Analysis Of Arab And Jewish Voices: 0.023
+   • Cross-Functional Collaboration: 0.022
+   • Climate Change Mitigation Strategies: 0.022
+   • Social Interaction: 0.022
+   • Discussion Facilitation: 0.021
+   • Patent Design Around: 0.020
+   • Disease Mapping: 0.019
+   • Human Disease Diagnosis: 0.019
+   • Global Political Impact: 0.019
+   • Global Cultural Engagement: 0.017
+   • Consensus Mechanisms: 0.017
+127.0.0.1 - - [24/Nov/2025 23:11:19] "POST /chat HTTP/1.1" 200 -
+   • Advocacy For Democratic Participation: 0.017
+   • Leadership: 0.016
+   • Inductive Definitions: 0.016
+   • Innovation: 0.015
+   • Art And Architecture Theory: 0.015
+   • Philosophical Inquiry: 0.015
+   • Technology-Driven Privacy Mitigation: 0.015
+   • Materiality In Photography: 0.015
+   • Semi-Structured Interview Design: 0.014
+   • Object State Manipulation: 0.014
+   • Gender Representation: 0.014
+   • Human Disease Treatment: 0.013
+   • Entrepreneurial Mindset: 0.013
+   • Applied Ethics: 0.012
+   • Customer Validation: 0.012
+   • Critical Reflection: 0.012
+   • Space Exploration And Colonization: 0.012
+   • Social Impact Assessment: 0.012
+   • Raw File Handling: 0.012
+   • Environmental Issues In Science: 0.012
+   • Power And Authority: 0.011
+   • Data Preprocessing: 0.010
+   • Accountability: 0.010
+   • Photographic Equipment Usage: 0.009
+   • Cps (Cyber-Physical Systems): 0.009
+   • Israeli And Palestinian Cultural Studies: 0.009
+   • Artistic Expression: 0.009
+   • Trademark Law: 0.008
+   • Legal And Regulatory Privacy Frameworks: 0.008
+   • Digital Camera Operation: 0.008
+   • Physical Health: 0.008
+   • Metal Powder Processing: 0.008
+   • Environmental Stewardship: 0.008
+   • Organizational Design And Change: 0.007
+   • Photographic Objects: 0.007
+   • Fine Art Photography: 0.007
+   • Ethical Considerations In Science: 0.007
+   • Stereotypes And In-Group/Out-Group Dynamics: 0.007
+   • Human Capital Strategy: 0.006
+   • Cultural Discourse Analysis: 0.005
+   • Interpret Empirical Results: 0.004
+   • Industrial Design Principles: 0.004
+   • Legal Process Understanding: 0.004
+   • Occupational Health: 0.004
+   • Trade Secret Law: 0.004
+   • Values Alignment: 0.003
+   • Sociology: 0.003
+   • Transcript Assembly: 0.002
+   • Government: 0.002
+   • Disease Stratification: 0.002
+   • Business Acumen: 0.001
+   • Team Management: 0.001
+   • Digital Process Transformation: 0.001
+   • Debate: 0.001
+   • Neighborhood Segregation: 0.001
+   • Critical Infrastructure Protection: 0.001
+   • Process Identification For Automation: 0.001
+   • Remote Work: 0.000
+   • Community Health: 0.000
+   • Community Building: -0.000
+   • Group Critique And Feedback: -0.001
+   • Wealth Creation Systems: -0.001
+   • Academic-Industry Alignment: -0.001
+   • Public Policy: -0.001
+   • Laser Cutting: -0.002
+   • Manufacturing Process Capabilities: -0.002
+   • Sephardi, Ashkenazi, And Mizrahi Jewish Culinary History: -0.002
+   • Social Influence: -0.002
+   • Entrepreneurship: -0.003
+   • Conceptual Art Practices: -0.003
+   • Culinary Anthropology: -0.003
+   • American Political Culture: -0.005
+   • Organizational Alignment: -0.005
+   • Spiritual Health: -0.006
+   • Local History (Pittsburgh): -0.006
+   • Politics Of Food: -0.006
+   • Food Insecurity And Hunger Studies: -0.006
+   • Field Validation: -0.007
+   • Ethical Service: -0.007
+   • Philosophy (Ethics): -0.007
+   • Life Cycle Carbon Assessment (Lca): -0.007
+   • Conservation Genomics: -0.008
+   • Digital Innovation: -0.008
+   • Legal Compliance: -0.009
+   • Peace Studies: -0.009
+   • Presentation: -0.009
+   • Archival Analysis: -0.009
+   • Intellectual Health: -0.010
+   • Philosophy Of Information: -0.011
+   • Cyber-Physical Systems: -0.011
+   • Reparative Justice Frameworks: -0.011
+   • Historical Preservation: -0.011
+   • Philosophical Foundations Of Privacy: -0.011
+   • Social Justice: -0.011
+   • Ethical Decision-Making: -0.011
+   • Emotional Health: -0.011
+   • Contextual Interpretation Of Social, Cultural, And Historical Factors: -0.013
+   • Two-Dimensional Representation: -0.013
+   • Workspace Customization: -0.013
+   • Stock Market Interpretation: -0.014
+   • Public Health: -0.015
+   • Historical Context Of Health: -0.015
+   • Organizational Information Flow: -0.015
+   • Political Theory: -0.015
+   • Reproductive Justice: -0.016
+   • Institutional Wellness: -0.016
+   • Ego Strength In Team Settings: -0.016
+   • Poster Design: -0.017
+   • Image Formation And Representation: -0.017
+   • Planetary Perspective: -0.017
+   • Environmental Health: -0.018
+   • Narrative Deconstruction: -0.018
+   • Preventative Health Behaviors: -0.018
+   • Social Inequality: -0.018
+   • Historical Interpretation: -0.019
+   • Cultural Competency: -0.019
+   • Human Evolution And Migration: -0.019
+   • Poverty As A Social, Political, And Historical Phenomenon: -0.019
+   • Governance Models: -0.020
+   • Customer Problem Definition: -0.020
+   • Genome Assembly: -0.021
+   • Censorship And Free Expression Law: -0.021
+   • Decarbonization Of Infrastructure: -0.021
+   • American Exceptionalism: -0.022
+   • Carceral State: -0.022
+   • Integrity: -0.024
+   • Race And Identity Studies: -0.024
+   • Systemic Racism: -0.025
+   • Intersectionality: -0.026
+   • Population Health: -0.028
+   • Team Formation: -0.028
+   • Military Culture: -0.028
+   • Photographic Installations: -0.029
+   • Critical Analysis Of Museum Practices: -0.030
+   • Genomic Data Ethics: -0.030
+   • Mission-Driven Entrepreneurship: -0.030
+   • Cultural Awareness: -0.031
+   • Legal Rights Identification: -0.031
+   • Cybercrime Law: -0.032
+   • Reportage Photography: -0.033
+   • New Media Art Practices: -0.034
+   • Contextual Dilemma Resolution: -0.037
+   • Microarchitectural Side-Channel Attacks: -0.039
+   • Social Impact Of Technology: -0.040
+   • Public Sector Innovation: -0.040
+   • Psychology Of Identity: -0.040
+   • Ethnographic Understanding: -0.041
+   • Democratic Integrity: -0.041
+   • Historical Context Of Race: -0.041
+   • Drone Privacy Concerns: -0.042
+   • Human Rights Awareness: -0.042
+   • Labor Market Discrimination: -0.043
+   • Whole-Genome Alignment: -0.043
+   • Intellectual Property In Cyberspace: -0.046
+   • Professional Work Ethic: -0.046
+   • Responsibility And Ethics: -0.047
+   • Diversity, Equity, And Inclusion (Dei): -0.048
+   • Power And Institutional Critique: -0.050
+   • Ethical Reasoning In Health Contexts: -0.051
+   • Critical Analysis Of Environmental Narratives: -0.051
+   • Camera Limitations And Enhancements: -0.051
+   • Social Well-Being: -0.053
+   • Pcr Design And Execution: -0.057
+   • Cultural Humility: -0.058
+   • Photographic Meaning Construction: -0.059
+   • Social Identity Theory: -0.073
+   • Workforce Transformation: -0.074
+   • Oral History Interpretation: -0.076
+   • Human Dignity Studies: -0.081
+   • Colonialism And Artifact Repatriation: -0.082
+   • Health Care Organizational Structures: -0.084
+   • Identity And Belonging: -0.096
+   • Stewardship And Shared Ownership: -0.098
+   • Palestinian Culinary Traditions And Gendered Food Practices: -0.107
+   • Surveillance Ethics: -0.114
+   • Social Determinants Of Health: -0.116
+   • Precarious Masculinity: -0.118
+✓ Got 1 VR apps
+📝 Logged interaction for user e7242652...
+✅ Sending response
+
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+👤 Returning User: e7242652-8078-433a-93a0-df0339f902ec
+💬 Message: 'I am studying anatomy and surgery'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): I am studying anatomy and surgery
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 11.69it/s]
+127.0.0.1 - - [24/Nov/2025 23:11:37] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [24/Nov/2025 23:11:41] "GET /api/admin/data/status HTTP/1.1" 200 -
+🔍 Search for 'I am studying anatomy and surgery':
+   • Surgical Navigation: 0.544
+   • Surgery: 0.513
+   • Human Anatomy: 0.494
+   • Surgical Procedures: 0.469
+   • Neuroanatomy: 0.421
+   • Dental Procedures: 0.417
+   • Human Hand Anatomy And Function: 0.407
+   • Medical Training Methodologies: 0.407
+   • Anatomy: 0.401
+   • Critical Analysis Of Medical Science: 0.398
+   • Medical Training Pedagogy: 0.398
+   • Neurophysiology: 0.385
+   • Medical Simulation Design: 0.375
+   • Computational Medicine: 0.360
+   • Medicine: 0.358
+   • Personalized Medicine: 0.351
+   • Health Science: 0.349
+   • Computational Biology: 0.331
+   • Pedagogical Study Design: 0.328
+   • Reading And Analyzing Academic Papers: 0.324
+✓ Got 6 VR apps
+📝 Logged interaction for user e7242652...
+✅ Sending response
+
+
+======================================================================
+📨 NEW CHAT REQUEST
+======================================================================
+👤 Returning User: e7242652-8078-433a-93a0-df0339f902ec
+💬 Message: 'I need to improve my collaboration skills'
+🎯 Intent: recommendation
+→ Extracting query data (hints for LLM)…
+
+🔄 Calling recommender.generate_recommendation()…
+
+🔍 Processing (RAG): I need to improve my collaboration skills
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 13.48it/s]
+127.0.0.1 - - [24/Nov/2025 23:11:58] "POST /chat HTTP/1.1" 200 -
