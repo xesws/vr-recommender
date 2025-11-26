@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # 1. Flask API Service
+  vr-recommender:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: vr-recommender:prod
+    container_name: vr-recommender
+    restart: always
+    ports:
+      - "5001:5000" # Map host 5001 to container 5000
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - PORT=5000
+      # Neo4j connection - uses Docker service name
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=${NEO4J_PASSWORD:-password}
+    depends_on:
+      - redis
+      - neo4j
+    networks:
+      - vr-net
+
+  # 2. Redis (for Rate Limiting & Caching)
+  redis:
+    image: redis:7.2-alpine
+    container_name: vr-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - vr-net
+
+  # 3. Neo4j (Graph Database) - Optional if using External, but good to have in stack
+  # Since we are using local Neo4j in dev, let's keep it here for full stack deployment
+  # If using Cloud Neo4j, this can be removed.
+  neo4j:
+    image: neo4j:5.15.0
+    container_name: vr-neo4j
+    restart: always
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/${NEO4J_PASSWORD:-password}
+      - NEO4J_PLUGINS=["apoc", "graph-data-science"]
+    volumes:
+      - neo4j_data:/data
+    networks:
+      - vr-net
+
+volumes:
+  redis_data:
+  neo4j_data:
+
+networks:
+  vr-net:
+    driver: bridge

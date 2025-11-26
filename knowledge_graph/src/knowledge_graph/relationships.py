@@ -2,7 +2,7 @@
 
 import json
 import os
-from typing import List
+from typing import List, Dict, Union
 
 
 class RelationshipCreator:
@@ -17,26 +17,30 @@ class RelationshipCreator:
         """
         self.conn = connection
 
-    def create_course_skill_relations(self, course_skills_path: str):
+    def create_course_skill_relations(self, mappings_source: Union[str, List[Dict]]):
         """
         Create TEACHES relationships between Course and Skill nodes
 
         Args:
-            course_skills_path: Path to course-skills mapping JSON file
+            mappings_source: Path to course-skills mapping JSON file OR List of mappings
         """
-        print(f"\n[Relations] Loading course-skill mappings from {course_skills_path}...")
-
-        if not os.path.exists(course_skills_path):
-            raise FileNotFoundError(f"Course-skills mapping file not found: {course_skills_path}")
-
-        with open(course_skills_path, 'r', encoding='utf-8') as f:
-            mappings = json.load(f)
+        mappings = []
+        if isinstance(mappings_source, str):
+            print(f"\n[Relations] Loading course-skill mappings from {mappings_source}...")
+            if not os.path.exists(mappings_source):
+                raise FileNotFoundError(f"Course-skills mapping file not found: {mappings_source}")
+            with open(mappings_source, 'r', encoding='utf-8') as f:
+                mappings = json.load(f)
+        else:
+            print(f"\n[Relations] Loading course-skill mappings from memory/DB...")
+            mappings = mappings_source
 
         print(f"  Processing {len(mappings)} course-skill mappings...")
 
+        # Supports 'source_id' (JSON) or 'course_id' (MongoDB)
         cypher = """
         UNWIND $mappings AS m
-        MATCH (c:Course {course_id: m.source_id})
+        MATCH (c:Course {course_id: coalesce(m.source_id, m.course_id)})
         MATCH (s:Skill {name: m.skill_name})
         MERGE (c)-[r:TEACHES]->(s)
         SET r.weight = m.weight,
@@ -54,26 +58,30 @@ class RelationshipCreator:
             print(f"✗ Failed to create TEACHES relationships: {e}")
             raise
 
-    def create_app_skill_relations(self, app_skills_path: str):
+    def create_app_skill_relations(self, mappings_source: Union[str, List[Dict]]):
         """
         Create DEVELOPS relationships between VRApp and Skill nodes
 
         Args:
-            app_skills_path: Path to app-skills mapping JSON file
+            mappings_source: Path to app-skills mapping JSON file OR List of mappings
         """
-        print(f"\n[Relations] Loading app-skill mappings from {app_skills_path}...")
-
-        if not os.path.exists(app_skills_path):
-            raise FileNotFoundError(f"App-skills mapping file not found: {app_skills_path}")
-
-        with open(app_skills_path, 'r', encoding='utf-8') as f:
-            mappings = json.load(f)
+        mappings = []
+        if isinstance(mappings_source, str):
+            print(f"\n[Relations] Loading app-skill mappings from {mappings_source}...")
+            if not os.path.exists(mappings_source):
+                raise FileNotFoundError(f"App-skills mapping file not found: {mappings_source}")
+            with open(mappings_source, 'r', encoding='utf-8') as f:
+                mappings = json.load(f)
+        else:
+            print(f"\n[Relations] Loading app-skill mappings from memory/DB...")
+            mappings = mappings_source
 
         print(f"  Processing {len(mappings)} app-skill mappings...")
 
+        # Supports 'source_id' (JSON) or 'app_id' (MongoDB)
         cypher = """
         UNWIND $mappings AS m
-        MATCH (a:VRApp {app_id: m.source_id})
+        MATCH (a:VRApp {app_id: coalesce(m.source_id, m.app_id)})
         MATCH (s:Skill {name: m.skill_name})
         MERGE (a)-[r:DEVELOPS]->(s)
         SET r.weight = m.weight,
@@ -95,36 +103,9 @@ class RelationshipCreator:
         """
         Compute RECOMMENDS relationships between Course and VRApp
         based on shared skills and their weights.
-        
-        NOTE: We are intentionally disabling the creation of direct :RECOMMENDS relationships
-        to force the RAG system to traverse the skill nodes ((Course)-[:DEVELOPS]->(Skill)<-[:DEVELOPS]-(VRApp)).
-        Direct links were causing the system to bypass the semantic layer.
         """
-        print(f"\\n[Relations] Skipping direct RECOMMENDATION creation (Architecture Fix).")
+        print(f"\n[Relations] Skipping direct RECOMMENDATION creation (Architecture Fix).")
         print(f"  System will rely on indirect (Course)->(Skill)<-(App) paths.")
-        
-        # cypher = """
-        # MATCH (c:Course)-[t:TEACHES]->(s:Skill)<-[d:DEVELOPS]-(a:VRApp)
-        # WITH c, a, collect(s.name) AS shared_skills,
-        #      sum(t.weight * d.weight) AS score
-        # WHERE size(shared_skills) >= $min_shared
-        # MERGE (c)-[r:RECOMMENDS]->(a)
-        # SET r.score = score,
-        #     r.shared_skills = shared_skills,
-        #     r.skill_count = size(shared_skills),
-        #     r.created_at = timestamp()
-        # """
-
-        # try:
-        #     self.conn.execute(cypher, {"min_shared": min_shared_skills})
-
-        #     # Count relationships created
-        #     result = self.conn.query("MATCH ()-[r:RECOMMENDS]->() RETURN count(r) as count")
-        #     count = result[0]['count'] if result else 0
-        #     print(f"✓ Computed {count} RECOMMENDS relationships")
-        # except Exception as e:
-        #     print(f"✗ Failed to compute RECOMMENDS relationships: {e}")
-        #     raise
 
     def get_relationship_counts(self) -> dict:
         """

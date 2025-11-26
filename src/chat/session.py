@@ -1,44 +1,29 @@
-"""Chat session management for VR recommender.
-
-Manages user chat sessions, including history and context.
-"""
-
-import json
-import os
+"""Chat session management - MongoDB implementation."""
 from datetime import datetime
 from typing import List, Dict
-
+from src.db.repositories.sessions_repo import ChatSessionsRepository
 
 class ChatSession:
     """Chat session management."""
 
-    def __init__(self, session_id: str, storage_dir: str = "chat_logs"):
+    def __init__(self, session_id: str, user_id: str = "anonymous"):
         """
         Initialize a chat session.
 
         Args:
             session_id: Unique session identifier
-            storage_dir: Directory to store session logs
+            user_id: User identifier
         """
         self.session_id = session_id
-        self.storage_dir = storage_dir
-        self.storage_path = f"{storage_dir}/{session_id}.json"
-        self.history: List[Dict] = []
+        self.user_id = user_id
+        self.repo = ChatSessionsRepository()
+        self._load_or_create()
 
-        os.makedirs(storage_dir, exist_ok=True)
-        self._load()
-
-    def _load(self):
-        """Load session history from disk."""
-        if os.path.exists(self.storage_path):
-            with open(self.storage_path, 'r') as f:
-                self.history = json.load(f)
-
-    def save(self):
-        """Save session history to disk."""
-        with open(self.storage_path, 'w') as f:
-            json.dump(self.history, f, indent=2)
-
+    def _load_or_create(self):
+        """Load session from DB or create if new."""
+        # This ensures the session document exists
+        self.repo.get_or_create(self.session_id, self.user_id)
+        
     def add_message(self, role: str, content: str):
         """
         Add a message to the session.
@@ -47,16 +32,11 @@ class ChatSession:
             role: Message role (e.g., 'user', 'assistant')
             content: Message content
         """
-        self.history.append({
-            "role": role,
-            "content": content,
-            "timestamp": datetime.now().isoformat()
-        })
-        self.save()
+        self.repo.add_message(self.session_id, role, content)
 
     def get_context(self, last_n: int = 5) -> str:
         """
-        Get recent messages as context.
+        Get recent messages as context string.
 
         Args:
             last_n: Number of recent messages to include
@@ -64,8 +44,13 @@ class ChatSession:
         Returns:
             Formatted context string
         """
-        recent = self.history[-last_n:] if len(self.history) > last_n else self.history
-        return "\n".join([f"{m['role']}: {m['content']}" for m in recent])
+        messages = self.repo.get_messages(self.session_id, limit=last_n)
+        # Messages from repo are dicts, need to format them
+        return "\n".join([f"{m['role']}: {m['content']}" for m in messages])
+
+    def get_messages(self, limit: int = 20) -> List[Dict]:
+        """Get raw messages list."""
+        return self.repo.get_messages(self.session_id, limit=limit)
 
     def should_trigger_recommendation(self, message: str) -> bool:
         """
@@ -85,11 +70,12 @@ class ChatSession:
         return any(t in message.lower() for t in triggers)
 
     def clear_history(self):
-        """Clear session history."""
-        self.history = []
-        if os.path.exists(self.storage_path):
-            os.remove(self.storage_path)
+        """Clear session history (Not implemented for persistent DB)."""
+        # In a persistent DB, we typically don't delete history unless requested.
+        # For now, we can just mark it ended or do nothing.
+        pass
 
     def get_message_count(self) -> int:
         """Get total number of messages in session."""
-        return len(self.history)
+        doc = self.repo.collection.find_one({"_id": self.session_id}, {"message_count": 1})
+        return doc.get("message_count", 0) if doc else 0

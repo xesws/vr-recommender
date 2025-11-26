@@ -25,6 +25,19 @@ from data_collection.vr_app_fetcher_improved import VRAppFetcherImproved
 from skill_extraction.pipeline import SkillExtractionPipeline
 from knowledge_graph.builder import KnowledgeGraphBuilder
 
+# Import DB Repositories
+try:
+    from src.db.repositories import (
+        CoursesRepository,
+        VRAppsRepository,
+        SkillsRepository,
+        CourseSkillsRepository,
+        AppSkillsRepository
+    )
+    MONGO_AVAILABLE = True
+except ImportError:
+    MONGO_AVAILABLE = False
+
 class JobManager:
     """Manages background data update jobs."""
     
@@ -39,12 +52,20 @@ class JobManager:
         self.data_dir = os.path.join(self.base_dir, "data_collection", "data")
 
     def get_data_stats(self) -> Dict[str, Any]:
-        """Get stats about data files."""
+        """Get stats about data files and DB."""
         stats = {
             "courses": self._get_file_info("courses.json"),
             "vr_apps": self._get_file_info("vr_apps.json"),
-            "skills": self._get_file_info("skills.json") # Added skills stats
+            "skills": self._get_file_info("skills.json")
         }
+        
+        if MONGO_AVAILABLE:
+            try:
+                stats["db_courses"] = CoursesRepository().count()
+                stats["db_apps"] = VRAppsRepository().count()
+                stats["db_skills"] = SkillsRepository().count()
+            except:
+                stats["db_status"] = "unavailable"
         
         # Add job status
         if self.current_job:
@@ -148,8 +169,11 @@ class JobManager:
             self._log("Processing courses and apps...")
             pipeline.run(courses_path, apps_path, self.data_dir, top_n=top_n)
             
-            self._log("Skill extraction complete.")
-            self._log(f"Results saved to {self.data_dir}")
+            self._log("Skill extraction complete. Results saved to JSON.")
+
+            # Sync to MongoDB
+            if MONGO_AVAILABLE:
+                self._sync_skills_to_mongo()
             
         except Exception as e:
             raise e
@@ -164,6 +188,7 @@ class JobManager:
             builder = KnowledgeGraphBuilder(logger=self._log)
             
             self._log("Building graph in Neo4j...")
+            # Builder now prefers MongoDB automatically
             builder.build(data_dir=self.data_dir, clear=clear_db)
             
             self._log("Graph build complete.")
@@ -198,10 +223,16 @@ class JobManager:
                 
             self._log(f"Fetched {len(courses)} courses.")
             
-            # Save
+            # Save JSON
             save_path = os.path.join(self.data_dir, "courses.json")
             fetcher.save_courses(courses, path=save_path)
             self._log(f"Saved to {save_path}")
+
+            # Sync to MongoDB
+            if MONGO_AVAILABLE:
+                self._log("Syncing courses to MongoDB...")
+                count = CoursesRepository().bulk_upsert(courses)
+                self._log(f"✓ Synced {count} courses to MongoDB")
             
         except Exception as e:
             raise e
@@ -224,10 +255,38 @@ class JobManager:
                 
             self._log(f"Fetched {len(apps)} apps.")
             
-            # Save
+            # Save JSON
             save_path = os.path.join(self.data_dir, "vr_apps.json")
             fetcher.save_apps(apps, path=save_path)
             self._log(f"Saved to {save_path}")
+
+            # Sync to MongoDB
+            if MONGO_AVAILABLE:
+                self._log("Syncing VR apps to MongoDB...")
+                count = VRAppsRepository().bulk_upsert(apps)
+                self._log(f"✓ Synced {count} apps to MongoDB")
             
         except Exception as e:
             raise e
+
+    def _sync_skills_to_mongo(self):
+        """Helper to sync extracted skills and mappings to MongoDB."""
+        self._log("Syncing skills and mappings to MongoDB...")
+        
+        # Load from JSON
+        try:
+            with open(os.path.join(self.data_dir, "skills.json")) as f:
+                skills = json.load(f)
+            with open(os.path.join(self.data_dir, "course_skills.json")) as f:
+                c_skills = json.load(f)
+            with open(os.path.join(self.data_dir, "app_skills.json")) as f:
+                a_skills = json.load(f)
+
+            # Write to Mongo
+            s_count = SkillsRepository().bulk_upsert(skills)
+            cs_count = CourseSkillsRepository().bulk_upsert(c_skills)
+            as_count = AppSkillsRepository().bulk_upsert(a_skills)
+            
+            self._log(f"✓ MongoDB Sync: {s_count} skills, {cs_count} course-skills, {as_count} app-skills")
+        except Exception as e:
+            self._log(f"⚠ MongoDB Sync failed: {e}")

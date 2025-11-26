@@ -2,7 +2,7 @@
 
 import json
 import os
-from typing import List, Dict
+from typing import List, Dict, Union
 
 
 class NodeCreator:
@@ -17,20 +17,25 @@ class NodeCreator:
         """
         self.conn = connection
 
-    def create_courses(self, courses_path: str):
+    def create_courses(self, courses_source: Union[str, List[Dict]]):
         """
-        Create Course nodes from JSON file
+        Create Course nodes from JSON file or List of dicts
 
         Args:
-            courses_path: Path to courses JSON file
+            courses_source: Path to courses JSON file OR List of course dictionaries
         """
-        print(f"\n[Nodes] Loading courses from {courses_path}...")
+        courses = []
+        if isinstance(courses_source, str):
+            print(f"\n[Nodes] Loading courses from {courses_source}...")
 
-        if not os.path.exists(courses_path):
-            raise FileNotFoundError(f"Courses file not found: {courses_path}")
+            if not os.path.exists(courses_source):
+                raise FileNotFoundError(f"Courses file not found: {courses_source}")
 
-        with open(courses_path, 'r', encoding='utf-8') as f:
-            courses = json.load(f)
+            with open(courses_source, 'r', encoding='utf-8') as f:
+                courses = json.load(f)
+        else:
+            print(f"\n[Nodes] Loading courses from memory/DB...")
+            courses = courses_source
 
         # Filter out placeholder courses
         courses = [
@@ -57,20 +62,23 @@ class NodeCreator:
             print(f"✗ Failed to create Course nodes: {e}")
             raise
 
-    def create_apps(self, apps_path: str):
+    def create_apps(self, apps_source: Union[str, List[Dict]]):
         """
-        Create VRApp nodes from JSON file
+        Create VRApp nodes from JSON file or List of dicts
 
         Args:
-            apps_path: Path to VR apps JSON file
+            apps_source: Path to VR apps JSON file OR List of app dictionaries
         """
-        print(f"\n[Nodes] Loading VR apps from {apps_path}...")
-
-        if not os.path.exists(apps_path):
-            raise FileNotFoundError(f"VR apps file not found: {apps_path}")
-
-        with open(apps_path, 'r', encoding='utf-8') as f:
-            apps = json.load(f)
+        apps = []
+        if isinstance(apps_source, str):
+            print(f"\n[Nodes] Loading VR apps from {apps_source}...")
+            if not os.path.exists(apps_source):
+                raise FileNotFoundError(f"VR apps file not found: {apps_source}")
+            with open(apps_source, 'r', encoding='utf-8') as f:
+                apps = json.load(f)
+        else:
+            print(f"\n[Nodes] Loading VR apps from memory/DB...")
+            apps = apps_source
 
         print(f"  Processing {len(apps)} VR apps...")
 
@@ -93,20 +101,23 @@ class NodeCreator:
             print(f"✗ Failed to create VRApp nodes: {e}")
             raise
 
-    def create_skills(self, skills_path: str):
+    def create_skills(self, skills_source: Union[str, List[Dict]]):
         """
-        Create Skill nodes from JSON file
+        Create Skill nodes from JSON file or List of dicts
 
         Args:
-            skills_path: Path to skills JSON file
+            skills_source: Path to skills JSON file OR List of skill dictionaries
         """
-        print(f"\n[Nodes] Loading skills from {skills_path}...")
-
-        if not os.path.exists(skills_path):
-            raise FileNotFoundError(f"Skills file not found: {skills_path}")
-
-        with open(skills_path, 'r', encoding='utf-8') as f:
-            skills = json.load(f)
+        skills = []
+        if isinstance(skills_source, str):
+            print(f"\n[Nodes] Loading skills from {skills_source}...")
+            if not os.path.exists(skills_source):
+                raise FileNotFoundError(f"Skills file not found: {skills_source}")
+            with open(skills_source, 'r', encoding='utf-8') as f:
+                skills = json.load(f)
+        else:
+            print(f"\n[Nodes] Loading skills from memory/DB...")
+            skills = skills_source
 
         print(f"  Processing {len(skills)} skills...")
 

@@ -11,6 +11,20 @@ from knowledge_graph.schema import KnowledgeGraphSchema
 from knowledge_graph.nodes import NodeCreator
 from knowledge_graph.relationships import RelationshipCreator
 
+# Try to import Repositories (fails if dependencies not installed)
+try:
+    from src.db.repositories import (
+        CoursesRepository, 
+        VRAppsRepository, 
+        SkillsRepository,
+        CourseSkillsRepository,
+        AppSkillsRepository
+    )
+    MONGO_AVAILABLE = True
+except ImportError:
+    MONGO_AVAILABLE = False
+    print("⚠ MongoDB repositories not found. Falling back to JSON files only.")
+
 
 class KnowledgeGraphBuilder:
     """Main orchestrator for building the knowledge graph"""
@@ -36,7 +50,7 @@ class KnowledgeGraphBuilder:
         Build the complete knowledge graph
 
         Args:
-            data_dir: Directory containing JSON data files
+            data_dir: Directory containing JSON data files (fallback)
             clear: Whether to clear existing data
             min_shared_skills: Minimum shared skills for recommendations
         """
@@ -55,19 +69,55 @@ class KnowledgeGraphBuilder:
             self.schema.init_constraints()
             self.schema.init_indexes()
 
+            # Load Data Strategy: Try MongoDB first, then JSON
+            courses, apps, skills = [], [], []
+            course_skills, app_skills = [], []
+            
+            data_loaded_from_mongo = False
+
+            if MONGO_AVAILABLE:
+                try:
+                    self.logger("\n[Data Load] Attempting to load from MongoDB...")
+                    courses = CoursesRepository().find_all()
+                    apps = VRAppsRepository().find_all()
+                    skills = SkillsRepository().find_all()
+                    course_skills = CourseSkillsRepository().find_all()
+                    app_skills = AppSkillsRepository().find_all()
+                    
+                    if courses and apps:
+                        data_loaded_from_mongo = True
+                        self.logger(f"✓ Loaded from MongoDB: {len(courses)} courses, {len(apps)} apps, {len(skills)} skills")
+                    else:
+                        self.logger("⚠ MongoDB returned empty data. Falling back to JSON.")
+                except Exception as e:
+                    self.logger(f"⚠ MongoDB load failed: {e}. Falling back to JSON.")
+
+            # Fallback to JSON if needed
+            if not data_loaded_from_mongo:
+                self.logger(f"\n[Data Load] Loading from JSON files in {data_dir}...")
+                # We pass the file paths to Creators, which support both paths and lists
+                # But to keep logic uniform, let's stick to passing data if possible, 
+                # or let Creators handle paths if data is empty.
+                # Ideally, we just pass what we have.
+                
+                # If we are here, courses/apps are empty or None. 
+                # We will pass the file paths string to the creators.
+                courses = f"{data_dir}/courses.json"
+                apps = f"{data_dir}/vr_apps.json"
+                skills = f"{data_dir}/skills.json"
+                course_skills = f"{data_dir}/course_skills.json"
+                app_skills = f"{data_dir}/app_skills.json"
+
             # 2. Create nodes
             self.logger("\n[2/4] Creating nodes...")
-            self.logger(f"  Loading courses from {data_dir}/courses.json...")
-            self.nodes.create_courses(f"{data_dir}/courses.json")
-            self.logger(f"  Loading apps from {data_dir}/vr_apps.json...")
-            self.nodes.create_apps(f"{data_dir}/vr_apps.json")
-            self.logger(f"  Loading skills from {data_dir}/skills.json...")
-            self.nodes.create_skills(f"{data_dir}/skills.json")
+            self.nodes.create_courses(courses)
+            self.nodes.create_apps(apps)
+            self.nodes.create_skills(skills)
 
             # 3. Create relationships
             self.logger("\n[3/4] Creating relationships...")
-            self.relations.create_course_skill_relations(f"{data_dir}/course_skills.json")
-            self.relations.create_app_skill_relations(f"{data_dir}/app_skills.json")
+            self.relations.create_course_skill_relations(course_skills)
+            self.relations.create_app_skill_relations(app_skills)
 
             # 4. Compute recommendations
             self.logger(f"\n[4/4] Computing recommendations (min_shared_skills={min_shared_skills})...")
@@ -113,56 +163,63 @@ class KnowledgeGraphBuilder:
         # Additional insights
         self.logger("\n💡 Insights:")
 
-        # Top skills by source count
-        result = self.conn.query("""
-            MATCH (s:Skill)
-            RETURN s.name as name, s.source_count as count, s.category as category
-            ORDER BY s.source_count DESC
-            LIMIT 5
-        """)
-        if result:
-            self.logger("   Top 5 skills by mentions:")
-            for i, record in enumerate(result, 1):
-                self.logger(f"      {i}. {record['name']} ({record['category']}): {record['count']} mentions")
+        try:
+            # Top skills by source count
+            result = self.conn.query("""
+                MATCH (s:Skill)
+                RETURN s.name as name, s.source_count as count, s.category as category
+                ORDER BY s.source_count DESC
+                LIMIT 5
+            """ 
+            )
+            if result:
+                self.logger("   Top 5 skills by mentions:")
+                for i, record in enumerate(result, 1):
+                    self.logger(f"      {i}. {record['name']} ({record['category']}): {record['count']} mentions")
 
-        # Courses with most skills
-        result = self.conn.query("""
-            MATCH (c:Course)-[r:TEACHES]->(s:Skill)
-            WITH c, count(s) as skill_count
-            RETURN c.title as title, skill_count
-            ORDER BY skill_count DESC
-            LIMIT 5
-        """)
-        if result:
-            self.logger("\n   Courses teaching most skills:")
-            for i, record in enumerate(result, 1):
-                self.logger(f"      {i}. {record['title']}: {record['skill_count']} skills")
+            # Courses with most skills
+            result = self.conn.query("""
+                MATCH (c:Course)-[r:TEACHES]->(s:Skill)
+                WITH c, count(s) as skill_count
+                RETURN c.title as title, skill_count
+                ORDER BY skill_count DESC
+                LIMIT 5
+            """ 
+            )
+            if result:
+                self.logger("\n   Courses teaching most skills:")
+                for i, record in enumerate(result, 1):
+                    self.logger(f"      {i}. {record['title']}: {record['skill_count']} skills")
 
-        # Top VR apps by skills
-        result = self.conn.query("""
-            MATCH (a:VRApp)-[r:DEVELOPS]->(s:Skill)
-            WITH a, count(s) as skill_count
-            RETURN a.name as name, skill_count
-            ORDER BY skill_count DESC
-            LIMIT 5
-        """)
-        if result:
-            self.logger("\n   VR apps developing most skills:")
-            for i, record in enumerate(result, 1):
-                self.logger(f"      {i}. {record['name']}: {record['skill_count']} skills")
+            # Top VR apps by skills
+            result = self.conn.query("""
+                MATCH (a:VRApp)-[r:DEVELOPS]->(s:Skill)
+                WITH a, count(s) as skill_count
+                RETURN a.name as name, skill_count
+                ORDER BY skill_count DESC
+                LIMIT 5
+            """ 
+            )
+            if result:
+                self.logger("\n   VR apps developing most skills:")
+                for i, record in enumerate(result, 1):
+                    self.logger(f"      {i}. {record['name']}: {record['skill_count']} skills")
 
-        # Course-VR app recommendations
-        result = self.conn.query("""
-            MATCH (c:Course)-[r:RECOMMENDS]->(a:VRApp)
-            RETURN count(*) as total_recommendations,
-                   avg(r.skill_count) as avg_shared_skills,
-                   max(r.skill_count) as max_shared_skills
-        """)
-        if result and result[0]['total_recommendations'] > 0:
-            r = result[0]
-            self.logger(f"\n   Total course-app recommendations: {r['total_recommendations']}")
-            self.logger(f"   Average shared skills per recommendation: {r['avg_shared_skills']:.1f}")
-            self.logger(f"   Maximum shared skills: {r['max_shared_skills']}")
+            # Course-VR app recommendations
+            result = self.conn.query("""
+                MATCH (c:Course)-[r:RECOMMENDS]->(a:VRApp)
+                RETURN count(*) as total_recommendations,
+                       avg(r.skill_count) as avg_shared_skills,
+                       max(r.skill_count) as max_shared_skills
+            """ 
+            )
+            if result and result[0]['total_recommendations'] > 0:
+                r = result[0]
+                self.logger(f"\n   Total course-app recommendations: {r['total_recommendations']}")
+                self.logger(f"   Average shared skills per recommendation: {r['avg_shared_skills']:.1f}")
+                self.logger(f"   Maximum shared skills: {r['max_shared_skills']}")
+        except Exception as e:
+            self.logger(f"\n⚠ Failed to generate some insights: {e}")
 
     def cleanup(self):
         """Clean up resources"""
@@ -170,58 +227,5 @@ class KnowledgeGraphBuilder:
             self.conn.close()
 
     def query(self, cypher: str, params: dict = None):
-        """
-        Execute a custom query
-
-        Args:
-            cypher: Cypher query
-            params: Query parameters
-
-        Returns:
-            Query results
-        """
+        """Execute a custom query"""
         return self.conn.query(cypher, params)
-
-    def test_build(self, data_dir: str = "stage1/data"):
-        """
-        Test the build process with a small dataset
-
-        Args:
-            data_dir: Directory containing JSON data files
-        """
-        self.logger("\n🧪 TEST BUILD")
-        self.logger("="*60)
-
-        # Check data files exist
-        required_files = [
-            f"{data_dir}/courses.json",
-            f"{data_dir}/vr_apps.json",
-            f"{data_dir}/skills.json",
-            f"{data_dir}/course_skills.json",
-            f"{data_dir}/app_skills.json"
-        ]
-
-        for file_path in required_files:
-            if not os.path.exists(file_path):
-                self.logger(f"✗ Missing required file: {file_path}")
-                return False
-
-        self.logger("✓ All required data files present")
-
-        # Test Neo4j connection
-        if not self.conn.test_connection():
-            self.logger("✗ Neo4j connection test failed")
-            return False
-
-        self.logger("✓ Neo4j connection successful")
-
-        # Test basic query
-        try:
-            result = self.conn.query("RETURN 'Connection test successful' as message")
-            self.logger(f"✓ {result[0]['message']}")
-        except Exception as e:
-            self.logger(f"✗ Query test failed: {e}")
-            return False
-
-        self.logger("\n✓ All tests passed")
-        return True

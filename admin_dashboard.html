@@ -16,9 +16,28 @@
         .intent-badge { font-size: 0.8rem; }
         .refresh-btn { cursor: pointer; }
         pre { background: #f8f9fa; padding: 10px; border-radius: 5px; max-height: 200px; overflow-y: auto; }
+        /* Overlay styles */
+        #auth-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.95); z-index: 9999;
+            display: flex; align-items: center; justify-content: center;
+        }
     </style>
 </head>
 <body>
+
+<!-- Auth Overlay -->
+<div id="auth-overlay">
+    <div class="card shadow-lg p-4" style="width: 350px;">
+        <h4 class="text-center mb-3"><i class="bi bi-shield-lock-fill text-primary"></i> Admin Login</h4>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" id="auth-pass" class="form-control" onkeyup="if(event.key==='Enter') doLogin()">
+        </div>
+        <button class="btn btn-primary w-100" onclick="doLogin()">Unlock</button>
+        <p id="auth-error" class="text-danger mt-2 text-center small"></p>
+    </div>
+</div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -34,8 +53,11 @@
                     <a class="nav-link" href="/admin/data">Data Management</a>
                 </li>
             </ul>
-            <button class="btn btn-outline-light btn-sm" onclick="fetchData()">
+            <button class="btn btn-outline-light btn-sm me-2" onclick="fetchData()">
                 <i class="bi bi-arrow-clockwise me-1"></i>Refresh
+            </button>
+            <button class="btn btn-sm btn-danger" onclick="doLogout()">
+                <i class="bi bi-box-arrow-right"></i> Logout
             </button>
         </div>
     </div>
@@ -141,24 +163,73 @@
     const BASE_URL = "http://localhost:5001";
     let refreshInterval;
 
+    // --- Auth Logic ---
+    async function checkAuth() {
+        try {
+            const res = await fetch('/api/auth/check');
+            const data = await res.json();
+            if (data.is_admin) {
+                document.getElementById('auth-overlay').style.display = 'none';
+                fetchData(); // Start loading data
+            } else {
+                document.getElementById('auth-overlay').style.display = 'flex';
+            }
+        } catch (e) {
+            console.error("Auth check failed", e);
+            document.getElementById('auth-overlay').style.display = 'flex';
+        }
+    }
+
+    async function doLogin() {
+        const pass = document.getElementById('auth-pass').value;
+        const err = document.getElementById('auth-error');
+        
+        try {
+            const res = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({password: pass})
+            });
+            
+            const data = await res.json();
+            
+            if (res.ok) {
+                location.reload();
+            } else {
+                err.textContent = data.error || 'Login failed';
+            }
+        } catch (e) {
+            err.textContent = "Network error";
+        }
+    }
+
+    async function doLogout() {
+        await fetch('/api/auth/logout', {method: 'POST'});
+        location.reload();
+    }
+
+    // --- Data Logic ---
+
     async function fetchData() {
         const userFilter = document.getElementById('user-filter').value;
         
         try {
             // Fetch Stats
-            const statsRes = await fetch(`${BASE_URL}/api/admin/stats`);
+            const statsRes = await fetch('/api/admin/stats');
+            if (statsRes.status === 401) return location.reload(); // Re-auth needed
+
             const stats = await statsRes.json();
             
             document.getElementById('total-interactions').textContent = stats.total_interactions;
             document.getElementById('unique-users').textContent = stats.unique_users;
             
-            const intentsHtml = stats.top_intents.map(i => 
-                `<span class="badge bg-secondary me-1">${i[0]} (${i[1]})</span>`
+            const intentsHtml = (stats.top_intents || []).map(i => 
+                `<span class="badge bg-secondary me-1">${i._id || i.intent} (${i.count})</span>`
             ).join('');
             document.getElementById('top-intents').innerHTML = intentsHtml || '<span class="text-muted">No data</span>';
 
             // Fetch Logs
-            let logUrl = `${BASE_URL}/api/admin/logs?limit=50`;
+            let logUrl = '/api/admin/logs?limit=50';
             if (userFilter) logUrl += `&user_id=${userFilter}`;
             
             const logsRes = await fetch(logUrl);
@@ -178,7 +249,7 @@
         }
 
         tbody.innerHTML = logs.map(log => {
-            const meta = JSON.parse(log.metadata || '{}');
+            const meta = typeof log.metadata === 'string' ? JSON.parse(log.metadata) : (log.metadata || {});
             const latency = meta.latency_ms ? `${meta.latency_ms}ms` : '-';
             
             const intentColors = {
@@ -189,12 +260,15 @@
             const badgeColor = intentColors[log.intent] || 'secondary';
             
             // Truncate ID and Query
-            const shortUser = log.user_id.substring(0, 8) + '...';
-            const shortQuery = log.query_text.length > 30 ? log.query_text.substring(0, 30) + '...' : log.query_text;
+            const shortUser = log.user_id ? log.user_id.substring(0, 8) + '...' : 'anon';
+            const shortQuery = log.query_text && log.query_text.length > 30 ? log.query_text.substring(0, 30) + '...' : (log.query_text || '-');
             const shortResp = log.response_text ? log.response_text.substring(0, 40) + '...' : '-';
 
+            // Safely stringify log for onclick attribute
+            const logStr = JSON.stringify(log).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+
             return `
-                <tr onclick='showDetails(${JSON.stringify(log).replace(/'/g, "&#39;")})' style="cursor:pointer">
+                <tr onclick='showDetails(${logStr})' style="cursor:pointer">
                     <td class="small text-muted">${new Date(log.timestamp).toLocaleTimeString()}</td>
                     <td><code title="${log.user_id}">${shortUser}</code></td>
                     <td><span class="badge bg-${badgeColor} intent-badge">${log.intent}</span></td>
@@ -208,33 +282,28 @@
     }
 
     function showDetails(log) {
+        // Fix potential parsing issues if object comes directly
         document.getElementById('modal-query').textContent = log.query_text;
         document.getElementById('modal-user').textContent = log.user_id;
         document.getElementById('modal-time').textContent = new Date(log.timestamp).toLocaleString();
         document.getElementById('modal-response').textContent = log.response_text;
         
-        try {
-            const apps = JSON.parse(log.recommended_apps || '[]');
-            document.getElementById('modal-apps').textContent = JSON.stringify(apps, null, 2);
-        } catch(e) {
-            document.getElementById('modal-apps').textContent = log.recommended_apps;
-        }
+        const apps = typeof log.recommended_apps === 'string' ? JSON.parse(log.recommended_apps) : log.recommended_apps;
+        document.getElementById('modal-apps').textContent = JSON.stringify(apps, null, 2);
         
-        try {
-            const meta = JSON.parse(log.metadata || '{}');
-            document.getElementById('modal-meta').textContent = JSON.stringify(meta, null, 2);
-        } catch(e) {
-            document.getElementById('modal-meta').textContent = log.metadata;
-        }
+        const meta = typeof log.metadata === 'string' ? JSON.parse(log.metadata) : log.metadata;
+        document.getElementById('modal-meta').textContent = JSON.stringify(meta, null, 2);
 
         const modal = new bootstrap.Modal(document.getElementById('detailModal'));
         modal.show();
     }
 
-    // Initial Load
-    fetchData();
-    // Auto refresh every 10s
-    refreshInterval = setInterval(fetchData, 10000);
+    // Start
+    checkAuth();
+    // Auto refresh every 10s (only if authed)
+    refreshInterval = setInterval(() => {
+        if(document.getElementById('auth-overlay').style.display === 'none') fetchData();
+    }, 10000);
 </script>
 
 </body>

@@ -1,0 +1,51 @@
+# Multi-stage build for smaller image
+FROM python:3.9-slim as builder
+
+WORKDIR /app
+
+# Install system dependencies for building Python packages
+# - gcc: C compiler for native extensions
+# - libffi-dev: Required by some packages
+# - g++: C++ compiler (required by sentence-transformers/onnx)
+# - build-essential: General build tools
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    libffi-dev \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# Runtime stage
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install minimal runtime deps (if any needed, e.g. curl for healthcheck)
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy installed packages from builder
+COPY --from=builder /root/.local /root/.local
+ENV PATH=/root/.local/bin:$PATH
+
+# Copy application code
+COPY . .
+
+# Expose port
+EXPOSE 5000
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV FLASK_APP=flask_api.py
+
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:5000/health || exit 1
+
+# Run with Gunicorn
+CMD ["gunicorn", "-c", "gunicorn_config.py", "flask_api:app"]
