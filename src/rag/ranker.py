@@ -6,6 +6,7 @@ Uses OpenRouter API to re-rank applications and generate explanations.
 import os
 import json
 from typing import List, Dict
+from src.config_manager import ConfigManager
 
 try:
     from openai import OpenAI
@@ -21,11 +22,13 @@ class LLMRanker:
         if OpenAI is None:
             raise ImportError("openai package required. Install with: pip install openai")
 
+        self.config = ConfigManager()
+        
         self.client = OpenAI(
-            api_key=os.getenv("OPENROUTER_API_KEY"),
+            api_key=self.config.openrouter_api_key,
             base_url="https://openrouter.ai/api/v1"
         )
-        self.model = os.getenv("OPENROUTER_MODEL", "google/gemini-2.0-flash-001")
+        self.model = self.config.openrouter_model
 
     def rank_and_explain(self, query: str, apps: List[Dict]) -> List[Dict]:
         """

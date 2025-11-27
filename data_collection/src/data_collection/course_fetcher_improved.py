@@ -20,15 +20,16 @@ from models import Course
 class CMUCourseFetcherImproved:
     """Improved CMU course fetcher that scrapes detail pages from all departments"""
 
-    def __init__(self, logger=None):
+    def __init__(self, logger=None, api_key: str = None):
         """
         Initialize the fetcher with Firecrawl API
         
         Args:
             logger: Optional logging function (defaults to print)
+            api_key: Optional Firecrawl API key
         """
         self.logger = logger if logger else print
-        self.api_key = os.getenv("FIRECRAWL_API_KEY")
+        self.api_key = api_key or os.getenv("FIRECRAWL_API_KEY")
         if not self.api_key:
             self.logger("Warning: FIRECRAWL_API_KEY environment variable not set") # Changed raise to log warning for robustness
 

@@ -25,6 +25,8 @@ from data_collection.vr_app_fetcher_improved import VRAppFetcherImproved
 from skill_extraction.pipeline import SkillExtractionPipeline
 from knowledge_graph.builder import KnowledgeGraphBuilder
 
+from src.config_manager import ConfigManager
+
 # Import DB Repositories
 try:
     from src.db.repositories import (
@@ -206,7 +208,8 @@ class JobManager:
         
         try:
             # Inject logger
-            fetcher = CMUCourseFetcherImproved(logger=self._log)
+            config = ConfigManager()
+            fetcher = CMUCourseFetcherImproved(logger=self._log, api_key=config.firecrawl_api_key)
             
             # Use the fetcher
             self._log("Fetching courses from CMU catalog...")
@@ -244,7 +247,8 @@ class JobManager:
         self._log(f"Initializing VR App Fetcher (Categories: {categories})...")
         
         try:
-            fetcher = VRAppFetcherImproved()
+            config = ConfigManager()
+            fetcher = VRAppFetcherImproved(api_key=config.tavily_api_key)
             
             self._log("Fetching VR apps via Tavily...")
             apps = fetcher.fetch_apps(categories=categories)

@@ -25,6 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from vr_recommender import HeinzVRLLMRecommender, StudentQuery
 from src.logging_service import InteractionLogger
 from src.data_manager import JobManager
+from src.config_manager import ConfigManager
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", secrets.token_hex(32))
@@ -51,11 +52,15 @@ limiter = Limiter(
 recommender = None
 interaction_logger = None
 data_manager = None
+config_manager = None
 
 try:
     print("\n🔄 Initializing Services...")
     interaction_logger = InteractionLogger()
     print("✓ Database Logger ready")
+    
+    config_manager = ConfigManager()
+    print("✓ Config Manager ready")
     
     data_manager = JobManager()
     print("✓ Data Manager ready")
@@ -339,6 +344,81 @@ def process_graph():
     if "error" in result:
         return jsonify(result), 409
     return jsonify(result), 202
+
+@app.route("/api/admin/config", methods=["GET"])
+@login_required
+def get_config():
+    """Get system configuration."""
+    if not config_manager:
+        return jsonify({"error": "Config Manager unavailable"}), 503
+        
+    # Define keys we manage
+    managed_keys = ["OPENROUTER_API_KEY", "OPENROUTER_MODEL", "FIRECRAWL_API_KEY", "TAVILY_API_KEY", "MONGODB_URI", "NEO4J_URI"]
+    sensitive_keys = ["OPENROUTER_API_KEY", "FIRECRAWL_API_KEY", "TAVILY_API_KEY", "MONGODB_URI", "NEO4J_URI"]
+    
+    response_config = {}
+    
+    for key in managed_keys:
+        val = config_manager.get(key)
+        if val:
+            if key in sensitive_keys and len(val) > 8:
+                 response_config[key] = val[:4] + "*" * (len(val) - 8) + val[-4:]
+            elif key in sensitive_keys:
+                 response_config[key] = "*" * len(val)
+            else:
+                 response_config[key] = val
+        else:
+            response_config[key] = ""
+            
+    return jsonify(response_config)
+
+@app.route("/api/admin/config", methods=["POST"])
+@login_required
+def update_config():
+    """Update system configuration."""
+    global recommender
+    
+    if not config_manager:
+        return jsonify({"error": "Config Manager unavailable"}), 503
+        
+    data = request.get_json(silent=True) or {}
+    
+    updates = {}
+    for k, v in data.items():
+        # Ignore masked values (if they contain ***)
+        if "*****" in str(v): 
+            continue
+        updates[k] = v
+        
+    if not updates:
+        return jsonify({"message": "No changes detected"}), 200
+        
+    success = config_manager.set_bulk(updates)
+    
+    if success:
+        # Check if LLM settings changed
+        if "OPENROUTER_API_KEY" in updates or "OPENROUTER_MODEL" in updates:
+            print("♻️ LLM Config changed. Reloading recommender...")
+            try:
+                # Reload recommender
+                recommender = HeinzVRLLMRecommender()
+                print("✓ Recommender reloaded successfully")
+            except Exception as e:
+                print(f"❌ Error reloading recommender: {e}")
+                return jsonify({"success": True, "warning": f"Config saved but reload failed: {e}"}), 200
+
+        return jsonify({"success": True, "message": "Configuration updated"})
+    
+    return jsonify({"error": "Failed to update configuration"}), 500
+
+@app.route("/admin/config", methods=["GET"])
+def admin_config_page():
+    """Serve the Config Dashboard."""
+    print("\n📊 GET /admin/config - Serving Config Dashboard")
+    try:
+        return send_file("admin_config.html", mimetype="text/html")
+    except Exception as e:
+        return jsonify({"error": f"Config page not found: {e}"}), 404
 
 # --------------------------- Admin Pages (Protected) --------------------------- #
 

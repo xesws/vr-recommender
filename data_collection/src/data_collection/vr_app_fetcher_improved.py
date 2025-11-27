@@ -19,16 +19,18 @@ from models import VRApp
 class VRAppFetcherImproved:
     """Improved VR app fetcher using direct app name extraction"""
 
-    def __init__(self):
+    def __init__(self, api_key: str = None):
         """Initialize the fetcher with Tavily API"""
-        self.api_key = os.getenv("TAVILY_API_KEY")
+        self.api_key = api_key or os.getenv("TAVILY_API_KEY")
         if not self.api_key:
-            raise ValueError("TAVILY_API_KEY environment variable not set")
-
-        if TavilyClient is None:
-            raise ImportError("tavily-python not installed. Run: pip install tavily-python")
-
-        self.client = TavilyClient(api_key=self.api_key)
+            # raise ValueError("TAVILY_API_KEY environment variable not set")
+            # Warn instead of crash to allow curated apps
+            print("Warning: TAVILY_API_KEY not set. Only curated apps will be available.")
+            self.client = None
+        else:
+            if TavilyClient is None:
+                raise ImportError("tavily-python not installed. Run: pip install tavily-python")
+            self.client = TavilyClient(api_key=self.api_key)
 
         # Curated VR apps database with high-quality data
         self.curated_apps = self._build_curated_database()
