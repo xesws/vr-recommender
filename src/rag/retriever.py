@@ -26,7 +26,12 @@ class RAGRetriever:
 
     def __init__(self):
         """Initialize the retriever with search and graph services."""
-        self.skill_search = SkillSearchService()
+        # Resolve absolute path to vector store
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        # Path: src/rag/ -> ../../vector_store/data/chroma
+        persist_dir = os.path.abspath(os.path.join(current_dir, "../../vector_store/data/chroma"))
+        
+        self.skill_search = SkillSearchService(persist_dir=persist_dir)
         self.graph = Neo4jConnection()
         self.active_skills = self._get_active_skills()
         print(f"   [RAG] Loaded {len(self.active_skills)} active skills (skills with VR Apps)")
@@ -59,6 +64,12 @@ class RAGRetriever:
         Returns:
             List of dictionaries containing VR application data
         """
+        # Auto-refresh active skills if empty (handles case where graph was built after startup)
+        if not self.active_skills:
+            print("   [RAG] Active skills cache is empty. Refreshing from graph...")
+            self.active_skills = self._get_active_skills()
+            print(f"   [RAG] Refreshed: {len(self.active_skills)} active skills loaded")
+
         candidates = {}
         
         # Thresholds
