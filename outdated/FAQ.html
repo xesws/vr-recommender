@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Recommender - 常见问题解答</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .question {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        .question h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .answer {
+            color: #555;
+            line-height: 1.6;
+        }
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .error-box {
+            background: #ffe5e5;
+            border: 2px solid #ff6b6b;
+            color: #c92a2a;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .success-box {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>❓ 常见问题解答 (FAQ)</h1>
+
+        <div class="question">
+            <h3>❌ Q1: 我遇到了 "HTTP ERROR 403" 错误</h3>
+            <div class="answer">
+                <div class="error-box">
+                    <strong>错误:</strong> "访问 localhost 的请求遭到拒绝 - 您未获授权，无法查看此网页"
+                </div>
+                <p><strong>原因:</strong> 你可能在浏览器中直接打开了 <code>.sh</code> 脚本文件。</p>
+                <p><strong>解决方案:</strong></p>
+                <ol>
+                    <li>不要在浏览器中打开 <code>.sh</code> 文件</li>
+                    <li>在终端中运行: <code>./start_project.sh</code></li>
+                    <li>访问网页: <a href="http://127.0.0.1/index.html">http://127.0.0.1/index.html</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>❌ Q2: "Address already in use" 端口被占用</h3>
+            <div class="answer">
+                <div class="error-box">
+                    <strong>错误:</strong> "Address already in use - Port 5001 is in use by another program"
+                </div>
+                <p><strong>解决方案:</strong></p>
+                <div class="code">./restart.sh</div>
+                <p>这会自动清理并重启所有服务。</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>❌ Q3: "Permission denied" 权限被拒绝</h3>
+            <div class="answer">
+                <div class="error-box">
+                    <strong>错误:</strong> "Permission denied"
+                </div>
+                <p><strong>解决方案:</strong></p>
+                <div class="code">chmod +x *.sh
+./fix_permissions.sh</div>
+                <p>或者运行权限修复工具。</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>❌ Q4: Flask API 没有响应</h3>
+            <div class="answer">
+                <div class="warning-box">
+                    <strong>现象:</strong> 页面加载很慢或无响应
+                </div>
+                <p><strong>诊断步骤:</strong></p>
+                <ol>
+                    <li>运行诊断: <code>./diagnose.sh</code></li>
+                    <li>检查状态: <code>./status.sh</code></li>
+                    <li>查看日志: <code>tail -f flask_5001.log</code></li>
+                </ol>
+                <p><strong>解决方案:</strong> 重启服务 <code>./restart.sh</code></p>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>❌ Q5: Neo4j 数据库连接失败</h3>
+            <div class="answer">
+                <div class="error-box">
+                    <strong>错误:</strong> "Unable to connect to Neo4j"
+                </div>
+                <p><strong>解决方案:</strong></p>
+                <ol>
+                    <li>检查 Neo4j 是否运行: <code>./status.sh</code></li>
+                    <li>启动 Neo4j: <code>neo4j start</code></li>
+                    <li>等待几秒钟再试</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>❌ Q6: 推荐功能不工作</h3>
+            <div class="answer">
+                <div class="warning-box">
+                    <strong>现象:</strong> 查询后没有返回推荐结果
+                </div>
+                <p><strong>测试步骤:</strong></p>
+                <div class="code">curl -X POST http://127.0.0.1:5001/chat \
+  -H 'Content-Type: application/json' \
+  -d '{"message": "machine learning"}'</div>
+                <p><strong>如果返回空结果:</strong></p>
+                <ol>
+                    <li>检查 RAG 数据: 确保 Neo4j 有数据</li>
+                    <li>重建索引: <code>./update_rag.py --rebuild-embeddings</code></li>
+                    <li>重启服务: <code>./restart.sh</code></li>
+                </ol>
+            </div>
+        </div>
+
+        <h2>✅ 快速命令参考</h2>
+
+        <div class="question">
+            <h3>🚀 启动服务</h3>
+            <div class="answer">
+                <div class="code">./start_project.sh    # 一键启动所有服务
+./start_services.sh  # 后台启动</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>🔄 管理服务</h3>
+            <div class="answer">
+                <div class="code">./status.sh           # 查看状态
+./restart.sh         # 重启服务
+./stop_all.sh        # 停止所有服务</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>🔧 诊断问题</h3>
+            <div class="answer">
+                <div class="code">./diagnose.sh         # 一键诊断
+./fix_permissions.sh # 修复权限</div>
+            </div>
+        </div>
+
+        <h2>🌐 访问地址</h2>
+
+        <div class="question">
+            <h3>常用链接</h3>
+            <div class="answer">
+                <p><a href="http://127.0.0.1/index.html" class="btn">🏠 首页</a></p>
+                <p><a href="http://127.0.0.1:5001" class="btn">🥽 Chatbot</a></p>
+                <p><a href="http://127.0.0.1:5001/health" class="btn">❤️ 健康检查</a></p>
+                <p><a href="http://127.0.0.1:7474" class="btn">🗄️ Neo4j 管理</a></p>
+                <p><a href="http://127.0.0.1:8000/test_access.html" class="btn">🧪 测试页面</a></p>
+            </div>
+        </div>
+
+        <h2>📞 获取帮助</h2>
+
+        <div class="success-box">
+            <strong>如果以上方法都不行:</strong>
+            <ol>
+                <li>运行 <code>./diagnose.sh</code> 查看详细报告</li>
+                <li>检查 <code>logs/flask_api.log</code> 中的错误信息</li>
+                <li>确保所有依赖已安装: Python 3.8+, Neo4j</li>
+                <li>尝试完全重置: <code>./stop_all.sh && sleep 5 && ./start_services.sh</code></li>
+            </ol>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee; text-align: center; color: #999;">
+            <p>VR Recommender System - RAG-Powered Learning Platform</p>
+        </div>
+    </div>
+</body>
+</html>

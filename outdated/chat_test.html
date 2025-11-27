@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Test (Fixed URL)</title>
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+        #messages { height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 15px; margin: 15px 0; background: #fafafa; }
+        input { width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ddd; border-radius: 5px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #0056b3; }
+        .msg { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .user { background: #e3f2fd; text-align: right; }
+        .bot { background: #f5f5f5; }
+        .status { padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbot Test (Port 5001)</h1>
+        <div id="status" class="status">Ready</div>
+        <div id="messages"></div>
+        <input type="text" id="input" placeholder="Type a message...">
+        <button onclick="send()">Send</button>
+    </div>
+
+    <script>
+        const API_URL = 'http://127.0.0.1:5001/chat';
+        let messages = [];
+
+        function addMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `msg ${sender}`;
+            msgDiv.textContent = text;
+            document.getElementById('messages').appendChild(msgDiv);
+            document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+        }
+
+        async function send() {
+            const input = document.getElementById('input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user');
+            input.value = '';
+
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = 'Sending...';
+            statusDiv.className = 'status';
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: message,
+                        history: messages
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                addMessage(data.response, 'bot');
+                messages.push({ role: 'user', content: message });
+                messages.push({ role: 'assistant', content: data.response });
+
+                statusDiv.textContent = 'Success!';
+                statusDiv.className = 'status success';
+            } catch (error) {
+                addMessage(`Error: ${error.message}`, 'bot');
+                statusDiv.textContent = `Error: ${error.message}`;
+                statusDiv.className = 'status error';
+                console.error('Error:', error);
+            }
+        }
+
+        document.getElementById('input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                send();
+            }
+        });
+
+        // Test connection on load
+        window.onload = function() {
+            addMessage('System: Ready to test!', 'bot');
+        };
+    </script>
+</body>
+</html>

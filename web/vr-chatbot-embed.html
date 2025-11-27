@@ -1,0 +1,388 @@
+<!-- CMU Heinz VR Recommendation Chatbot Embed Script -->
+<!-- Add this script to your CMU website following the instructions at: -->
+<!-- https://www.cmu.edu/web/how-to/build-site/manage/advanced/scripts.html -->
+
+<script>
+(function() {
+    function init() {
+    // Configuration - UPDATE THIS WITH YOUR DEPLOYED BACKEND URL
+    const CHATBOT_API_URL = 'http://localhost:5001/chat'; // Change to your deployed Flask API URL
+    const WIDGET_POSITION = 'bottom-right'; // Options: 'bottom-right', 'bottom-left'
+    
+    // Create container
+    const container = document.createElement('div');
+    container.id = 'cmu-vr-chatbot-container';
+    container.style.position = 'fixed';
+    container.style.bottom = '20px';
+    container.style.right = WIDGET_POSITION === 'bottom-right' ? '20px' : 'auto';
+    container.style.left = WIDGET_POSITION === 'bottom-left' ? '20px' : 'auto';
+    container.style.zIndex = '9999';
+    container.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    
+    // Add styles
+    const style = document.createElement('style');
+    style.textContent = `
+        #cmu-vr-chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c41230 0%, #8b0000 100%);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(196, 18, 48, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        #cmu-vr-chat-button:hover { transform: scale(1.1); }
+        #cmu-vr-chat-button svg { width: 28px; height: 28px; fill: white; }
+        
+        #cmu-vr-chat-window {
+            position: fixed;
+            bottom: 90px;
+            right: ${WIDGET_POSITION === 'bottom-right' ? '20px' : 'auto'};
+            left: ${WIDGET_POSITION === 'bottom-left' ? '20px' : 'auto'};
+            width: 420px;
+            max-width: calc(100vw - 40px);
+            height: 600px;
+            max-height: calc(100vh - 110px);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #cmu-vr-chat-window.open { display: flex; }
+        
+        #cmu-vr-chat-header {
+            background: linear-gradient(135deg, #c41230 0%, #8b0000 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #cmu-vr-chat-header h3 { 
+            margin: 0; 
+            font-size: 16px; 
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        #cmu-vr-chat-header .subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+        #cmu-vr-chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+        }
+        
+        #cmu-vr-chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .cmu-vr-message {
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .cmu-vr-message.user { flex-direction: row-reverse; }
+        
+        .cmu-vr-message-content {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            line-height: 1.5;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+        .cmu-vr-message.bot .cmu-vr-message-content {
+            background: white;
+            color: #333;
+            border-bottom-left-radius: 4px;
+        }
+        .cmu-vr-message.user .cmu-vr-message-content {
+            background: #c41230;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+        
+        /* Format bold text in bot messages */
+        .cmu-vr-message.bot .cmu-vr-message-content strong {
+            font-weight: 600;
+            color: #c41230;
+        }
+        
+        .cmu-vr-message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .cmu-vr-message.bot .cmu-vr-message-avatar { 
+            background: #c41230; 
+            color: white; 
+        }
+        .cmu-vr-message.user .cmu-vr-message-avatar { 
+            background: #666; 
+            color: white; 
+        }
+        
+        #cmu-vr-chat-input-container {
+            padding: 16px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 10px;
+        }
+        
+        #cmu-vr-chat-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            font-family: inherit;
+            resize: none;
+            min-height: 44px;
+            max-height: 120px;
+        }
+        #cmu-vr-chat-input:focus { border-color: #c41230; }
+        
+        #cmu-vr-chat-send {
+            background: #c41230;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            align-self: flex-end;
+        }
+        #cmu-vr-chat-send:hover { background: #a01028; }
+        #cmu-vr-chat-send:disabled { background: #ccc; cursor: not-allowed; }
+        
+        .cmu-vr-typing-indicator { display: flex; gap: 4px; padding: 12px 16px; }
+        .cmu-vr-typing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #999;
+            animation: typing 1.4s infinite;
+        }
+        .cmu-vr-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .cmu-vr-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+        
+    `;
+    document.head.appendChild(style);
+    
+    // Create widget HTML
+    container.innerHTML = `
+        <button id="cmu-vr-chat-button" aria-label="Open VR Assistant">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            </svg>
+        </button>
+        
+        <div id="cmu-vr-chat-window">
+            <div id="cmu-vr-chat-header">
+                <div>
+                    <h3>🥽 VR Learning Assistant</h3>
+                    <div class="subtitle">Heinz College CMU</div>
+                </div>
+                <button id="cmu-vr-chat-close" aria-label="Close chat">&times;</button>
+            </div>
+            
+            <div id="cmu-vr-chat-messages">
+                <div class="cmu-vr-message bot">
+                    <div class="cmu-vr-message-avatar">🤖</div>
+                    <div class="cmu-vr-message-content">
+                        Hi! I'm your Heinz College VR Learning Assistant! 🎓
+                        
+I can help you find VR apps for your learning goals using our advanced RAG system.
+
+Simply tell me what you'd like to learn about (e.g., "machine learning for public policy", "data visualization", "Python programming")
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cmu-vr-chat-input-container">
+                <textarea 
+                    id="cmu-vr-chat-input" 
+                    placeholder="Type your interests..." 
+                    rows="1"
+                ></textarea>
+                <button id="cmu-vr-chat-send">Send</button>
+            </div>
+        </div>
+    `;
+    
+    // Add to page
+    document.body.appendChild(container);
+    
+    // Initialize functionality
+    const chatButton = document.getElementById('cmu-vr-chat-button');
+    const chatWindow = document.getElementById('cmu-vr-chat-window');
+    const chatClose = document.getElementById('cmu-vr-chat-close');
+    const chatInput = document.getElementById('cmu-vr-chat-input');
+    const chatSend = document.getElementById('cmu-vr-chat-send');
+    const messagesContainer = document.getElementById('cmu-vr-chat-messages');
+    
+    let conversationHistory = [];
+    
+    chatButton.addEventListener('click', () => {
+        chatWindow.classList.toggle('open');
+        if (chatWindow.classList.contains('open')) {
+            chatInput.focus();
+        }
+    });
+    
+    chatClose.addEventListener('click', () => {
+        chatWindow.classList.remove('open');
+    });
+    
+    chatSend.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+    
+    // Auto-resize textarea
+    chatInput.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+    });
+    
+    async function sendMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+        
+        addMessage(message, 'user');
+        conversationHistory.push({ role: 'user', content: message });
+        
+        chatInput.value = '';
+        chatInput.style.height = 'auto';
+        chatInput.disabled = true;
+        chatSend.disabled = true;
+        
+        const typingIndicator = addTypingIndicator();
+        
+        try {
+            const response = await fetch(CHATBOT_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    message,
+                    history: conversationHistory 
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            
+            const data = await response.json();
+            typingIndicator.remove();
+            
+            // Format the response with markdown-style formatting
+            const formattedResponse = formatBotResponse(data.response);
+            addMessage(formattedResponse, 'bot');
+            conversationHistory.push({ role: 'assistant', content: data.response });
+            
+        } catch (error) {
+            console.error('Error:', error);
+            typingIndicator.remove();
+            addMessage('Sorry, I encountered an error. Please make sure the backend server is running and try again.', 'bot');
+        } finally {
+            chatInput.disabled = false;
+            chatSend.disabled = false;
+            chatInput.focus();
+        }
+    }
+    
+    function formatBotResponse(text) {
+        // Convert **bold** to <strong>
+        return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    }
+    
+    function addMessage(content, sender) {
+        const div = document.createElement('div');
+        div.className = `cmu-vr-message ${sender}`;
+        
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'cmu-vr-message-content';
+        
+        // For bot messages, parse HTML; for user messages, use plain text
+        if (sender === 'bot') {
+            contentDiv.innerHTML = content;
+        } else {
+            contentDiv.textContent = content;
+        }
+        
+        div.innerHTML = `
+            <div class="cmu-vr-message-avatar">${sender === 'bot' ? '🤖' : '👤'}</div>
+        `;
+        div.appendChild(contentDiv);
+        
+        messagesContainer.appendChild(div);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        return div;
+    }
+    
+    function addTypingIndicator() {
+        const div = document.createElement('div');
+        div.className = 'cmu-vr-message bot';
+        div.innerHTML = `
+            <div class="cmu-vr-message-avatar">🤖</div>
+            <div class="cmu-vr-message-content">
+                <div class="cmu-vr-typing-indicator">
+                    <div class="cmu-vr-typing-dot"></div>
+                    <div class="cmu-vr-typing-dot"></div>
+                    <div class="cmu-vr-typing-dot"></div>
+                </div>
+            </div>
+        `;
+        messagesContainer.appendChild(div);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        return div;
+    }
+    
+        // end of init
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>

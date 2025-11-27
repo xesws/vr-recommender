@@ -48,4 +48,4 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:5000/health || exit 1
 
 # Run with Gunicorn
-CMD ["gunicorn", "-c", "gunicorn_config.py", "flask_api:app"]
+CMD ["gunicorn", "--chdir", "web", "-c", "web/gunicorn_config.py", "flask_api:app"]

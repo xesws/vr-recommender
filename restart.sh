@@ -25,9 +25,9 @@ log_info "停止现有服务..."
 ./stop_all.sh
 sleep 2
 
-# 重新启动
+# 重新启动 (使用 start_project.sh 的后台模式)
 log_info "重新启动所有服务..."
-./start_services.sh
+./start_project.sh --background
 
 log_success "重启完成！"
 echo ""

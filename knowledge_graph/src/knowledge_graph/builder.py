@@ -6,10 +6,10 @@ import os
 # Add src to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 
-from knowledge_graph.connection import Neo4jConnection
-from knowledge_graph.schema import KnowledgeGraphSchema
-from knowledge_graph.nodes import NodeCreator
-from knowledge_graph.relationships import RelationshipCreator
+from .connection import Neo4jConnection
+from .schema import KnowledgeGraphSchema
+from .nodes import NodeCreator
+from .relationships import RelationshipCreator
 
 # Try to import Repositories (fails if dependencies not installed)
 try:
@@ -44,6 +44,23 @@ class KnowledgeGraphBuilder:
         except Exception as e:
             self.logger(f"\n✗ Failed to initialize: {e}")
             raise
+
+    def _sanitize_data(self, data_list):
+        """
+        Sanitize data loaded from MongoDB for Neo4j compatibility.
+        Converts ObjectId to string or removes incompatible types.
+        """
+        if not data_list:
+            return []
+            
+        sanitized = []
+        for item in data_list:
+            new_item = item.copy()
+            # Convert _id to string if it exists (handles ObjectId)
+            if '_id' in new_item:
+                new_item['_id'] = str(new_item['_id'])
+            sanitized.append(new_item)
+        return sanitized
 
     def build(self, data_dir: str = "stage1/data", clear: bool = False, min_shared_skills: int = 1):
         """
@@ -87,6 +104,14 @@ class KnowledgeGraphBuilder:
                     if courses and apps:
                         data_loaded_from_mongo = True
                         self.logger(f"✓ Loaded from MongoDB: {len(courses)} courses, {len(apps)} apps, {len(skills)} skills")
+                        
+                        # Sanitize data for Neo4j (convert ObjectId to str)
+                        courses = self._sanitize_data(courses)
+                        apps = self._sanitize_data(apps)
+                        skills = self._sanitize_data(skills)
+                        course_skills = self._sanitize_data(course_skills)
+                        app_skills = self._sanitize_data(app_skills)
+                        
                     else:
                         self.logger("⚠ MongoDB returned empty data. Falling back to JSON.")
                 except Exception as e:

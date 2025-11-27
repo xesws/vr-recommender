@@ -1,0 +1,44 @@
+╔══════════════════════════════════════════════════════════════════╗
+║           VR RECOMMENDER - 一键启动系统                           ║
+╚══════════════════════════════════════════════════════════════════╝
+
+🚀 快速启动 (推荐)
+   $ ./start_project.sh
+   → 自动检查、清理、启动所有服务
+   → 适合开发和测试
+
+⚡ 后台启动
+   $ ./start_services.sh
+   → 后台运行所有服务
+   → 适合生产环境
+
+🔄 重启服务
+   $ ./restart.sh
+   → 自动清理并重启所有服务
+   → 解决端口占用问题
+
+⏹️  停止服务
+   $ ./stop_all.sh
+   → 停止所有服务并清理端口
+
+📊 检查状态
+   $ ./status.sh
+   → 查看所有服务运行状态
+
+🌐 访问地址
+   • Chatbot:     http://localhost:5001
+   • Health:      http://localhost:5001/health
+   • Neo4j UI:    http://localhost:7474
+
+🧪 测试推荐
+   curl -X POST http://localhost:5001/chat \
+     -H 'Content-Type: application/json' \
+     -d '{"message": "machine learning"}'
+
+📖 详细文档
+   cat START_HERE.md      # 启动指南
+   cat DEPLOYMENT.md      # 部署说明
+
+═══════════════════════════════════════════════════════════════════
+
+问题？运行 ./start_project.sh --help 查看帮助
